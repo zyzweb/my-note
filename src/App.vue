@@ -6,6 +6,7 @@
     <two :data="good" @haha="im"></two>
     <p>{{ff}}</p>
     <slot-father></slot-father>
+    <slot-zyy></slot-zyy>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import first from './components/first.vue'
 import two from './components/two.vue'
 import slotFather from './components/slot-father.vue'
+import slotZyy from './components/slot-zyy-father'
 // helloWorld first two 都是子组件
 
 export default {
@@ -22,7 +24,8 @@ export default {
     HelloWorld,
     first,
     two,
-    slotFather
+    slotFather,
+    slotZyy
   },
   data(){
     return {
