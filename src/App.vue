@@ -5,26 +5,30 @@
     <first :data="value" @listenEvent="one"></first>
     <two :data="good" @haha="im"></two>
     <p>{{ff}}</p>
+    <slot-father></slot-father>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import first from './components/first'
+import first from './components/first.vue'
 import two from './components/two.vue'
+import slotFather from './components/slot-father.vue'
+// helloWorld first two 都是子组件
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
     first,
-    two
+    two,
+    slotFather
   },
   data(){
     return {
-      value: '这是父组件传递过来的dongxi',
-      good:'这是第二个',
-      ff:''
+      value: '这是父组件传给第一个子组件的值',
+      good:'这是父组件传给第二个子组件的值',
+      ff:'这是父组件自己的值'
     }
   },
   methods:{
