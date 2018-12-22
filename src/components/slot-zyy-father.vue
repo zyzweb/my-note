@@ -28,6 +28,7 @@
 <script>
 import Child from "./slot-zyy-son.vue";
 export default {
+  name:'slot-zyy-father',
   components: {
     child: Child
   }

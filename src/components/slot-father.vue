@@ -17,7 +17,7 @@
 <script>
     import Child from './slot-son.vue'
     export default {
-        // name: 'slotFather',
+        name: 'slotFather',
         data: function(){
             return {
                 msg: ''

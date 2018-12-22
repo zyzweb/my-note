@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    // name: 'child',
+    name: 'child',
     data: function(){
         return {
             msg: ''

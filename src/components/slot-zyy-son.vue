@@ -7,6 +7,7 @@
 
 <script>
 export default {
+    naem:'slot-zyy-son',
     props: ["message"],
     data(){
         return {
