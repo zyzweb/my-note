@@ -7,7 +7,7 @@
     <p>{{ff}}</p>
     <slot-father></slot-father>
     <slot-zyy></slot-zyy>
-    
+    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="666" ></el-input-number>
   </div>
  
 </template>
@@ -27,13 +27,14 @@ export default {
     first,
     two,
     slotFather,
-    slotZyy
+    slotZyy,
   },
   data(){
     return {
       value: '这是父组件传给第一个子组件的值',
       good:'这是父组件传给第二个子组件的值',
-      ff:'这是父组件自己的值'
+      ff:'这是父组件自己的值',
+       num1: 1,
     }
   },
   methods:{
@@ -43,6 +44,9 @@ export default {
     im(i){
       // alert(i)
       this.ff=i
+    },
+    handleChange(value) {
+      console.log(value);
     }
   }
 }
