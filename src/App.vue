@@ -1,54 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js Ap1"/>
-    <first :data="value" @listenEvent="one"></first>
-    <two :data="good" @haha="im"></two>
-    <p>{{ff}}</p>
-    <slot-father></slot-father>
-    <slot-zyy></slot-zyy>
-    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="666" ></el-input-number>
+    <h2>这是根组件</h2>
+    <router-link to="/gaizao">跳转改造</router-link>
+    
+    
+    <!-- 中间路由 -->
+  <router-view></router-view>
   </div>
- 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import first from './components/first.vue'
-import two from './components/two.vue'
-import slotFather from './components/slot-father.vue'
-import slotZyy from './components/slot-zyy-father'
-// helloWorld first two 都是子组件
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld,
-    first,
-    two,
-    slotFather,
-    slotZyy,
-  },
-  data(){
-    return {
-      value: '这是父组件传给第一个子组件的值',
-      good:'这是父组件传给第二个子组件的值',
-      ff:'这是父组件自己的值',
-       num1: 1,
-    }
-  },
-  methods:{
-    one(val){
-      alert(val)
-    },
-    im(i){
-      // alert(i)
-      this.ff=i
-    },
-    handleChange(value) {
-      console.log(value);
-    }
-  }
 }
 </script>
 
