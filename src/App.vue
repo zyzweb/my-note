@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <h2>这是根组件</h2>
-    <router-link to="/gaizao">跳转改造</router-link>
+   
+    <router-link to="/gaizao">跳转改造</router-link> <br>
+    <router-link to="/news">跳转news</router-link>
     
     
     <!-- 中间路由 -->
@@ -10,8 +12,12 @@
 </template>
 
 <script>
+import helloworld from './components/HelloWorld'
 export default {
   name: 'app',
+  components: {
+   
+  }
 }
 </script>
 

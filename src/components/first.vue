@@ -13,7 +13,11 @@
     export default {
         name:'first',
         props:{
-            data:String
+            data:{
+                type:String,
+                default:'1'
+            }
+
         },
         data(){
             return{
