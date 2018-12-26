@@ -35,6 +35,7 @@ export default {
       good:'这是父组件传给第二个子组件的值',
       ff:'这是父组件自己的值',
        num1: 1,
+       value:''
     }
   },
   methods:{

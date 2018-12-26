@@ -7,20 +7,22 @@
         <p v-text="a.item"></p>
       </template>
     </child>
+    <md-button class="md-primary">主要</md-button>
+    <md-button class="md-raised md-warn">暖色</md-button>
+    <!-- <md-button class="md-raised md-primary" disabled v-md-theme="'brown'">棕色</md-button> -->
   </div>
 </template>
 
 <script>
-
-import child from './child';
+import child from "./child";
 export default {
   data() {
     return {
-      msg: ''
+      msg: ""
     };
   },
-  components:{
-      child
+  components: {
+    child
   }
 };
 </script>
