@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>app</h2>
+        <test-slot :items="items">
+            <template scope="props">
+                <span>{{ props.cname }}</span>
+                <span>{{ props.addr }}</span>
+                <span>{{ props.age }}</span> 
+            </template>
+        </test-slot>
+    </div>
+    <script>
+        Vue.component('test-slot', {
+            props: ['items'],
+            data(){
+                return {}
+            },
+            template: `
+            <div class="hello">
+                <slot :cname="items[2].cname"></slot> 
+                <slot :addr="items[2].addr"></slot> 
+                <slot age="18"></slot> 
+            </div>
+            `
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                items:[
+                    { text:'文字1' , cname:'tom' , addr:'usa' },
+                    { text:'文字2' , cname:'wangwu' , addr:'uk' },
+                    { text:'文字3' , cname:'zhangsan' , addr:'un' }
+                ]
+            },
+        })
+        
+    </script>
+</body>
+
+</html>
