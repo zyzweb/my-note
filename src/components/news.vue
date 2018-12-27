@@ -2,6 +2,7 @@
   <div>
     <h2>这是news组件</h2> {{msg}}
     <!-- <div class="one"></div> -->
+    <router-link to="/quanping">跳到全屏组件</router-link>
     <child>
       <template slot-scope="a">
         <p v-text="a.item"></p>

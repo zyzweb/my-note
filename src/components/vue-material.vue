@@ -1,5 +1,6 @@
 <template>
   <div>
+    <slot>123</slot>
     <div class="separator">
       <md-avatar class="md-small">
         <img src="/assets/examples/avatar.png" alt="People">
@@ -66,5 +67,9 @@ export default {
 
   .separator + .separator {
     margin-top: 24px;
+  }
+  .md-avatar {
+    width: 20px;
+    height: 200px;
   }
 </style>
