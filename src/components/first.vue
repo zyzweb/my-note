@@ -26,7 +26,9 @@
                     {id:0,text:'蔬菜'},
                     {id:1,text:'奶酪'},
                     {id:2,text:'随便'}
-                ]
+                ],
+                img:'../../image/good.png'
+
             }
         },
         methods:{

@@ -1,75 +1,26 @@
 <template>
   <div>
-    <slot>123</slot>
-    <div class="separator">
-      <md-avatar class="md-small">
-        <img src="/assets/examples/avatar.png" alt="People">
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-small">
-        <md-icon>home</md-icon>
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-small md-primary">
-        <md-icon>folder</md-icon>
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-small md-accent">
-        <md-icon>favorite</md-icon>
-      </md-avatar>
-    </div>
-
-    <div class="separator">
-      <md-avatar>
-        <img src="/assets/examples/avatar.jpg" alt="Avatar">
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon">
-        <md-icon>home</md-icon>
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-primary">
-        <md-icon>folder</md-icon>
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-accent">
-        <md-icon>favorite</md-icon>
-      </md-avatar>
-    </div>
-
-    <div class="separator">
-      <md-avatar class="md-large">
-        <img src="/assets/examples/avatar-2.jpg" alt="People">
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-large">
-        <md-icon>home</md-icon>
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-large md-primary">
-        <md-icon>folder</md-icon>
-      </md-avatar>
-
-      <md-avatar class="md-avatar-icon md-large md-accent">
-        <md-icon>favorite</md-icon>
-      </md-avatar>
-    </div>
+    Centered
+    <md-tabs class="md-primary" md-alignment="centered">
+      <md-tab id="tab-home" md-label="Home"></md-tab>
+      <md-tab id="tab-pages" md-label="Home"></md-tab>
+      <md-tab id="tab-posts" md-label="Posts"></md-tab>
+      <md-tab id="tab-favorites" md-label="Favorites"></md-tab>
+    </md-tabs>
   </div>
 </template>
+ 
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-
-  .separator + .separator {
-    margin-top: 24px;
-  }
-  .md-avatar {
-    width: 20px;
-    height: 200px;
-  }
+.separator + .separator {
+  margin-top: 24px;
+}
+.md-avatar {
+  width: 20px;
+  height: 200px;
+}
 </style>

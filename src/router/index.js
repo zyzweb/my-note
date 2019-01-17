@@ -10,6 +10,8 @@ import material from '../components/vue-material'
 import quanping from '../components/全屏组件'
 import page1 from '../components/keep-alive用法/page1'
 import hello from '../components/keep-alive用法/hello'
+import element from '../components/element-ui使用/element'
+import element2 from '../components/element-ui使用/element2'
 
 
 const router = new VueRouter({
@@ -32,7 +34,9 @@ const router = new VueRouter({
             meta: {
               keepAlive: true // 需要被缓存
             }
-          }
+          },
+          {path:'/element',component:element},
+          {path:'/element2',component:element2}
         
     ]
 })
