@@ -8,6 +8,7 @@
     <slot-zyy></slot-zyy>
     <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="666" ></el-input-number>
     <check></check>
+    <aa></aa>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import two from './two.vue'
 import slotFather from './slot-father.vue'
 import slotZyy from './slot-zyy-father.vue'
 import check from './绑定checked值.vue'
+import aa from './aa.vue'
 // helloWorld first two 都是子组件
 
 export default {
@@ -27,7 +29,8 @@ export default {
     two,
     slotFather,
     slotZyy,
-    check
+    check,
+    aa
   },
   data(){
     return {
