@@ -3,7 +3,7 @@
     <h3>这是父组件</h3>
     <child>
       <!-- 第一次使用:用flex展示数据 -->
-      <template slot-scope="user">
+      <template slot-scope="user"> <!-- user自己设的一个 -->
         <div class="tmp1">
           <span
             v-for="(item,index) in user.data"

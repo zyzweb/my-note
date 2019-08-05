@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <h1>这是根组件</h1>
+    <!-- <h1>这是根组件</h1> -->
 
-    <router-link to="/gaizao">跳转改造</router-link> <br>
+    <!-- <router-link to="/gaizao">跳转改造</router-link> <br>
     <router-link to="/news">跳转news</router-link><br>
-    <router-link to="/material">跳转material</router-link>
+    <router-link to="/material">跳转material</router-link> -->
 
-    <keep-alive>
+    <!-- <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <router-view v-if="!$route.meta.keepAlive"></router-view> -->
     <!-- 中间路由 -->
-    <!-- <router-view></router-view> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import helloworld from "./components/HelloWorld";
 export default {
   name: "app",
   components: {}
 };
 </script>
-
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -38,5 +36,8 @@ export default {
   display: inline-block;
   vertical-align: top;
   border: 1px solid rgba(#000, 0.12);
+}
+.good {
+  line-height: 20px;
 }
 </style>

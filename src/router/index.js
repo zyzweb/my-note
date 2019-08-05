@@ -3,27 +3,24 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)//模块化开发必须要use
 
 //导入组件
-import luyou from '../components/luyou.vue'
+import test from '../components/test.vue'
 import gaizao from '../components/gaizao.vue'
-import news from '../components/news'
-import material from '../components/vue-material'
-import quanping from '../components/全屏组件'
 import page1 from '../components/keep-alive用法/page1'
-import hello from '../components/keep-alive用法/hello'
 import element from '../components/element-ui使用/element'
 import element2 from '../components/element-ui使用/element2'
-
+import popup from '../components/mint-ui使用/popup.vue'
+import easytable from '../components/vue-easytable'
+import checked from '../components/绑定checked值'
 
 const router = new VueRouter({
     routes:[
-        {path:'/luyou',component:luyou},
+        {path:'/test',component:test},
         {path:'/gaizao',component:gaizao},
-        {path:'/news',component:news},
-        {path:'/material',component:material},
-        {path:'/quanping',component:quanping},
+        {path:'/easytable',component:easytable},
+        {path:'/checked',component:checked},
         {
             path: '/',
-            component: hello,
+            component: test,
             meta: {
               keepAlive: false // 不需要缓存
             }
@@ -36,7 +33,8 @@ const router = new VueRouter({
             }
           },
           {path:'/element',component:element},
-          {path:'/element2',component:element2}
+          {path:'/element2',component:element2},
+          {path:'/popup',component:popup}
         
     ]
 })
