@@ -10,14 +10,40 @@
 
 <body>
     <script>
-        let Person = {
+        // es3 es5 数据保护
+        // var Person = function() { //es3
+        //     var data = {
+        //         name: 'es3',
+        //         sex: 'male',
+        //         age: 15
+        //     }
+        //     this.get = function(key) {
+        //         return data[key]
+        //     }
+        //     this.set = function(key,value) {
+        //         if(key !== 'sex') {
+        //             data[key] = value
+        //         }
+        //     }
+        // }
+        
+        // var Person = { // es5
+        //     name: 'es5',
+        //     age: 15
+        // }
+        // Object.defineProperty(Person,'sex',{
+        //     writable:false,
+        //     value:'male'
+        // })
+
+        let Person = {  //代理前的对象
             name:'es6',
             sex:'male',
             age:15
         }
 
-        let person = new Proxy(Person,{
-            get(target,key){
+        let person = new Proxy(Person,{ //代理Person,以后操作person,保护了Person   和es5 中 get set方法类似   代理后的对象
+            get(target,key){ //target为Person,key值得是哪个属性 
                 return target[key]
             },
             set(target,key,value){
