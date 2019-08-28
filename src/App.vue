@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <h1>这是根组件</h1> -->
+    <h1>这是根组件</h1>
 
     <!-- <router-link to="/gaizao">跳转改造</router-link> <br>
     <router-link to="/news">跳转news</router-link><br>

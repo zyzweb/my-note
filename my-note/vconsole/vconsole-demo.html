@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <script src="vconsole.min.js"></script>
+
+<script>
+      // 初始化
+      var vConsole = new VConsole();
+      console.log("Hello world");
+      window.addEventListener("offline", () => {
+        alert("你断网啦！");
+      });
+
+    
+      window.addEventListener(
+        "orientationchange",
+        () => {
+          document.body.innerHTML += `<p>屏幕旋转后的角度值：${window.orientation}</p>`;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
