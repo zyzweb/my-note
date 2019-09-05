@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
+      /* 尽量使用transition,比较复杂的动画就用animation    transition从hover衍生    animation从flash衍生 */
+      /* 1、触发条件不同 transition需要去触发比如：点击事件、鼠标移入事件；而animation则是在页面加载后就触发
+         2、循环次数不同 transition触发一次,animation可以触发多次 */
       /* 3d要开启视点 perspective 视点加在父元素上 */
       .animate {
         animation: slide 0.4s ease-in-out;
@@ -19,9 +22,19 @@
           transform: translate3d(-100px, 0, 0);
         }
       }
+      .blue {
+        width:100px;
+        height:100px;
+        background:blue;
+        transition:width 2s; /* 过渡宽度 或者 all */
+      }
+      .blue:hover {
+        width: 300px
+      }
     </style>
   </head>
   <body>
     <div style="width: 100px;height: 100px;background-color: red;" class="animate"></div>
+    <div class="blue"></div>
   </body>
 </html>

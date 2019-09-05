@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script>
+      var doc = new jsPDF();
+      doc.text("Hello world!", 20, 20);
+      doc.save("jspdf-demo.pdf");
+    </script>
+  </body>
+</html>

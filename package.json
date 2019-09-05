@@ -10,6 +10,7 @@
   "dependencies": {
     "css-loader": "^2.1.0",
     "element-ui": "^2.4.11",
+    "jspdf": "^1.5.3",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lib-flexible": "^0.3.2",
