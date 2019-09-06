@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟客户端</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body style="padding:10px">
+    <blockquote>
+        <p>接收服务端广播的消息,展示在文本框里</p>
+    </blockquote>
+    <!-- 文本框 -->
+    <textarea id="textarea" class="form-control" rows="3"></textarea>
+    <!-- 关闭按钮 -->
+    <button class="btn btn-default" type="submit">关闭广播系统</button>
+    <script>
+        //注册一个websocket
+        let WebSocketClient = new WebSocket('ws://localhost:8989')
+
+        //建立链接
+        WebSocketClient.addEventListener('open',function(e){
+            console.log('开始webSocket连接服务器')
+            
+            
+            //客户端接收服务端的数据
+            WebSocketClient.addEventListener('message',function(msgEvent){
+                console.log(msgEvent)
+
+                //将服务端发送来的消息,填入文本域
+                document.getElementById('textarea').value = msgEvent.data
+            })
+
+            //监听失败事件
+            WebSocketClient.addEventListener('error',function(err) {
+                console.log(err)
+            }) 
+
+            //关闭广播
+            document.querySelector('.btn').addEventListener('click',function(){
+                // 关闭链接
+                WebSocketClient.close()
+            })
+        }) 
+        
+    </script>
+</body>
+</html>
