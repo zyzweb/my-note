@@ -6,12 +6,13 @@ function arr(a,b) {
     console.log(arguments);
     console.log(arguments[0]);
     console.log(arguments.length);
+    console.log(arguments.callee);
     console.log(arr.caller);
 }
 arr(3,4)
 
-function eng() {
-    arr()
-}
-eng()
+// function eng() {
+//     arr()
+// }
+// eng()
 

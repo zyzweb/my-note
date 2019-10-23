@@ -10,7 +10,7 @@ import element from '../components/element-ui使用/element'
 import element2 from '../components/element-ui使用/element2'
 import popup from '../components/mint-ui使用/popup.vue'
 import easytable from '../components/vue-easytable'
-import checked from '../components/绑定checked值'
+import checked from '@/components/绑定checked值'
 import editor from '../components/editor'
 
 const router = new VueRouter({

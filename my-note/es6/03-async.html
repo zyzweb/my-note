@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function getPromise(time,str){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve(str)
+                }, time);
+            })
+        }
+
+        /**
+        异步函数就是在普通函数的funciton前面加上 async关键字
+        */
+        async function timeTask(){
+            const result1  = await getPromise(2000,'...第一层1...')
+            console.log(result1)
+
+            const result2  = await getPromise(3000,'...第二层2...')
+            console.log(result2)
+
+            const result3  = await getPromise(1000,'...第三层3...')
+            console.log(result3)
+
+            const result4  = await getPromise(2000,'...第四层4...')
+            console.log(result4)
+        }
+
+
+        // 调用的时候和普通的函数一样
+        timeTask()
+    
+    </script>
+</body>
+</html>

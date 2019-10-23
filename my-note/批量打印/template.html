@@ -1,0 +1,100 @@
+<div class="qualifiedBox">
+    <div class="header">
+        <div class="headerLeft">
+            <p>深圳中检联</p>
+            <p>第三方监管有限公司</p>
+        </div>
+    </div>
+    <div class="mainBox">
+        <div class="mainRow">
+            <div class="mainLeft">样品编号：</div>
+            <div class="mainRight mainRightWrite"></div>
+        </div>
+        <div class="mainRow">
+            <div class="mainLeft">样品名称：</div>
+            <div class="mainRight mainRightWrite"></div>
+        </div>
+        <div class="mainRow">
+            <div class="mainLeft">测试项目：</div>
+            <div class="mainRight mainRightWrite"></div>
+        </div>
+        <div class="mainRow">
+            <div class="mainLeft">样品状态：</div>
+            <div class="mainRight mainRightCheckbox">
+                <div class="sampleBox">
+                    <input type="checkbox" name="sampleStatus" id="reservedSample">
+                    <label for="reservedSample">留样</label>
+                </div>
+                <div class="sampleBox">
+                    <input type="checkbox" name="sampleStatus" id="reservedRetest">
+                    <label for="reservedRetest">复测</label>
+                </div>
+                <div class="sampleBox">
+                    <input type="checkbox" name="sampleStatus" id="reservedWaitetest">
+                    <label for="reservedWaitetest">待测</label>
+                </div>
+                <div class="sampleBox">
+                    <input type="checkbox" name="sampleStatus" id="reservedtested">
+                    <label for="reservedtested">已测</label>
+                </div>
+            </div>
+        </div>
+        <div class="mainRow">
+            <div class="mainLeft">储存条件：</div>
+            <div class="mainRight mainRightCheckbox">
+                <div class="sampleBox">
+                    <input type="checkbox" name="samplecondition" id="reservedCold">
+                    <label for="reservedCold">冷藏</label>
+                </div>
+                <div class="sampleBox">
+                    <input type="checkbox" name="samplecondition" id="reservedFrozen">
+                    <label for="reservedFrozen">冷冻</label>
+                </div>
+                <div class="sampleBox">
+                    <input type="checkbox" name="samplecondition" id="reservedNormaltemp">
+                    <label for="reservedNormaltemp">常温</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .qualifiedBox {
+        width: 300px;
+        padding: 10px 10px;
+        float: left;
+    }
+    .headerLeft {
+        font-size: 10px;
+        text-align: right;
+    }
+    .headerLeft p {
+        margin: 0px;
+        padding: 0px;
+    }
+    .mainLeft {
+        font-size: 16px;
+    }
+    .mainRow {
+        display: flex;
+        height: 24px;
+        line-height: 24px;
+    }
+    .mainRightWrite {
+        border-bottom: 1px solid #000;
+        flex: 1;
+    }
+    .mainRightCheckbox {
+        display: flex;
+        font-size: 10px;
+        align-items: center;
+        flex: 1;
+        justify-content: space-between;
+    }
+    .sampleBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

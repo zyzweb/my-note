@@ -42,10 +42,9 @@
         })
         **/
 
-        getPromise(2000,'...第一层...').then(result=>{
+        getPromise(2000,'...第一层...').then(result=>{ //...第一层相当于result
             console.log(result)
-
-            return getPromise(3000,'...第二层...')
+            return getPromise(3000,'...第二层...')  //利用return一个promise
         }).then(result2=>{
             console.log(result2)
 

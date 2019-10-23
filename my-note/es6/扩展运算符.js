@@ -44,9 +44,32 @@ console.log(res(...a)); // 等价于console.log(res.apply(null,a))
 
 //将类数组转化为真数组
 [...document.querySelectorAll('div')]  // Array.from(document.querySelectorAll('div'))  Array.map(callback) 回调函数对数组进行操作返回新数组
+//数组去重
+let array = [1, 1, 1, 1, 2, 3, 4, 4, 5, 3];
+ let set = [...new Set(array)];
+ console.log(set); // [1,2,3,4,5]
 
 //解构
 let {x,y,...z} = {x: 1,y: 2,a: 3,b: 4}
 console.log(x);  //1
 console.log(y);  //2
 console.log(z);  //{a: 3,b: 4}
+
+console.log(...[1,2,3]);// 1 2 3
+console.log('a',...[1,2,3]); // a 1 2 3 
+
+//对象的扩展运算符不是es6的语法
+let initObj = {a:1,b:2}
+let mapGatters = obj => {
+    return {
+        c:4,
+        d:6
+    }
+}
+let fn = fn => console.log(fn)
+
+
+// let target = { ...initObj, ...mapGatters({ f: 4 }), fn} 
+
+let target = Object.assign( initObj, mapGatters({f: 2 }), fn) //与Object.assign作用一样
+console.log(target);

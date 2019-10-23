@@ -14,6 +14,7 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lib-flexible": "^0.3.2",
+    "lodash": "^4.17.15",
     "mint-ui": "^2.2.13",
     "node-sass": "^4.11.0",
     "postcss-px2rem": "^0.3.0",
@@ -37,7 +38,6 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
     "vue-easytable": "^1.7.2",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.17"
