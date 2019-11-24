@@ -43,7 +43,7 @@
         }
 
         let person = new Proxy(Person,{ //代理Person,以后操作person,保护了Person   和es5 中 get set方法类似   代理后的对象
-            get(target,key){ //target为Person,key值得是哪个 属性 get拦截所有读取的属性
+            get(target,key){ //target为Person,key指的是哪个属性 get拦截所有读取的属性
                 return target[key]
             },
             set(target,key,value){ //set拦截所有属性的设置 
@@ -66,7 +66,8 @@
                     return target[key]
                 }
             },
-            //拦截Object.kyes,Object.getOwnPropertySymbols,Object.getOwnPropertyNames (在遍历上)
+            //拦截Object.kyes()(不包含不可枚举属性),Object.getOwnPropertyNames() (包含不可枚举属性),Object.getOwnPropertySymbols(返回对象所有symbol属性的数组)
+            //propertyIsEnumerable() 判断是否可枚举   可枚举属性才能被for...in访问
             ownKeys(target) {
                 return Object.keys(target).filter(item => item != 'time')
             }

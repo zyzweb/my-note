@@ -19,6 +19,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-test.html
-test.json
 test.js
+test1.js
+test.html
+test1.html
+test.css
+test1.css
+

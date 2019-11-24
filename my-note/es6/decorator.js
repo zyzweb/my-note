@@ -1,5 +1,5 @@
 {//decorator修饰器 是一个函数 修改行为(扩展类的功能)  修改类的行为(只在类里面才能用)  
-  //抽离了业务漏记更加具有修饰性和可维护性
+  //抽离了业务逻辑更加具有修饰性和可维护性
   let readonly=function(target,name,descriptor){ //target是类本身
     descriptor.writable=false;//只读
     return descriptor

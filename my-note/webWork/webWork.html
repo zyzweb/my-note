@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+      //为js创建多线程
+      //创建一个Worker对象，指向一个js文件，然后通过Worker对象往js文件发送消息，
+      //js文件内部的处理逻辑，处理完毕后，再发送消息回到当前页面，纯异步方式，不影响当前主页面渲染。
+
+      //创建线程 work对象
+      var work = new Worker("work.js"); //work文件中不要存在跟ui代码
+      //发送消息
+      work.postMessage("4");
+      // 监听消息
+      work.onmessage = function(event) {
+        console.log(event.data);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

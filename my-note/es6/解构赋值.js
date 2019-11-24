@@ -4,7 +4,7 @@
   let b = 2;
 
   [a, b] = [b, a];
-  console.log(a, b);
+  console.log(a, b); // 2 1
 }
 
 //取到函数返回值
@@ -13,7 +13,7 @@
         return [1,2]
     }
     let [a,b] = f()
-    console.log(a,b);
+    console.log(a,b); // 1 2
 }
 
 //可以选择性的取值,可以和扩展运算符混合使用
@@ -31,7 +31,7 @@
 {
     let o = {p:42,q:true}
     let {p,q} = o
-    console.log(p,q);
+    console.log(p,q); // 42 true
 }
 
 //json字符串解构 常用

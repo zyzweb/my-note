@@ -1,5 +1,5 @@
 {
-    // genertaor基本定义  是promise的进阶  generator返回的就是iterator
+    // genertaor基本定义  是promise的进阶  generator返回的就是iterator  遇到yield就停止 调用next方法才运行下一步
     let tell = function*() {
       yield "a";
       yield "b";
@@ -8,14 +8,14 @@
   
     let k = tell();
   
-    console.log(k.next());
+    console.log(k.next()); //next方法是iterator的方法
     console.log(k.next());
     console.log(k.next());
     console.log(k.next());
   }
   
   {
-    let obj = {}; //给对象添加iterator的另一种方法
+    let obj = {}; //给对象添加iterator的另一种方法 更简单
     obj[Symbol.iterator] = function*() {
       yield 1;
       yield 2;
@@ -29,7 +29,7 @@
   
   {
     let state = function*() {
-      //状态机
+      //状态机 可以一直循环下去
       while (1) {
         yield "A";
         yield "B";
@@ -45,7 +45,7 @@
   }
   
   // {
-  //   let state=async function (){ //是generator的语法通
+  //   let state=async function (){ //是generator的语法糖作用一样,需要安装babel插件进行编译
   //     while(1){
   //       await 'A';
   //       await 'B';
@@ -122,4 +122,5 @@
   
    pull()
   }
+  //语法和实战看两遍  反推为什么这样写   自己写对比   
   

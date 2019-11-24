@@ -6,18 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-      #test {
+      #test,#test1,#test2 {
         width: 100px;
         height: 100px;
         background-color: yellow;
+        margin-top: 20px;
+      }
+      #test2:hover {
+        background-color: red;
       }
     </style>
   </head>
   <body>
     <div id="test"></div>
+    <div id="test1"></div>
+    <div id="test2"></div>
     <script>
       var a = document.getElementById("test");
+      var b = document.getElementById("test1");
       a.onclick = function() {
+        a.style.backgroundColor = 'red' //改变节点属性断点
         var result = get(1);
         alert(result);
       };
@@ -25,6 +33,11 @@
       function get(b) {
         return ++b;
       }
+
+      b.onclick = function() {
+        var parent = b.parentNode
+        parent.removeChild(b) //节点被移出断点
+      };
     </script>
   </body>
 </html>

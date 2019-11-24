@@ -4,8 +4,8 @@ import ElementUI from 'element-ui'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
-// import 'element-ui/lib/theme-chalk/index.css';
-// Vue.use(ElementUI)
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
 // import {Tabs,TabPane,} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 // Vue.use(Tabs)
@@ -35,6 +35,7 @@ import {VTable,VPagination} from 'vue-easytable'
 // 注册到全局
 Vue.component(VTable.name, VTable)
 Vue.component(VPagination.name, VPagination)
+;
 
 
      
@@ -42,10 +43,13 @@ Vue.component(VPagination.name, VPagination)
 import router from './router'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-new Vue({
+var cc = new Vue({
   render: h => h(App),
   router
 }).$mount('#app')
+
+console.log(Vue)
+console.log(cc);
 
 //全局导入样式
 

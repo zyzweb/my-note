@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h2>{{msg}}</h2>
-    <input type="text" placeholder="输入框">
+    <input type="text" placeholder="请输入">
   </div>
 </template>
 

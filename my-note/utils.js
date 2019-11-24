@@ -34,3 +34,11 @@ for (let i = 0; i < array.length; i++) {
     array[i] = new Object()
 }
 console.log(new Date().getTime() - start);
+
+//渲染对象数组
+let arr = [{a:2},{b:3}]
+arr.map(i => ({...i, c:5}))
+console.log(arr.map(i => ({...i, c:5})));
+
+//生成空数组 
+Array.apply(null,{length: 10})  // === new Array(10).fill(1)

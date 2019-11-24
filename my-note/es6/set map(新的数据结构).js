@@ -1,3 +1,4 @@
+//优先使用map 对唯一性有要求使用set 放弃object和array
 {
     let list = new Set();  //类似于数组就是不能重复
     list.add(5); //添加元素
@@ -73,7 +74,7 @@
     let map = new Map(); //第一种定义
     let arr=['123'];
   
-    map.set(arr,456); //添加元素 key可以为任何数据类型
+    map.set(arr,456); //添加元素 key可以为任何数据类型    map.set('1',2).set('3',4) 可以连续设置多个map
   
     console.log('map',map,map.get(arr)); //获取值
   }

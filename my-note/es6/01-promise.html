@@ -55,7 +55,7 @@
         });
 
       {
-        // 基本定义
+        // 基本定义  通过回调
         let ajax = function(callback) {
           console.log("执行");
           setTimeout(function() {
@@ -67,7 +67,7 @@
         });
       }
 
-      {
+      { //通过promise
         let ajax = function() {
           console.log("执行2");
           return new Promise(function(resolve, reject) {
@@ -145,7 +145,7 @@
                   let img = document.createElement('img')
                   img.src = src
                   img.onload = function () { //图片加载完成
-                      resolve(img)
+                      resolve(img)  //resolve都是放在一段时间之后在加载的
                   }
                   img.onerror = function (err) {
                       reject(img)
