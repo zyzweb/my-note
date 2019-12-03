@@ -88,7 +88,7 @@
   }
   
   {
-    let weakmap=new WeakMap();
+    let weakmap=new WeakMap(); // weak表示弱引用  weakset同理  对于值的引用不计入垃圾回收机制
   
     let o={};
     weakmap.set(o,123);

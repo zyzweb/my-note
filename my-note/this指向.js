@@ -43,7 +43,7 @@ var obj = {
  // 说出下面的输出结果
  obj.dbl(); // 2 4
  var func = obj.dbl;
- func(); // 8 8 上面执行之后val变为2 
+ func(); // 8 8 上面执行之后val变为2 val和this.val都是指向外面window的val
 
 
  var name = "caibaojian.com",
@@ -68,5 +68,5 @@ var a = {
     },
     c: 'hello'
   }
-  a.b(); // undefined
+  a.b(); // undefined  this指向window
   console.log(a.c); //hello

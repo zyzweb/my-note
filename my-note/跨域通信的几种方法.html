@@ -37,9 +37,9 @@
       Bwindow.postMessage('data', 'http://B.com');
       // 在窗口B中监听
       Awindow.addEventListener('message', function (event) {
-          console.log(event.origin);
-          console.log(event.source);
-          console.log(event.data);
+          console.log(event.origin);//发送消息的窗口
+          console.log(event.source);//消息发向的网址
+          console.log(event.data);//消息内容
       }, false);
 
       // Websocket【参考资料】http://www.ruanyifeng.com/blog/2017/05/websocket.html

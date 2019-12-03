@@ -65,6 +65,7 @@ mPromise.prototype = {
   }
 };
 
+//使用方式同原生promise
 let f1 = function(num) {
   return new mPromise((resolve, reject) => {
     if (num < 10) resolve(num);

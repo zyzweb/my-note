@@ -8,8 +8,8 @@
       >{{item.value}}</button>
     </div>
     <div>
-      <keep-alive include="books">
-        <component :is="viewFirst"></component>
+      <keep-alive include="books"> <!-- include匹配到的才会被缓存-->
+        <component :is="viewFirst"></component> <!-- component为动态组件通过is属性切换 通过keep-alive解决切换组件过程中的缓存问题-->
       </keep-alive>
     </div>
   </div>

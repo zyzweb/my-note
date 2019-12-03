@@ -1,4 +1,4 @@
-//数组 Array.from()  实例的fill() 实例的entries() values() keys()   实例的includes()//与字符串类似都是判断存在返回boolean
+//数组 Array.from()  实例的fill()  Array.of()  实例的entries() values() keys()   实例的includes()//与字符串类似都是判断存在返回boolean
 //math上的很多方法转移到number上   object很多方法转移到Rflect上
 //补白
 "123".padStart(6, "0"); //"123000"   还有padEnd

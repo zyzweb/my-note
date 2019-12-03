@@ -5,8 +5,6 @@ Vue.use(VueRouter); //模块化开发必须要use
 //导入组件
 import test from "../components/test.vue";
 import gaizao from "../components/gaizao.vue";
-import page1 from "../components/keep-alive用法/page1";
-import hello from "../components/keep-alive用法/hello";
 import home from "../components/keep-alive用法/home";
 import element from "../components/element-ui使用/element";
 import element2 from "../components/element-ui使用/element2";
@@ -22,8 +20,6 @@ const router = new VueRouter({
     { path: "/easytable", component: easytable },
     { path: "/checked", component: checked },
     { path: "/editor", component: editor },
-    { path: "/page1", component: page1, meta: { keepAlive: true} },// 需要被缓存
-    { path: "/hello", component: hello, meta: {keepAlive: false} },
     { path: "/home", component: home },
     { path: "/element", component: element },
     { path: "/element2", component: element2 },
