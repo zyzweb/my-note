@@ -19,15 +19,23 @@ var arr = [1, 2, 3, 4];
 
 let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
 
+// array.reduce(function(total, currentValue, currentIndex, arr), initialValue); 从左开始计算直到生成最后一个数
+/*
+  total: 必需。初始值, 或者计算结束后的返回值。
+  currentValue： 必需。当前元素。
+  currentIndex： 可选。当前元素的索引；                     
+  arr： 可选。当前元素所属的数组对象。
+  initialValue: 可选。传递给函数的初始值，相当于total的初始值。
+*/
 //获取数组中元素出现的次数
 let nameNum = names.reduce((pre, cur) => {// 替代for循环作用和forEach类似  reduceRight从右往左做累加
-  if (cur in pre) {
+  if (cur in pre) { //判断是否是对象的属性
     pre[cur]++;
   } else {
     pre[cur] = 1;
   }
   return pre;
-}, {});
+}, {});//最初为{}
 console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
 
 var arr1 = [3, 4, 5, 6, 7];
