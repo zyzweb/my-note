@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter); //模块化开发必须要use
 
 //导入组件
-import father from "../components/$attr $listeners用法/father";
+import father from "../components/$attr $listeners继承用法/father";
 import test from "../components/test.vue";
 import gaizao from "../components/gaizao.vue";
 import home from "../components/keep-alive用法/home";
