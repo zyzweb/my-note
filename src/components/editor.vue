@@ -13,7 +13,7 @@
 // var editor = new E('#editor')
 // editor.create()
 export default {
-  mou
+  
 }
 </script>
 

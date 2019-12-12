@@ -10,13 +10,13 @@
     <script>
         class Person{
             // 一般用来做初始化工作，比如给我们的属性赋值
-            constructor(name,age){  //没有需要可以不写
+            constructor(name,age){  //没有需要可以不写   相当于es5中的构造函数
                 console.log("111111111")
                 this.name = name
                 this.age = age
             }
 
-            eat(foodName){
+            eat(foodName){  //相当于es5中的原型方法
                 console.log(`${this.name} 吃 ${foodName}`)
             }
         }

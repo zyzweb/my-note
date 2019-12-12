@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter); //模块化开发必须要use
 
 //导入组件
+import father from "../components/$attr $listeners用法/father";
 import test from "../components/test.vue";
 import gaizao from "../components/gaizao.vue";
 import home from "../components/keep-alive用法/home";
@@ -12,9 +13,11 @@ import popup from "../components/mint-ui使用/popup.vue";
 import easytable from "../components/vue-easytable";
 import checked from "@/components/绑定checked值";
 import editor from "../components/editor";
+console.log('father',father);
 
 const router = new VueRouter({
   routes: [
+    { path: "/father", component: father },
     { path: "/test", component: test },
     { path: "/gaizao", component: gaizao },
     { path: "/easytable", component: easytable },
@@ -24,7 +27,7 @@ const router = new VueRouter({
     { path: "/element", component: element },
     { path: "/element2", component: element2 },
     { path: "/popup", component: popup },
-    { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值 
+    // { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值 
   ]
 });
 

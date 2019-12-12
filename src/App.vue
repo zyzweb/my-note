@@ -6,14 +6,14 @@
     <router-link to="/news">跳转news</router-link><br>
     <router-link to="/material">跳转material</router-link> -->
 
-     <keep-alive>
-      <router-view v-if="$route.meta.keepAlive"></router-view>  <!-- 这样的话只有keepAlive属性为true才能展示 -->
+     <!-- <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>  这样的话只有keepAlive属性为true才能展示
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"></router-view> <!-- 当keepAlive属性为false时时这个路由 -->
+    <router-view v-if="!$route.meta.keepAlive"></router-view> 当keepAlive属性为false时时这个路由  -->
 
     
     <!-- 中间路由 -->
-    <!-- <router-view></router-view> -->
+    <router-view></router-view>
   </div>
 </template>
 

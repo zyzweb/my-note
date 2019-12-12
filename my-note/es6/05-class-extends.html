@@ -23,7 +23,7 @@
       class Cat extends Animal {
         //继承父类
         constructor(name, age, color) {
-          super(name, age); //覆盖父类的参数
+          super(name, age); //覆盖父类的参数   继承了constructor
           this.color = color; //子类自己的属性必须放在super之后
         }
 
@@ -55,9 +55,9 @@
         }
 
         let v = new Parent();
-        console.log("getter", v.longName);
+        console.log("getter", v.longName); //getter mkmukewang
         v.longName = "hello";
-        console.log("setter", v.longName);
+        console.log("setter", v.longName);  // setter mkhello
       }
 
       {
@@ -73,7 +73,7 @@
           }
         }
 
-        Parent.tell();
+        Parent.tell(); // tell
       }
 
       {
@@ -90,7 +90,7 @@
 
         Parent.type = "test"; //静态属性
 
-        console.log("静态属性", Parent.type);
+        console.log("静态属性", Parent.type);  //test
       }
     </script>
   </body>

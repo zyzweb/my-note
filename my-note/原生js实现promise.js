@@ -1,3 +1,4 @@
+//promise相当于一个构造函数 new Promise()是promise构造函数实例化的对象
 let that; // 存储 mPromise
 /**
  * 因为每次 new mPromise(then, catch的时候都需要链式调用)会调用 mPromise(constructor)，
@@ -104,3 +105,30 @@ f1(12)
   .finally(() => {
     console.log("12 finally\n"); // 12 finally
   });
+
+
+  //es6 实现
+  class PromiseClone {
+    constructor(process) {
+      this.status = 'pending'
+      this.msg = ''
+      process(this.resolve.bind(this), this.reject.bind(this))
+      return this
+    }
+    resolve(val) {
+      this.status = 'fulfilled'
+      this.msg = val
+    }
+    reject(err) {
+      this.status = 'rejected'
+      this.msg = err
+    }
+    then(fulfilled, reject) {
+      if(this.status === 'fulfilled') {
+        fulfilled(this.msg)
+      }
+      if(this.status === 'rejected') {
+        reject(this.msg)
+      }
+    }
+  }
