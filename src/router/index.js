@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-Vue.use(VueRouter); //模块化开发必须要use
 
 //导入组件
+import i18n from "../components/vue-i18n"
 import father from "../components/$attr $listeners继承用法/father";
 import test from "../components/test.vue";
 import gaizao from "../components/gaizao.vue";
@@ -13,10 +13,23 @@ import popup from "../components/mint-ui使用/popup.vue";
 import easytable from "../components/vue-easytable";
 import checked from "@/components/绑定checked值";
 import editor from "../components/editor";
-console.log('father',father);
+
+import index from '@/components/keep-alive表单demo/index'
+import test1 from '@/components/keep-alive表单demo/test1';
+import pagea from '@/components/keep-alive表单demo/pageA';
+import agree from '@/components/keep-alive表单demo/agree';
+import listBox from '@/components/keep-alive表单demo/listBox';
+import list from '@/components/keep-alive表单demo/list';
+import details from '@/components/keep-alive表单demo/details';
+
+Vue.use(VueRouter); //模块化开发必须要use
 
 const router = new VueRouter({
   routes: [
+    { path: "/index",name: 'index', component: index },
+    { path: "/test1",name: 'test1', component: test1,children:[{path: "/test1",name: 'pageA1', component: pagea },{path: "/agree",name: 'agree', component: agree }] },
+    { path: "/list",name: 'listBox', component: listBox,children:[{path: "/list",name: 'list', component: list },{path: "/details",name: 'details', component: details }] },
+    { path: "/i18n", component: i18n },
     { path: "/father", component: father },
     { path: "/test", component: test },
     { path: "/gaizao", component: gaizao },

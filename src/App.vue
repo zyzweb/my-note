@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     this.$nextTick(function() {
-      console.log(this);
+      console.log(this);//vuecomponent实例
       console.log(this.$data);
     })
   }

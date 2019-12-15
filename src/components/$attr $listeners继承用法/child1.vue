@@ -15,7 +15,7 @@ export default {
     child2
   },
   props: ['foo'],
-  inheritAttrs: false,//$attrs继承父组件除props以外的属性
+  inheritAttrs: false,//$attrs继承父组件除props以外的属性  true/false 体现在子组件根元素属性的不同
 }
 </script>
 <style scoped>

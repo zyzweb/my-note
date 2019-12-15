@@ -7,7 +7,6 @@
     <title>Document</title>
 
     <script src="https://unpkg.com/vue"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.1/vuex.min.js"></script>
   </head>
   <body>
     <div id="app">
@@ -18,22 +17,7 @@
       <button @click="changedata">事件触发</button>
     </div>
     <script>
-      // const store = new Vuex.Store({
-      //   state: {
-      //     todos: [
-      //       { id: 1, text: "...", done: true },
-      //       { id: 2, text: "...", done: false }
-      //     ]
-      //   },
-      //   getters: {
-      //     doneTodos: state => {
-      //       return state.todos.filter(todo => todo.done);
-      //     }
-      //   }
-      // });
       var obj = { name: "zs", age: 12 };
-      // Object.freeze(obj)
-
       new Vue({
         el: "#app",
         data() {

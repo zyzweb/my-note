@@ -27,6 +27,7 @@
     "vue": "^2.5.17",
     "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^3.0.2",
+    "vuex": "^3.1.2",
     "vux": "^2.9.2",
     "vux-loader": "^1.2.9",
     "wangeditor": "^3.1.1",
@@ -43,6 +44,7 @@
     "mocha": "^6.2.2",
     "node-sass": "^4.11.0",
     "vue-easytable": "^1.7.2",
+    "vue-i18n": "^8.15.1",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.17"
   },
