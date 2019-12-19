@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "app",
   components: {},
@@ -27,6 +28,7 @@ export default {
     }
   },
   mounted() {
+    axios.get('/data.json').then(res => console.log(res))
     this.$nextTick(function() {
       console.log(this);//vuecomponent实例
       console.log(this.$data);
