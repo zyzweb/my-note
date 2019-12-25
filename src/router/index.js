@@ -21,12 +21,17 @@ import listBox from '@/components/keep-alive表单demo/listBox';
 import list from '@/components/keep-alive表单demo/list';
 import details from '@/components/keep-alive表单demo/details';
 import slideBar from '@/components/目录树递归组件/side-bar';
-import functional from '@/components/函数式组件/functionComponent'
+import functional from '@/components/函数式组件/functionComponent';
+import fengzhuang from '@/components/封装组件';
+import slot from '@/components/slot-zyy-father';
 
 Vue.use(VueRouter); //模块化开发必须要use
 
 const router = new VueRouter({
+  // mode:'history',//需要serve支持
   routes: [
+    { path: "/slot", component: slot },
+    { path: "/fengzhuang", component: fengzhuang },
     { path: "/functional", component: functional },
     { path: "/slideBar", component: slideBar },
     { path: "/index",name: 'index', component: index },

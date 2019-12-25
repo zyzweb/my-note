@@ -31,6 +31,9 @@ export default {
   name:'slot-zyy-father',
   components: {
     child: Child
+  },
+  mounted() {
+    console.log('this.$slots', this.$slots);
   }
 };
 </script>

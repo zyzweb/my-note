@@ -13,6 +13,7 @@ export default {
         return {
             data: ["小庄","cc","小张","小林","Leaf","Bob"]
         }
-    }
+    },
+    
 }
 </script>
