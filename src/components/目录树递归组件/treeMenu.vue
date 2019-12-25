@@ -22,7 +22,7 @@
     },
     computed:{
       hasChild(){
-        return this.model.children && this.model.children.length
+        return this.model.children && this.model.children.length //得到菜单个数
       }
     },
     methods:{
