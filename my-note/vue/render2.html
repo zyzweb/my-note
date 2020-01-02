@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <anchored-heading :level="3">Hello world!</anchored-heading>
+    </div>
+    <script>
+      Vue.component("anchored-heading", {
+        render: function(createElement) {  // createElement('div',666)最简单的用法
+          return createElement(
+            "h" + this.level, // 标签名称
+            this.$slots.default // 子节点数组  VNode数组
+          );
+        },
+        props: {
+          level: {
+            type: Number,
+            required: true
+          }
+        },
+        mounted() {
+            console.log('this.$slots.default---', this.$slots.default); //[VNode]
+        }
+      });
+
+      new Vue({
+        el: "#app"
+      });
+    </script>
+  </body>
+</html>
