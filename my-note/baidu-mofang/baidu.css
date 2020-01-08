@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+#u1 {
+    background-color: #3388ff;
+    color: white;
+    float: right;
+    margin-right: 20px;
+    font-size: 13px;
+}
+#u2 {
+    float: right;
+}
+#u2 a{
+    margin-left: 20px;
+    color:black;
+    font-size: 13px;
+    font-weight: 700;
+    float: left;
+    position: relative;
+    z-index: 100;
+}
+#u2 a:nth-of-type(n+7){
+    font-weight: normal;
+}
+#bj {
+    margin-top: 35px;
+}
+#bj img {
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-135px);
+}
+#search {
+    width: 640px;
+    height: 36px;
+    margin: 0 auto;
+}
+#promot {
+    width: 540px;
+    height: 36px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-color: #b8b8b8 transparent #ccc #b8b8b8;
+    border-right: none;
+    float: left;
+}
+#promot input {
+    height: 100%;
+    width:500px;
+    box-sizing: border-box;
+    margin:6px 0 0 7px;
+    font-size: 13.3333px;
+    height: 22px;
+    border:none;
+    outline: none;
+}
+#search button {
+    width: 100px;
+    border:none;
+    font-size: 15px;
+    color:white;
+    float: right;
+    background-color: #3385ff;
+    height: 100%;
+    cursor: pointer;
+}
+#search button:hover {
+    background-color: #3171f3;
+}
+#search i {
+    background: url('static/camera_new_5606e8f.png');
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+}
+#search i:hover {
+    background-position: 0 -20px
+}
+#qrcode {
+    margin: 0 auto;
+    width: 60px;
+    text-align: center;
+}
+#last {
+    width: 529.19px;
+    height: 45px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+}
+#last a {
+    color: #999;
+}
+#last .row a:nth-of-type(n+2) {
+    margin-left: 25px;
+}
+.icrlogo {
+    width: 14px;
+    height: 17px;
+    display: inline-block;
+    background: url('static/icons_5859e57.png') no-repeat;
+    background-position: -600px -96px;
+}
+.jgwablogo {
+    width: 14px;
+    height: 17px;
+    display: inline-block;
+    background: url('static/icons_5859e57.png') no-repeat;
+    background-position: -623px -96px;
+}
+#footer {
+    position: fixed;
+    bottom:60px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.pf {
+    display: inline-block;
+    text-align: center;
+}
+#config {
+    position: absolute;
+    font-size: 12px;
+    width: 70px;
+    border: 1px solid #d1d1d1;
+    background-color: #fff;
+    margin-top: -1px;
+    box-shadow: 1px 1px 5px #d1d1d1;
+    top: 26px;
+    display: none;
+}
+#config .arrow {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -5px;
+}
+#config .arrow em,#config .arrow i {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    border: 5px solid transparent;
+    border-style: dashed dashed solid;
+}
+#config .arrow em{
+    border-bottom-color: #d8d8d8;
+    top: -1px;
+}
+#config .arrow i {
+    border-bottom-color: #fff;
+    top: 0;
+}
+#config a {
+    text-decoration: none;
+    color:black;
+    line-height: 26px;
+    padding: 0 9px;
+    margin: 0!important;
+    text-align: left;
+    display: block;
+}
+#config a:hover {
+    color:white;
+    background-color: #3388ff;
+}
+#config .arrow i {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    border: 5px solid transparent;
+    border-style: dashed dashed solid;
+    border-bottom-color: #fff;
+    top: 0;
+}
+.pull {
+    width: 640px;
+    margin: 0 auto;
+}
+.pull .pull-down {
+    width: 540px;
+    text-align: left;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-top: none;
+    display: none;
+}
+.pull-down ul li {
+    width: 533px;
+    height: 25px;
+    padding-left: 5px;
+    line-height: 25px;
+}
+.pull-down ul li:hover {
+    background-color: #f0f0f0;
+}
+.plus {
+    font-size: 13px;
+    float: right;
+    position: relative;
+    width: 70px;
+    text-align: center;
+}
+.plus:hover {
+    height: 130px;
+}
+.plus:hover #config {
+    display: block;
+}

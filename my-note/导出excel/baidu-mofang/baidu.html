@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>百度</title>
+    <link rel="stylesheet" href="./baidu.css" />
+  </head>
+  <body>
+    <div id="u1">更多产品</div>
+    <div class="plus">
+      <a class="pf" href="#">设置</a>
+      <div id="config">
+        <div class="arrow">
+          <em></em>
+          <i></i>
+        </div>
+        <a href="#">搜索设置</a>
+        <a href="#">高级搜索</a>
+        <a href="#">关闭预测</a>
+        <a href="#">隐私设置</a>
+      </div>
+    </div>
+    <div id="u2">
+      <a href="#">新闻</a>
+      <a href="#">hao123</a>
+      <a href="#">地图</a>
+      <a href="#">视频</a>
+      <a href="#">贴吧</a>
+      <a href="#">学术</a>
+      <a href="#">登录</a>
+    </div>
+
+    <div id="bj">
+      <img class="index-logo-src" src="static/bd_logo1.png" width="270" height="129" />
+    </div>
+    <div id="search">
+      <div id="promot">
+        <input class="input" type="text" />
+        <i></i>
+      </div>
+      <button>百度一下</button>
+    </div>
+    <div id="footer">
+      <div id="qrcode">
+        <img src="static/zbios_efde696.png" alt="" />
+        <p>百度</p>
+      </div>
+
+      <div id="last">
+        <p class="row">
+          <a href="#">把百度设为首页</a>
+          <a href="#">关于百度</a>
+          <a href="#">About Baidu</a>
+          <a href="#">百度推广</a>
+        </p>
+        <p>©2019 Baidu
+          <a href="#">使用百度前必读</a>
+          <a href="#">意见反馈</a> 京ICP证030173号 <i class="icrlogo"></i>&nbsp
+          <a href="#">京公网安备11000002000001号</a>
+          <i class="jgwablogo"></i>
+        </p>
+      </div>
+    </div>
+
+    <div class="pull">
+      <div class="pull-down">
+        <ul>
+          <li>王老吉</li>
+          <li>旺仔牛奶</li>
+          <li>珍视明眼贴</li>
+          <li>304不锈钢</li>
+          <li>苹果手机</li>
+          <li style="background-color: #fafafa;text-align:right;font-size: 12px" >
+            <a href="#">关闭历史</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      var input = document.getElementsByClassName("input")[0];
+      var search = document.getElementById("promot");
+      var pullDown = document.querySelector(".pull-down");
+      input.onfocus = function() {
+        search.style.borderColor = "#4791ff";
+        pullDown.style.display = "block";
+      };
+      input.onblur = function() {
+        search.style.borderColor = "#b8b8b8";
+        pullDown.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

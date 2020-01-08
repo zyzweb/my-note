@@ -1,3 +1,6 @@
+// https://api.github.com/repos/octokit/octokit.rb
+
+
 // fetch(
 //     'http://localhost:99',
 //     {
@@ -14,7 +17,7 @@
 //         headers: {'content-type': 'application/json'},
 //         body: JSON.stringify({a:1})
 //     }
-// ).then(res => res.json()).then(data => console.log(data))
+// ).then(res => res.json()).then(data => console.log(data)
 
 //豆瓣250
 fetch('https://douban.uieee.com/v2/movie/top250').then(res=>res.json()).then(data=>console.log(data))

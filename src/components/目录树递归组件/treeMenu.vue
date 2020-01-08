@@ -1,17 +1,18 @@
 <template>
   <li>
     <span @click="toggle">
-      <i v-if="hasChild" class="icon" v-bind:class="[open ? 'folder-open': 'folder' ]"></i>
+      <i v-if="hasChild" class="icon" :class="[open ? 'folder-open': 'folder' ]"></i>
       <i v-if="!hasChild" class="icon file-text"></i>
       {{model.menuName}}
     </span>
     <ul v-show="open" v-if="hasChild">
-      <tree-menu v-for="(item,index) in model.children"  v-bind:model="item" v-bind:key="index"></tree-menu>
+      <tree-menu v-for="(item,index) in model.children"  :model="item" :key="index"></tree-menu>
     </ul>
   </li>
 </template>
 
 <script>
+//child的个数加1为菜单个数
   export default {
     name: "treeMenu",
     props: ['model'],
@@ -21,8 +22,9 @@
       }
     },
     computed:{
+      //如果没有子菜单child:[] hasChild的值为0 hasChild为false,有子菜单child:[]中有值,this.model.children.length得到子菜单个数
       hasChild(){
-        return this.model.children && this.model.children.length //得到菜单个数
+        return this.model.children && this.model.children.length //得到菜单个数  
       }
     },
     methods:{
@@ -61,7 +63,7 @@
   }
 
   .icon.folder {
-    background-image: url(/src/assets/folder.png);
+    background-image: url('./tangel.svg');
   }
 
   .icon.folder-open {

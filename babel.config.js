@@ -1,5 +1,5 @@
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/app' //对应@vue/babel-preset-app
   ]
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
-      <h2>chlid子组件部分</h2>
-      <slot :data="data"></slot>
+      <h2 class="good">chlid子组件部分</h2>
+      <slot :age="first"></slot>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
     props: ["message"],
     data(){
         return {
-            data: ["小庄","cc","小张","小林","Leaf","Bob"]
+            first: ["小庄","cc","小张","小林","Leaf","Bob"]
         }
     },
     

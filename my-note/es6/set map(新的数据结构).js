@@ -76,15 +76,15 @@
   
     map.set(arr,456); //添加元素 key可以为任何数据类型    map.set('1',2).set('3',4) 可以连续设置多个map
   
-    console.log('map',map,map.get(arr)); //获取值
+    console.log('map',map,map.get(arr)); //获取值  Map{['123'] => 456} 456
   }
   
   {
     let map = new Map([['a',123],['b',456]]); //第二种定义
-    console.log('map args',map);
-    console.log('size',map.size); //里面有多少元素
-    console.log('delete',map.delete('a'),map);
-    console.log('clear',map.clear(),map);
+    console.log('map args',map); //Map {'a'=>124,'b'=>456}
+    console.log('size',map.size); //里面有多少元素  2
+    console.log('delete',map.delete('a'),map); //Map {'b'=>456}
+    console.log('clear',map.clear(),map);   //Map{}
   }
   
   {

@@ -9,6 +9,7 @@ import gaizao from "../components/gaizao.vue";
 import home from "../components/keep-alive用法/home";
 import element from "../components/element-ui使用/element";
 import element2 from "../components/element-ui使用/element2";
+import element3 from "../components/element-ui使用/element3";
 import popup from "../components/mint-ui使用/popup.vue";
 import easytable from "../components/vue-easytable";
 import checked from "@/components/绑定checked值";
@@ -22,16 +23,16 @@ import list from '@/components/keep-alive表单demo/list';
 import details from '@/components/keep-alive表单demo/details';
 import slideBar from '@/components/目录树递归组件/side-bar';
 import functional from '@/components/函数式组件/functionComponent';
-import fengzhuang from '@/components/封装组件';
 import slot from '@/components/slot-zyy-father';
+import sync from '@/components/sync用法/sync-father';
 
 Vue.use(VueRouter); //模块化开发必须要use
 
 const router = new VueRouter({
   // mode:'history',//需要serve支持
   routes: [
+    { path: "/sync", component: sync },
     { path: "/slot", component: slot },
-    { path: "/fengzhuang", component: fengzhuang },
     { path: "/functional", component: functional },
     { path: "/slideBar", component: slideBar },
     { path: "/index",name: 'index', component: index },
@@ -47,6 +48,7 @@ const router = new VueRouter({
     { path: "/home", component: home },
     { path: "/element", component: element },
     { path: "/element2", component: element2 },
+    { path: "/element3", component: element3 },
     { path: "/popup", component: popup },
     // { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值 
   ]

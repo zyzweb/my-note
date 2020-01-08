@@ -64,8 +64,8 @@ var cc = new Vue({
   store
 }).$mount('#app')
 
-console.log('vue',Vue)//为构造函数
-console.log('cc',cc); //vue实例
+// console.log('vue',Vue)//为构造函数
+// console.log('cc',cc); //vue实例
 
 
 //全局导入样式

@@ -6,18 +6,15 @@ Array.from(); //将类数组转化为数组  map set Dom结构
 Reflect.ownKeys(); //相当于Object.keys() 但是有时候Objecti.keys()拿不到前者可以拿到
 Object.defineProperty(target, key, desc); //定义对象的属性  es5方法
 
-var arr = [1, 2, 3, 4];
+//  var arr = [1, 2, 3, 4];
 // var sum = arr.reduce(function (pre,cur,index,arr) {
+//     console.log(pre);  1  3  6  开始的时候的值
+//     console.log(cur);  2  3  4   相加当前的值
+//     console.log(index);  1  2  3  当前元素的索引
+//     console.log(arr);   [1, 2, 3, 4]  [1, 2, 3, 4]  [1, 2, 3, 4]  当前元素所属的数组对象
 //     return pre + cur
 // })
-
-// var sum = arr.reduce(function (pre,cur) {
-//     console.log(pre);
-//     return pre + cur
-// })
-// console.log(sum);
-
-let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+// console.log(sum);  10
 
 // array.reduce(function(total, currentValue, currentIndex, arr), initialValue); 从左开始计算直到生成最后一个数
 /*
@@ -28,6 +25,7 @@ let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
   initialValue: 可选。传递给函数的初始值，相当于total的初始值。
 */
 //获取数组中元素出现的次数
+let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
 let nameNum = names.reduce((pre, cur) => {// 替代for循环作用和forEach类似  reduceRight从右往左做累加
   if (cur in pre) { //判断是否是对象的属性
     pre[cur]++;

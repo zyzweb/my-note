@@ -29,6 +29,8 @@
 // }
 
 module.exports = {
+  // baseUrl: 'vue', //写了这个会带二级目录 publicPath一样  实质就是将baseUrl写进到publicPath中
+  // outputDir: 'output',
   configureWebpack: {
     devtool: 'source-map'
   },

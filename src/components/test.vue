@@ -1,28 +1,21 @@
 <template>
   <div>
-      <p>666</p>
+    11
+    {{b}}
   </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-        
-    },
-    created() {
-       
-    },
-    mounted() {
-        Array.prototype.gggs = function() {
-            console.log(666);
-        }
-        
+  data() {
+    return {
+      a: {b:'ss'},
+      b:null
     }
+  },
+  mounted() {
+    this.b = this.a.b
+  }
 }
 </script>
 
