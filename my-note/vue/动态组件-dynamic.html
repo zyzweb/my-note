@@ -70,12 +70,13 @@
       </button>
 
       <keep-alive>
-        <component v-bind:is="currentTabComponent" class="tab"></component>
+        <component v-bind:is="currentTabComponent" class="tab"></component
+        ><!-- 和router-view类似都是把要渲染的组件放在这里 -->
       </keep-alive>
     </div>
     <script>
       Vue.component("tab-posts", {
-        data: function() {
+        data() {
           return {
             posts: [
               {
@@ -99,7 +100,7 @@
             ],
             selectedPost: null
           };
-        },/*通过点击改变selectedPost的值,通过v-if进行渲染  */
+        } /*通过点击改变selectedPost的值,通过v-if进行渲染  */,
         template: `
       <div class="posts-tab">
         <ul class="posts-sidebar">
