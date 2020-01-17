@@ -12,12 +12,18 @@
   </head>
   <body>
     <div id="app">
-      <son v-bind="post"></son>
+      <demo level="2"></demo>
     </div>
     <script>
-      Vue.component("son", {
-        props: ["a", "b"],
-        template: "<h3>{{a}}</h3>"
+      Vue.component("demo", { //render实现for循环
+        props: ['level'],
+        render(h) {
+          let list = []
+          for (let i = 0; i < 5; i++) {
+            list.push(h('strong','h'))        // list= [VNODE,VNODE,VNODE,VNODE]    
+          }
+          return h('h'+this.level,list)
+        }
       });
       new Vue({
         el: "#app",

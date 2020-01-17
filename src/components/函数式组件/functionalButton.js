@@ -9,8 +9,9 @@ export default {
   functional: true, //设为true
   render(createElement, { data, children }) {
     console.log("this", this); // => null
-    console.log({ data });
-    console.log(children); //[VNode]
+    console.log('data', data ); //on: {click: ƒ}    包含数据和事件
+    console.log('children',children); //[VNode]
+    console.log('666', ['hello', ...children]);
     return createElement("button", data, ['hello', ...children]);//渲染button按钮
   }
 };

@@ -13,7 +13,7 @@
     </div>
     <script>
       Vue.component("anchored-heading", {
-        render: function(createElement) {  // createElement('div',666)最简单的用法
+        render(createElement) {  // createElement('div',666)最简单的用法
           return createElement( // === template: `<h3><slot/></h3>`
             "h" + this.level, // 标签名称
             this.$slots.default // 子节点数组  VNode数组
