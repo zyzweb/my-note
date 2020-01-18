@@ -8,6 +8,7 @@
 <script>
 //引入svg组件
 import IconSvg from "./font-picture"     ;
+//这是什么
 
 //全局注册icon-svg
 // Vue.component("icon-svg", IconSvg);
