@@ -11,6 +11,8 @@
 <script>
 //666
 //这是骄傲的一天
+//哈哈哈
+
 export default {}  ;
 </script>
 
