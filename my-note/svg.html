@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>svg</title>
 </head>
 
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
     </svg>
-    <div style="width: 100px;height: 100px;background-color: red"></div>
+    <div style="width: 100px;height: 100px;background-color: red;margin-bottom: 50px;"></div>
+
+    <!--viewBox: min-x, min-y, width and height -->
+  <svg width="600px" height="600px" viewBox="0 0 1200 1200" style="border: 1px solid #ccc;">
+    <circle cx="600" cy="200" r="150" stroke="red" fill="lightgreen" stroke-width="8"/>
+  </svg>
      
 </body>
 

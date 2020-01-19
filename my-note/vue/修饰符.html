@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>事件修饰符</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <!-- sync主要是为了解决子组件传递给父组件prop的值 -->
+    <!-- vue中修饰符分为事件修饰符(stop prevent native)和自定义事件修饰符(sync) -->
+    <!-- 事件修饰符包括 按键修饰符(enter)  系统修饰符(ctrl shift alt)   exact(精确修饰符) 鼠标修饰符(left right middle)
+    表单修饰符 <input v-model.trim="msg">(还有number lazy)-->
+    <text-document
+      :title="doc.title"
+      @update:title="doc.title = $event"
+    ></text-document>
+    <text-document :title.sync="doc.title"></text-document> <!-- 与上面相等 -->
+
+  </body>
+</html>

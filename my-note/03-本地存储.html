@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>本地存储</title>
 </head>
 <body>
 	<script>
@@ -12,7 +12,11 @@
 		var arr = ['123123','方式发顺丰'];
 		// 会调用obj.toString()方法
 		console.log(JSON.parse('[1231231,233]'));
-		localStorage.setItem('obj',arr)
+		console.log(arr);
+		var cc = {name:1,age:2}
+		console.log(cc);
+		console.log(JSON.stringify(cc));
+		localStorage.setItem('obj',JSON.stringify(cc))
 	</script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="helloworld" />
+      <p>{{ hello }}</p>
+      <p>{{ world }}</p>
+      <p>{{ helloworld }}</p>
+      <button @click="changedata">事件触发</button>
+    </div>
+    <script>
+      var obj = { name: "zs", age: 12 };
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            hello: "hello",
+            world: "world"
+          };
+        },
+        computed: {
+          // getter，setter计算属性都有
+          helloworld: {
+            // getter
+            get: function() {
+              console.log("getter called");
+              return this.hello + this.world;
+            },
+            // setter
+            set: function(newValue) {
+              console.log("setter called , newValue: " + newValue);
+              this.hello = newValue;
+            }
+          }
+        },
+        methods: {
+          changedata() {
+            // this.hello = 'hello~' //并不能触发set
+            this.helloworld = "hello~world!";
+          }
+        },
+        updated() {
+          console.log('this.hello',this.hello);
+        }
+        
+      });
+    </script>
+  </body>
+</html>

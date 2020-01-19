@@ -3,8 +3,8 @@
     <!-- <p>{{ff}}</p>
     <slot-father></slot-father>
     <slot-zyy></slot-zyy>
-    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="666" ></el-input-number>
-    <check></check> -->
+    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="666" ></el-input-number> -->
+    <check></check>
     <!-- <swipeout/>> -->
     <!-- <vue-material @click="one">
       <span>666</span>

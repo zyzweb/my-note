@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>具名插槽</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!-- slot 给name属性赋值 -->
+    <div id="app">
+        <child>
+            <template v-slot:header> <!-- v-slot只能写在template上 -->
+            <h1>Here might be a page title</h1>
+            </template>
+        
+            <p>A paragraph for the main content.</p>  <!-- 也可以添加 <template v-slot:default> -->
+            <p>And another one.</p>
+        
+            <template v-slot:footer>
+            <p>Here's some contact info</p>
+            </template>
+        </child>
+    </div>
+    <script>
+        Vue.component('child', {
+            template: `
+            <div class="container">
+            <header>
+                <slot name="header"></slot>
+            </header>
+            <main>
+                <slot></slot>
+            </main>
+            <footer>
+                <slot name="footer"></slot>
+            </footer>
+            </div>
+            `
+        })
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+</html>

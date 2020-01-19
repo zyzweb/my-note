@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>background属性解析</title>
+  <style>
+      /* background-size: 10px 20px 可以设置大小 */
+    div {
+      width: 1000px;
+      height: 1000px;
+      background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573761058075&di=26a565bf938cf01d2299b3b71fbd9720&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201407%2F09%2F20140709143937_sRE8w.jpeg);
+      background-repeat: no-repeat;
+      background-position: right bottom;; /* 背景图片的位置,仅指定一个位置另一个的值为center  */
+      background-size: contain; /* cover：图片一定会覆盖整个盒子（图片可能会超出）contain：盒子一定包含整个图片(图片一定不会超出,但是可能会有留白) */
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

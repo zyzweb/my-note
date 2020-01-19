@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+      <!-- web components   1.自定义元素   2.shadow dom v1  3.template -->
+    <user-card></user-card>  <!-- 自定义元素要用-分开,目的为了和原生元素区分 -->
+    <!-- <user-card></user-card>  像vue中的组件一样使用 -->
+    <template id="userCardTemplate">
+      <img
+        src="https://semantic-ui.com/images/avatar2/large/kristy.png"
+        class="image"
+      />
+      <div class="container">
+        <p class="name">User Name</p>
+        <p class="email">yourmail@some-email.com</p>
+        <button class="button">Follow</button>
+      </div>
+    </template>
+    <script>
+      class UserCard extends HTMLElement {//template为user-card的模板
+        constructor() {
+          super();
+          var templateElem = document.getElementById("userCardTemplate");
+          var content = templateElem.content.cloneNode(true);
+          this.appendChild(content);
+        }
+      }
+      window.customElements.define("user-card", UserCard);
+    </script>
+  </body>
+</html>

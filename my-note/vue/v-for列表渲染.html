@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>v-for列表渲染</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body> <!-- v-for 可分为数组和对象渲染 -->
+    <div id="app">
+      <ul>
+        <li v-for="(item,index) in array" :key="index">
+          {{index}} : {{ item.message }}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="(item, index) in object">
+          {{index}} : {{ item }}
+        </li>
+      </ul>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          array: [{ message: "Foo" }, { message: "Bar" }],
+          object: {
+            title: "How to do lists in Vue",
+            author: "Jane Doe",
+            publishedAt: "2016-04-10"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

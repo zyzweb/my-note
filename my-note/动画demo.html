@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>动画demo</title>
     <style>
       /* 尽量使用transition,比较复杂的动画就用animation    transition从hover衍生    animation从flash衍生 */
       /* 1、触发条件不同 transition需要去触发比如：点击事件、鼠标移入事件；而animation则是在页面加载后就触发
@@ -14,7 +14,7 @@
         animation: slide 0.4s ease-in-out;
       }
 
-      @keyframes slide {
+      @keyframes slide {   /* 多步 0%{} 30%{} 50%{} */
         from {
           transform: translate3d(0, 0, 0);
         }

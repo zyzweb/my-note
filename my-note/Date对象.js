@@ -1,6 +1,6 @@
 /* eslint-disable */
-new Date().toLocaleTimeString ()  //获取时间  下午4:21:03
-new Date().toLocaleDateString ()  //获取日期  2018/7/18
+new Date().toLocaleTimeString ()  //  下午4:21:03
+new Date().toLocaleDateString ()  //  2018/7/18
 new Date().toLocaleString ()     //2018/7/18 下午4:21:03
 Date.now()   //1563333257890
 new Date()   // Wed Jul 17 2019 11:14:24 GMT+0800 (中国标准时间)
