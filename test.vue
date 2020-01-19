@@ -10,6 +10,7 @@
 
 <script>
 //666
+//这是骄傲的一天
 export default {}  ;
 </script>
 
