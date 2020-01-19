@@ -71,7 +71,7 @@ let mapGetters = obj => {
 let fn = fn => console.log(fn)
 
 
-let target = { ...initObj, ...mapGetters({ f: 4 }), fn} 
+let target = { ...initObj, ...mapGetters({ f: 4 }), fn} //{a: 1, b: 2, c: 4, d: 6, fn: ƒ}
 
 // let target = Object.assign( initObj, mapGetters({f: 4 }), fn) //与Object.assign作用一样
 console.log(target);

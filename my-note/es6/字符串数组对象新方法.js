@@ -37,7 +37,7 @@ let nameNum = names.reduce((pre, cur) => {// 替代for循环作用和forEach类�
 console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
 
 var arr1 = [3, 4, 5, 6, 7];
-var first = arr1.find(num => {
+var first = arr1.find(num => {  //还有some  every   返回值都是boolean   前者表示只要有一个  后者是所有
   //找到第一个符合的元素,和filter类似
   return num > 5;
 });

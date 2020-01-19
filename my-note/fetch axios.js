@@ -1,4 +1,6 @@
-// https://api.github.com/repos/octokit/octokit.rb
+// https://api.github.com/repos/octokit/octokit.rb  支持跨域
+// https://douban.uieee.com/v2/movie/top250  支持跨域
+// http://m.maoyan.com/ajax/movieOnInfoList?token=   不支持跨域
 
 
 // fetch(
