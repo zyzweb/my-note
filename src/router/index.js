@@ -25,12 +25,14 @@ import slideBar from '@/components/目录树递归组件/side-bar';
 import functional from '@/components/函数式组件/functionComponent';
 import slot from '@/components/slot-zyy-father';
 import sync from '@/components/sync用法/sync-father';
+import echarts from '@/components/echarts/echarts'
 
 Vue.use(VueRouter); //模块化开发必须要use
 
 const router = new VueRouter({
   // mode:'history',//需要serve支持
   routes: [
+    { path: "/echarts", component: echarts },
     { path: "/sync", component: sync },
     { path: "/slot", component: slot },
     { path: "/functional", component: functional },
