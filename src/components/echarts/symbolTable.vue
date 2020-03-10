@@ -1,9 +1,8 @@
 <template>
-  <el-table :data="tableData" stripe style="width: 100%">
-    <el-table-column prop="team" label="团队" width="90"></el-table-column>
-    <el-table-column prop="income" label="收入" width="90"></el-table-column>
-    <el-table-column prop="payOff" label="支出"></el-table-column>
-    <el-table-column prop="profit" label="利润"></el-table-column>
+  <el-table :data="tableData" style="width: 100%" height="200" >
+    <el-table-column prop="fundCode" label="基金代码" width="130"></el-table-column>
+    <el-table-column prop="fundName" label="基金名称" width="130"></el-table-column>
+    <el-table-column prop="fundScale" label="规模"></el-table-column>
   </el-table>
 </template>
 
@@ -13,22 +12,34 @@ export default {
     return {
       tableData: [
         {
-          team: "机构业务部",
-          income: "203",
-          payOff: "140",
-          profit: "63"
+          fundCode: "机构业务部",
+          fundName: "203",
+          fundScale: "140",
         },
         {
-          team: "2016-05-04",
-          income: "王小虎",
-          payOff: "上海市",
-          profit: "10"
+          fundCode: "2016-05-04",
+          fundName: "王小虎",
+          fundScale: "上海市",
         },
         {
-          team: "2016-05-01",
-          income: "王小虎",
-          payOff: "上海市",
-          profit: "10"
+          fundCode: "2016-05-01",
+          fundName: "王小虎",
+          fundScale: "上海市",
+        },
+        {
+          fundCode: "机构业务部",
+          fundName: "203",
+          fundScale: "140",
+        },
+        {
+          fundCode: "2016-05-04",
+          fundName: "王小虎",
+          fundScale: "上海市",
+        },
+        {
+          fundCode: "2016-05-01",
+          fundName: "王小虎",
+          fundScale: "上海市",
         }
       ]
     };

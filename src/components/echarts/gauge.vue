@@ -36,11 +36,14 @@ export default {
             radius: "100%",
             name: "业务指标",
             type: "gauge",
-            axisLine: {
+            axisLine: {//仪表盘轴线样式
               show: false,
               lineStyle: {
                 width: 10
               }
+            },
+            splitLine: {//分割线样式
+              length: 20
             },
             title: {
             //   show: false,

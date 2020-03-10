@@ -54,14 +54,21 @@
         </aside>
         <aside class="scale">
           <div class="invest-analy">
-            <el-tabs type="border-card">
+            <!-- <el-tabs type="border-card">
               <el-tab-pane label="团队">
                 <symbol-table></symbol-table>
               </el-tab-pane>
               <el-tab-pane label="业务">
                 <symbol-table1></symbol-table1>
               </el-tab-pane>
-            </el-tabs>
+            </el-tabs>-->
+            <div
+              class="etf"
+              style="height: 30px;
+              line-height: 30px;
+              text-align: center;"
+            >ETF规模</div>
+            <symbol-table></symbol-table>
           </div>
         </aside>
       </el-col>
@@ -95,7 +102,7 @@ import pieCustomized from "./pieCustomized";
 import pieSimple from "./pieSimple";
 import barEncode from "./barEncode";
 import symbolTable from "./symbolTable";
-import symbolTable1 from "./symbolTable1";
+// import symbolTable1 from "./symbolTable1";
 import gauge from "./gauge";
 import scaleRank from "./scaleRank";
 import investRank from "./investRank";
@@ -107,7 +114,7 @@ export default {
     pieSimple,
     barEncode,
     symbolTable,
-    symbolTable1,
+    // symbolTable1,
     gauge,
     scaleRank,
     investRank

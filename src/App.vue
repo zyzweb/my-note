@@ -34,6 +34,7 @@
 
 <script>
 import axios from 'axios'
+// import Particle from 'zhihu-particle'
 export default {
   name: "app",
   components: {},
@@ -54,6 +55,7 @@ export default {
       }
   },
   mounted() {
+    // new Particle(document.getElementById('app'),{interactive:true, density: 'low'})
     // axios.get('/data.json').then(res => console.log(res))
     // this.$nextTick(function() {
     //   console.log(this);//vuecomponent实例
@@ -63,46 +65,5 @@ export default {
 };
 </script>
 <style>
-body{
-  margin:0;
-  padding:5px;
-}
-.ifa{
-    width:100%;
-    height:100%!important;
-  }
-  .el-tabs__content{
-    border: 1px solid red;
-    border-top:none;
-    position: absolute;
-    top: 62px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  .allWapper{
-    display:flex;
-    border-bottom:1px solid #e4e7ed;
-  }
-  .el-tabs__header{
-    margin-bottom:0px;
-  }
-  .el-tabs__header .el-tabs__item{
-    margin:8px 0;
-    font-size:16px;
-    padding-left:29px;
 
-  }
-  .temp{
-      width:100%;
-    height:100%;
-  }
-.myLogo{
-      width: 200px;
-    height: 53px;
-    margin-right:35px;
-}
-.myLogo img{
-  width:100%;
-}
 </style>
