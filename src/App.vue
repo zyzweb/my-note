@@ -61,6 +61,7 @@ export default {
     //   console.log(this);//vuecomponent实例
     //   console.log(this.$data);
     //
+    //
     // })
   }
 };
