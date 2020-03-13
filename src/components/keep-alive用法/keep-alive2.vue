@@ -20,7 +20,7 @@
 import book from "./book.vue";
 import book1 from "./book1.vue";
 export default {
-  name: "home",
+  name: "keep-alive2",
   components: {
     book,
     book1

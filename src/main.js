@@ -1,6 +1,7 @@
 import Vue from 'vue'  //  == import Vue from '../node_modules/vue/dist/vue.js'
 import App from './App.vue'
 import store from './store'
+import '@/styles/normalize.css'
 import './rem'
 import ElementUI from 'element-ui'
 import MintUI from 'mint-ui'
