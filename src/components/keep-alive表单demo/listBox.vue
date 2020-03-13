@@ -1,6 +1,5 @@
 <template>
   <div class="list_box">
-    2333
     <keep-alive include="list">
       <router-view />
     </keep-alive>

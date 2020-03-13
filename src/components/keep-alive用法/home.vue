@@ -8,34 +8,42 @@
       >{{item.value}}</button>
     </div>
     <div>
-      <keep-alive include="books"> <!-- include匹配到的才会被缓存-->
-        <component :is="viewFirst"></component> <!-- component为动态组件通过is属性切换 通过keep-alive解决切换组件过程中的缓存问题-->
+      <!-- include匹配到的才会被缓存 和vue组件中的name属性匹配和vue-router的name不一样,后者是用作传递参数-->
+      <!-- include="book" -->
+      <keep-alive :include="['book1','book']">
+        <component :is="viewFirst"></component>   <!-- component为动态组件通过is属性切换 通过keep-alive解决切换组件过程中的缓存问题-->
       </keep-alive>
     </div>
   </div>
 </template>
 <script>
-import books from "./books.vue";
+import book from "./book.vue";
+import book1 from "./book1.vue";
 export default {
   name: "home",
+  components: {
+    book,
+    book1
+  },
   data() {
     return {
       buttons: [
         {
-          name: "books",
-          value: "books"
+          name: "book",
+          value: "book"
+        },
+        {
+          name: "book1",
+          value: "book1"
         }
       ],
       componentArray: [
         {
-          books: "books"
+          book: "book"
         }
       ],
-      viewFirst: "books"
+      viewFirst: "book"
     };
-  },
-  components: {
-    books
   },
   methods: {
     // tab选项

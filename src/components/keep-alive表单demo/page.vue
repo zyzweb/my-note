@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form action>
+    <form>
       <input type="text" placeholder="请输入用户昵称" />
       <br />
       <input type="text" placeholder="请输入用户手机" />
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'PageA',
+  name: 'page',
   created () { //keep-alive activated和deactivated 钩子函数
     console.log('Created: PageA')
   },
@@ -29,7 +29,7 @@ export default {
   methods: {
     tapToPageB () {
       this.$router.push({
-        name: 'agree'
+        path:'/agree'
       })
     }
   }
