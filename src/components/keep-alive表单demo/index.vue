@@ -2,7 +2,6 @@
   <div class="first_box">
     第一页进去：
     <span class="but" @click="goInput">'表单' 缓存</span>
-
     <span class="but" @click="goList">'列表停留位置' 缓存</span>
   </div>
 </template>

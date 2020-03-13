@@ -60,9 +60,11 @@ export default {
     // this.$nextTick(function() {
     //   console.log(this);//vuecomponent实例
     //   console.log(this.$data);
-    //
+    //哈哈
     //
     // })
+    //test
+    //test
   }
 };
 </script>
