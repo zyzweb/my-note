@@ -15,15 +15,15 @@
 
 <script>
 export default {
-  name: 'PageA',
+  name: 'page',
   created () { //keep-alive activated和deactivated 钩子函数
-    console.log('Created: PageA')
+    console.log('Created: page')
   },
   activated() {
-    console.log('activated: PageA')
+    console.log('activated: page')
   },
   deactivated() {
-      console.log('deactivated: PageA')
+      console.log('deactivated: page')
 
   },
   methods: {

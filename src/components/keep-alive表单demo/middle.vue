@@ -1,8 +1,7 @@
 <template>
   <div class="index">
-    666
-    <!-- <keep-alive :include="['PageA']" > -->
-    <keep-alive include="PageA" >
+    <!-- <keep-alive :include="['page']" > -->
+    <keep-alive include="page" >
       <router-view />
     </keep-alive>
   

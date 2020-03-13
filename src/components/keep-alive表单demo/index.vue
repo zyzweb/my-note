@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     goInput() {
-      this.$router.push({path:"/test1"});
+      this.$router.push({path:"/middle"});
     },
     goList() {
       this.$router.push({path:"/list"});
