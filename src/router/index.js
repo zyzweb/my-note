@@ -38,12 +38,12 @@ const router = new VueRouter({
     { path: "/functional", component: functional },
     { path: "/slideBar", component: slideBar },
     { path:'/keep-alive', component:() => import('@/components/keep-alive表单demo/index')},
-    {path: "/agree", component:() => import('@/components/keep-alive表单demo/agree')},
     {
       path: "/middle", 
       component: () => import('@/components/keep-alive表单demo/middle'),
       children: [
-        { path: "", component:() => import('@/components/keep-alive表单demo/page')}
+        { path: "", component:() => import('@/components/keep-alive表单demo/page')},
+        {path: "/agree", component:() => import('@/components/keep-alive表单demo/agree')},/* 必须在middle下面才能缓存 */
       ]
     },
     // { path: "/index", name: "index", component: index },
