@@ -317,3 +317,10 @@ const numFormat = num => {
     return "";
   }
 };
+
+//对象数组通过id大小排序 
+var cc = [{id:2,name:'zhang'},{id:1,name:'li'},{id:3,name:'wang'}]
+cc.sort((a,b) => {
+    return a.id - b.id
+})
+console.log(cc); // [{id:1,name:'li'},{id:2,name:'zhang'},{id:3,name:'wang'}]

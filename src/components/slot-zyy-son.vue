@@ -8,7 +8,6 @@
 <script>
 export default {
     name:'slot-zyy-son',
-    props: ["message"],
     data(){
         return {
             first: ["小庄","cc","小张","小林","Leaf","Bob"]

@@ -43,11 +43,16 @@ export default {
             colorLightness: [0, 1]
           }
         },
+        legend: {
+          orient: "vertical",
+          left: 10,
+          data: ["直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+        },
         series: [
           {
             name: "访问来源",
             type: "pie",
-            radius: "55%",
+            radius: "25%",
             center: ["50%", "50%"],
             data: [
               { value: 335, name: "直接访问" },

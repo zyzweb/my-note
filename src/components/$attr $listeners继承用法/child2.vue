@@ -1,5 +1,5 @@
 <template>
-  <div class="divC">
+  <div class="child2">
     <div>这是child2组件</div>
     <p>$attrs: {{$attrs}}</p>
     <p>点击child2组件的按钮触发father组件的reciveRocket方法</p>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 <style scoped>
-.divC {
+.child2 {
   width: 200px;
   height: 200px;
   border: 1px solid #00f;

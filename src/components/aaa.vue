@@ -1,8 +1,6 @@
 <template>
   <div style="border: 1px solid black;">
-    <router-link to="aaa">aaa</router-link>
-    <router-link to="bbb">bbb</router-link>
-    <router-view></router-view>
+      <h1>aaa</h1>
   </div>
 </template>
 

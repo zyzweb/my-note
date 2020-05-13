@@ -4,7 +4,6 @@
         <el-radio v-for="item of lang" :label="item.value" :Captcha="item.value" border :key="item.value">{{item.Captcha}}</el-radio>
     </el-radio-group>
 </div>
-
 </template>
 
 <script>

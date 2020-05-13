@@ -1,6 +1,7 @@
 const data = [
     {path:'/test',name:'测试'},
     {path:'/echarts',name:'echarts图表'},
+    {path:'/echartsDemo',name:'echarts-demo图表'},
     {path:'/sync',name:'sync用法'},
     {path:'/slot',name:'slot用法'},
     {path:'/functional',name:'函数式组件(functional)'},
@@ -14,6 +15,7 @@ const data = [
     {path:'/checked',name:'绑定checked值'},
     {path:'/editor',name:'wang富文本编辑器'},
     {path:'/popup',name:'mint-ui 弹出框'},
+    {path:'/editors',name:'el-table可编辑'},
 ]
 
 export default data

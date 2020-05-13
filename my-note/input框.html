@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body><!-- 选择文件点击确定的时候触发change事件 -->
     <input type="button" value="数据导入" onclick="one.click()" />
     <input type="file" id="one" style="display: none;" onchange="two.innerHTML = this.files[0].name" />
     <span id="two"></span>
