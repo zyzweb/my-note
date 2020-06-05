@@ -92,6 +92,7 @@ export default {
     confirm() {
       //校验然后发送邮件
       var r = /^((([a-z0-9_\.-]+)@pingan\.com\.cn\;)*(([a-z0-9_\.-]+)@pingan\.com\.cn))$/
+      this.email = this.email.replace(/\s/g,'')
       if(r.test(this.email)) {
         //发送邮件
         this.dialogVisible = false

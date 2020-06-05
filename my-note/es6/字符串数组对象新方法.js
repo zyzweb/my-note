@@ -16,7 +16,7 @@ Object.defineProperty(target, key, desc); //定义对象的属性  es5方法
 // })
 // console.log(sum);  10
 
-// array.reduce(function(total, currentValue, currentIndex, arr), initialValue); 从左开始计算直到生成最后一个数
+// array.reduce(function(total, currentValue, currentIndex, arr){}, initialValue); 从左开始计算直到生成最后一个数
 /*
   total: 必需。初始值, 或者计算结束后的返回值。
   currentValue： 必需。当前元素。

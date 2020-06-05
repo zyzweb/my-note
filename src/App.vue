@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 // import Particle from 'zhihu-particle'
 export default {
   name: "app",
@@ -49,10 +48,7 @@ export default {
     }
   },
   methods: {
-      handleClick(tab, event) {
-       let flagName=tab.name
-       this.ifArr[flagName]=true
-      }
+   
   },
   mounted() {
     // new Particle(document.getElementById('app'),{interactive:true, density: 'low'})
@@ -68,6 +64,10 @@ export default {
   }
 };
 </script>
-<style>
-
+<style lang="scss">
+  .el-scrollbar {
+   .el-scrollbar__bar {
+    opacity: 1 !important;
+  }
+}
 </style>

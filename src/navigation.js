@@ -16,6 +16,7 @@ const data = [
     {path:'/editor',name:'wang富文本编辑器'},
     {path:'/popup',name:'mint-ui 弹出框'},
     {path:'/editors',name:'el-table可编辑'},
+    {path:'/multiStageTable',name:'封装多级表头'},
 ]
 
 export default data

@@ -2,7 +2,8 @@
   <div class="father">
     <h3>这是父组件</h3>
     <child>
-      <!-- 第一次使用:用列表展示数据 --> <!-- user为自定义变量 -->
+      <!-- 第一次使用:用列表展示数据 -->
+      <!-- user为自定义变量 -->
       <!-- <template slot-scope="user">
                <ul>
                    <li v-for="(item,index) in user.age" :key="index">{{item}}</li>
@@ -11,9 +12,7 @@
       <!-- 第二次使用:直接展示数据 -->
       <!-- <template slot-scope="user">{{user.age}}</template> -->
       <!-- 直接使用v-slot指令 现在具名插槽也是用v-slot-->
-      <template v-slot:default="user">
-        {{user.age}}
-      </template>
+      <template v-slot:default="user">{{ user.age }}</template>
     </child>
   </div>
 </template>
@@ -38,4 +37,3 @@ export default {
   border: 1px solid #000;
 }
 </style>
-

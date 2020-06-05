@@ -1,3 +1,4 @@
+//@mixin 需要用@include引入     @mixin 和 @function 前者和可以包括很多,后者返回value
 $baseFontSize: 375;
 
 @function px2vw($px) {

@@ -1,11 +1,6 @@
 <template>
   <div @click="onFieldClick" class="edit-cell">
-    <el-tooltip
-      v-if="!editMode && !showInput"
-      :placement="toolTipPlacement"
-      :open-delay="toolTipDelay"
-      :content="toolTipContent"
-    >
+    <el-tooltip v-if="!editMode && !showInput" :placement="toolTipPlacement" :open-delay="toolTipDelay" :content="toolTipContent">
       <div tabindex="0" @keyup.enter="onFieldClick">
         <slot name="content"></slot>
       </div>

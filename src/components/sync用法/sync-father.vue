@@ -1,8 +1,8 @@
 <template>
   <div>
     <input type="button" value="我是父组件中的按钮" @click="show" />
-    <!-- <child @update:isShow="bol=>isShow=bol" v-show="isShow" /> -->
-    <child :isShow.sync="isShow" v-show="isShow" /> <!-- 下面是上面的语法糖 -->
+    <child @update:isShow="good" v-show="isShow" />
+    <!-- <child :isShow.sync="isShow" v-show="isShow" /> 下面是上面的语法糖 -->
   </div>
 </template>
 <script>
@@ -20,6 +20,9 @@ export default {
   methods: {
     show() {
       this.isShow = true;
+    },
+    good(val) {
+      this.isShow = val
     }
   }
 };

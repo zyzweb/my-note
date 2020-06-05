@@ -1,17 +1,18 @@
 <template>
-  <div style="border: 1px solid black;">
-    <router-link to="aaa">aaa</router-link>
-    <router-link to="bbb">bbb</router-link>
-    <router-view></router-view>
-  </div>
+<div>
+     <h1>test</h1>
+</div>
 </template>
 
 <script>
-export default {
-
-}
+  export default {
+    data () {
+      return {
+      }
+    }
+  }
 </script>
 
-<style>
+<style lang='scss' scoped>
 
 </style>

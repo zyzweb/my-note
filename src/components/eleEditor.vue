@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-       <el-table
-      :data="gridData"
-      style="width: 100%">
-
-       <!-- <el-table-column
+    <el-table :data="gridData" style="width: 100%">
+      <!-- <el-table-column
         label="Operations"
         min-width="180">
         <template slot-scope="{row, index}">
@@ -15,54 +12,35 @@
           @click="saveRow(row, index)">
         </el-button>
         </template>
-      </el-table-column> -->
+      </el-table-column>-->
 
-
-      <el-table-column
-        label="Name"
-        min-width="180">
-        <editable-cell :show-input="row.editMode" slot-scope="{row}" v-model="row.name">
-          <span slot="content">{{row.name}}</span>
+      <el-table-column label="Name" min-width="180">
+        <editable-cell :show-input="row.editMode" slot-scope="{ row }" v-model="row.name">
+          <span slot="content">{{ row.name }}</span>
         </editable-cell>
       </el-table-column>
 
-      <el-table-column
-        min-wwidth="150"
-        label="Gender">
-
-         <editable-cell
-         :show-input="row.editMode"
-         slot-scope="{row}" 
-         editable-component="el-select"
-         close-event="change"
-         v-model="row.gender">
-         
-          <el-tag size="medium" 
-                  :type="row.gender === 'M' ? 'primary' : 'danger'" 
-                  slot="content">
-                  {{row.gender === 'M' ? 'Male': 'Female'}}
-          </el-tag>
+      <el-table-column min-width="150" label="Gender">
+        <editable-cell :show-input="row.editMode" slot-scope="{ row }" editable-component="el-select" close-event="change" v-model="row.gender">
+          <el-tag size="medium" :type="row.gender === 'M' ? 'primary' : 'danger'" slot="content">{{ row.gender === "M" ? "Male" : "Female" }}</el-tag>
 
           <template slot="edit-component-slot">
             <el-option value="M" label="Male"></el-option>
             <el-option value="F" label="Female"></el-option>
           </template>
         </editable-cell>
-        
       </el-table-column>
 
-
-      <el-table-column
-        label="Birth Date"
-        min-width="250">
-         <editable-cell 
-         :show-input="row.editMode"
-         slot-scope="{row}" 
-         editable-component="el-date-picker"
-         format="yyyy-MM-dd"
-         value-format="yyyy-MM-dd"
-         v-model="row.date">
-          <span slot="content">{{row.date}}</span>
+      <el-table-column label="Birth Date" min-width="250">
+        <editable-cell
+          :show-input="row.editMode"
+          slot-scope="{ row }"
+          editable-component="el-date-picker"
+          format="yyyy-MM-dd"
+          value-format="yyyy-MM-dd"
+          v-model="row.date"
+        >
+          <span slot="content">{{ row.date }}</span>
         </editable-cell>
       </el-table-column>
     </el-table>
@@ -104,10 +82,10 @@ export default {
     };
   },
   methods: {
-    setEditMode(row, index) {
+    setEditMode(row) {
       row.editMode = true;
     },
-    saveRow(row, index) {
+    saveRow(row) {
       row.editMode = false;
     }
   },

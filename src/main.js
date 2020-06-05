@@ -14,6 +14,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 // Vue.use(Tabs)
 // Vue.use(TabPane)
 
+import hocElTable from '@hoc-element/table'
+
+Vue.use(hocElTable)
+
 import VueMaterial from 'vue-material' //还要导入样式
 import 'vue-material/dist/vue-material.css'
 import 'vue-material/dist/theme/default.css'
@@ -70,5 +74,6 @@ var cc = new Vue({
 
 
 //全局导入样式
+
 
 

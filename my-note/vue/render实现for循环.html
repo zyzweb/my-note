@@ -19,10 +19,12 @@
         props: ['level'],
         render(h) {
           let list = []
+          let list1 = []
           for (let i = 0; i < 5; i++) {
-            list.push(h('strong','h'))        // list= [VNODE,VNODE,VNODE,VNODE]    
+            list.push(h('strong','h1'))        // list= [VNODE,VNODE,VNODE,VNODE]    
           }
-          return h('h'+this.level,list)
+          list1.push(h('h3',list))
+          return h('h'+this.level,list1)
         }
       });
       new Vue({
@@ -33,7 +35,7 @@
               a: 1,
               b: 2
             }
-          };
+          }
         }
       });
     </script>

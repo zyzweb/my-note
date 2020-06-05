@@ -324,3 +324,15 @@ cc.sort((a,b) => {
     return a.id - b.id
 })
 console.log(cc); // [{id:1,name:'li'},{id:2,name:'zhang'},{id:3,name:'wang'}]
+
+
+//获取当月1号
+function initDate() {
+  let a = new Date().setDate(1);
+  let year = new Date(a).getFullYear() + "";
+  let month = new Date(a).getMonth() + 1;
+  if (month < 10) month = "0" + month;
+  let date = new Date(a).getDate();
+  if (date < 10) date = "0" + date;
+  return year + "-" + month + "-" + date;
+}

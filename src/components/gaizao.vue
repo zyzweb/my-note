@@ -51,9 +51,6 @@ export default {
   components: {
     slotZyy,
     check,
-    Swipeout,
-    SwipeoutItem,
-    SwipeoutButton,
     vueEasytable
   },
   data(){

@@ -5,7 +5,7 @@ Vue.use(VueRouter); //模块化开发必须要use
 const router = new VueRouter({
   // mode:'history',//需要serve支持
   routes: [
-    { 
+    {
       path: "/",
       component:() => import('@/components/home'),
       redirect: '/home',
@@ -37,19 +37,19 @@ const router = new VueRouter({
         { path: "", component:() => import('@/components/keep-alive表单demo/list'), },
       ]
     },
-    { path: "/i18n", component:() => import('@/components/vue-i18n') },
+    { path: "/i18n", name: 8888, component:() => import('@/components/vue-i18n') },
     { path: "/father", component:() => import('@/components/$attr $listeners继承用法/father')},
-    { path: "/test", component:() => import('@/components/test.vue'),redirect: '/test/aaa',
-  children: [
-    {
-      path: 'aaa',
-      component:() => import('@/components/aaa.vue'),
-    },
-    {
-      path: 'bbb',
-      component:() => import('@/components/bbb.vue'),
-    },
-  ]},
+    { path: "/test", component:() => import('@/components/test.vue'),
+      children: [
+      {
+        path: 'aaa',
+        component:() => import('@/components/aaa.vue'),
+      },
+      {
+        path: 'bbb',
+        component:() => import('@/components/bbb.vue'),
+      },
+    ]},
     { path: "/gaizao", component:() => import('@/components/gaizao')},
     { path: "/easytable", component:() => import('@/components/vue-easytable')},
     { path: "/checked", component:() => import('@/components/绑定checked值')},
@@ -57,13 +57,13 @@ const router = new VueRouter({
     { path: "/popup", component:() => import('@/components/mint-ui使用/popup')},
     // { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值
     { path: "/editors", component:() => import('@/components/eleEditor')},
+    { path: "/multiStageTable", component:() => import('@/components/el-table多级表头/multiStageTable')},
   ]
 });
-console.log(router);
-console.log(router.addRoutes([{path:"/goods",component:() => import('@/components/vue-easytable')}]));
-console.log(router);
 
-
+router.beforeEach((to,from,next) => {
+  next()
+})
 
 //导出路由
 export default router;

@@ -17,7 +17,6 @@
 //   }
 // }
 
-
 // const vuxLoader = require('vux-loader')
 // module.exports = {
 //   configureWebpack: config => {
@@ -28,11 +27,27 @@
 //   }
 // }
 
+const CompressionPlugin = require("compression-webpack-plugin");
 module.exports = {
-  // baseUrl: 'vue', //写了这个会带二级目录 publicPath一样  实质就是将baseUrl写进到publicPath中
-  // outputDir: 'output',
-  configureWebpack: {
-    devtool: 'source-map'
+  configureWebpack: (config) => {
+    if (process.env.NODE_ENV === "production") {
+      return {
+        plugins: [
+          new CompressionPlugin({
+            test: /\.js$|\.html$|.\css/, //匹配文件名
+            threshold: 10240, //对超过10k的数据压缩
+            deleteOriginalAssets: true, //不删除源文件
+          }),
+        ],
+        devtool: 'source-map'
+        // devtool: 'eval'  //不生成source-map
+      };
+    } else {
+      return {
+        devtool: 'source-map'
+      }
+    }
   },
-  lintOnSave: false //暂时关掉eslint的检查
-}
+  lintOnSave: false, //暂时关掉eslint的检查
+  baseUrl: 'vue', //写了这个会带二级目录 publicPath一样  实质就是将baseUrl写进到publicPath中
+};
