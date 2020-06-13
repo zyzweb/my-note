@@ -1,5 +1,5 @@
 <template>
-  <div id="app1">
+  <div id="app">
     <!-- <h1>这是根组件</h1> -->
 
     <!-- <router-link to="/gaizao">跳转改造</router-link> <br>
