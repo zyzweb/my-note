@@ -56,6 +56,7 @@ const i18n = new VueI18n({
   }
  })
 
+ console.log('----------------------',process.env);
 
      
 //导入路由文件
