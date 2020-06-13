@@ -32,14 +32,15 @@ module.exports = {
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === "production") {
       return {
-        plugins: [
-          new CompressionPlugin({
-            test: /\.js$|\.html$|.\css/, //匹配文件名
-            threshold: 10240, //对超过10k的数据压缩
-            deleteOriginalAssets: true, //不删除源文件
-          }),
-        ],
-        devtool: "source-map",
+        // plugins: [
+        //   new CompressionPlugin({
+        //     test: /\.js$|\.html$|.\css/, //匹配文件名
+        //     threshold: 10240, //对超过10k的数据压缩
+        //     deleteOriginalAssets: false, //不删除源文件
+        //   }),
+        // ],
+        // productionSourceMap: false
+        // devtool: "source-map",
         // devtool: 'eval'  //不生成source-map
       };
     } else {
@@ -52,5 +53,6 @@ module.exports = {
     }
   },
   lintOnSave: false, //暂时关掉eslint的检查
-  baseUrl: "vue", //写了这个会带二级目录 publicPath一样  实质就是将baseUrl写进到publicPath中
+  // baseUrl: '/'
+  // baseUrl: "vue", //写了这个会带二级目录 publicPath一样  实质就是将baseUrl写进到publicPath中
 };

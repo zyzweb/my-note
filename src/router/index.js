@@ -39,6 +39,7 @@ const router = new VueRouter({
     },
     { path: "/i18n", name: 8888, component:() => import('@/components/vue-i18n') },
     { path: "/father", component:() => import('@/components/$attr $listeners继承用法/father')},
+    { path: "/test1", component:() => import('@/components/test1'), props: {keyword: '111'},},
     { path: "/test", component:() => import('@/components/test.vue'),
       children: [
       {
@@ -53,7 +54,7 @@ const router = new VueRouter({
     { path: "/gaizao", component:() => import('@/components/gaizao')},
     { path: "/easytable", component:() => import('@/components/vue-easytable')},
     { path: "/checked", component:() => import('@/components/绑定checked值')},
-    { path: "/editor", component:() => import('@/components/editor')},
+    { path: "/editor", component:() => import('@/components/wangeditor')},
     { path: "/popup", component:() => import('@/components/mint-ui使用/popup')},
     // { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值
     { path: "/editors", component:() => import('@/components/eleEditor')},

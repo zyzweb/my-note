@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 3000px;
+        height: 5000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      //只有document 和 body 能监听scroll事件
+      //scroll事件都是在父元素  子元素内容大于父元素  还有一种元素的内容大于元素空间,也在该元素上注册scroll事件
+      var div = document.querySelector("div");
+      document.body.onscroll = function() {
+        console.log(document.documentElement.scrollTop);//只有html滚动距离
+        console.log(document.body.scrollTop);
+      };
+
+
+      document.onscroll = function() {
+        console.log(document.documentElement.scrollTop);
+      };
+    </script>
+  </body>
+</html>

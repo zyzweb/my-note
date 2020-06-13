@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .two {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .one::after { /* 方法二加伪元素 (开发用这个)*/ 
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="two"></div>
+    <!-- 方法一在后面加一个元素 clear:both -->
+        <!-- <div style="clear:both;"></div> -->
+    </div>
+</body>
+</html>

@@ -12,7 +12,7 @@
       <!-- 第二次使用:直接展示数据 -->
       <!-- <template slot-scope="user">{{user.age}}</template> -->
       <!-- 直接使用v-slot指令 现在具名插槽也是用v-slot-->
-      <template v-slot:default="user">{{ user.age }}</template>
+      <template v-slot="user">{{ user.age }}</template>
     </child>
   </div>
 </template>

@@ -108,7 +108,7 @@ function fileElemUpdata(elem) {
       var ctx = canvas.getContext("2d");
       ctx.drawImage(that, 0, 0, w, h);
       // quality值越小，所绘制出的图像越模糊
-      var dataImgURL = canvas.toDataURL("image/jpeg", quality); //转换为bese64
+      var dataImgURL = canvas.toDataURL("image/jpeg", quality); //转换为base64
       let cardUrl = "";
       var imgDataBase = {};
       if (IdOrBnak == "Bank") {
@@ -336,3 +336,17 @@ function initDate() {
   if (date < 10) date = "0" + date;
   return year + "-" + month + "-" + date;
 }
+
+//专门获取地址栏参数的方法  window.location.search  = ?search=%E9%9E%8B  name= search  返回鞋   
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return decodeURI(r[2]);
+  return null;
+}
+
+// 判断无效值：undefined、isNaN、null、"null"、""
+function isNullUndefinedTemp(value) {
+  return (typeof (value) == "undefined") || ((typeof (value) == "number") && isNaN(value)) || (value == "null") || (!value && value == 0) || (typeof (value) === "string" ? value.trim() == "" : false);
+}
+

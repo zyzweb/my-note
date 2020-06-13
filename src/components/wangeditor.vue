@@ -23,6 +23,7 @@
       event: 'change'
     },
     props: {
+      flag:Boolean,
       value: {
         type: String,
         default: ''
@@ -50,6 +51,12 @@
     mounted() {
       this.seteditor()
       this.editor.txt.html(this.value)
+      // this.editor.$textElem.attr('contenteditable', false)
+      debugger
+      if(this.flag) {
+        debugger
+        this.editor.$textElem.attr('contenteditable', false)//设置是否可编辑
+      }
     },
     methods: {
       seteditor() {
@@ -127,7 +134,9 @@
 
 <style lang="css">
   .editor {
-    width: 100%;
+    width: 30%;
+    height: 300px;
+    border: 1px solid #000;
     margin: 0 auto;
     position: relative;
     z-index: 0;

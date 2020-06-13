@@ -25,9 +25,12 @@
   </div>
   <script>
     var one = document.querySelector('.one')
-    console.log('scrollWidth',one.scrollWidth);
-    console.log('offsetWidth',one.offsetWidth);
-    console.log('clientWidth',one.clientWidth);
+    console.log('one.scrollWidth',one.scrollWidth);
+    console.log('one.offsetWidth',one.offsetWidth);
+    console.log('one.clientWidth',one.clientWidth);
+    one.onscroll = function() {
+      console.log('one.scrollTop', one.scrollTop);
+    }
   </script>
 </body>
 </html>
