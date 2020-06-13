@@ -17,6 +17,7 @@ vue.config.js 可以使用所有.env变量,但是cli只是将VUE_APP开头的注
 npm i webpack-bundle-analyzer -D  然后   npm run build --report   查看build图
 添加如下配置:
 
+
 ```js
 chainWebpack: (config) => {
     /* 添加分析工具*/
