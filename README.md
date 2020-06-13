@@ -16,6 +16,7 @@ webpack 通过 DefinePlugin 内置插件将 process.env 注入到客户端代码
 vue.config.js 可以使用所有.env变量,但是cli只是将VUE_APP开头的注入到前端代码
 npm i webpack-bundle-analyzer -D  然后   npm run build --report   查看build图
 添加如下配置:
+
 ```js
 chainWebpack: (config) => {
     /* 添加分析工具*/
