@@ -14,6 +14,21 @@ vue-cli-service serve 命令默认设置的环境是 development，你需要修�
 相同配置项权重大的覆盖小的，不同配置项它们会进行合并操作，类似于 Object.assign 的用法。
 webpack 通过 DefinePlugin 内置插件将 process.env 注入到客户端代码中。 所以前端代码也可以访问process.env
 vue.config.js 可以使用所有.env变量,但是cli只是将VUE_APP开头的注入到前端代码
+npm i webpack-bundle-analyzer -D  然后   npm run build --report   查看build图
+添加如下配置:
+```js
+chainWebpack: (config) => {
+    /* 添加分析工具*/
+    if (process.env.NODE_ENV === 'production') {
+        if (process.env.npm_config_report) {
+            config
+                .plugin('webpack-bundle-analyzer')
+                .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+                .end();
+            config.plugins.delete('prefetch')
+        }
+    } }
+```
 
 ```js
 const VueLoaderPlugin = require("vue-loader/lib/plugin");

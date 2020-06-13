@@ -56,3 +56,10 @@ function checkIdCard(idCard) {
 function idCardMask(idCard = "") {
   return idCard.substr(0, 1) + idCard.slice(1, -4).replace(/\d/g, "*") + idCard.substr(-4);
 }
+
+
+/^1[3|4|5|6|7|8|9][0-9]{9}$/   //手机号码
+
+// /^(https?:|mailto:|tel:)/.test(path)   以http:  https:   mailto:  tel:  开头的路径匹配   s?代表是否存在s 表示 http:  https:
+
+"期待你,脚踏,祥云".replace(/([^,]+)/ig,"'$1'")   //"'期待你','脚踏','祥云'"   捕获组

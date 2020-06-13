@@ -1,5 +1,4 @@
 // module.exports = {
-//   // 选项...
 //   baseUrl: './', //设置baseUrl,在index.html中导入js，其它文件的时候用到
 //   productionSourceMap: false, // 不生成source Map文件
 //   lintOnSave: false, //暂时关掉eslint的检查
@@ -31,7 +30,6 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 module.exports = {
   configureWebpack: (config) => {
-    console.log('----------------------',process.env.npm_package_name);
     if (process.env.NODE_ENV === "production") {
       return {
         // plugins: [
@@ -54,6 +52,19 @@ module.exports = {
       };
     }
   },
+  chainWebpack: (config) => {
+    /* 添加分析工具*/
+    if (process.env.NODE_ENV === "production") {
+      if (process.env.npm_config_report) {
+        config
+          .plugin("webpack-bundle-analyzer")
+          .use(require("webpack-bundle-analyzer").BundleAnalyzerPlugin)
+          .end();
+        config.plugins.delete("prefetch");
+      }
+    }
+  },
+
   lintOnSave: false, //暂时关掉eslint的检查
   // baseUrl: '/'
   // baseUrl: "vue", //写了这个会带二级目录 publicPath一样  实质就是将baseUrl写进到publicPath中
