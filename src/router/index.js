@@ -4,7 +4,7 @@ Vue.use(VueRouter); //模块化开发必须要use
 
 const router = new VueRouter({
   // mode:'history',//需要serve支持
-  // base: '/666',  //?路由hover的时候看到,location中没有, publicPath是加在location中
+  base: '/666',  //?路由hover的时候看到,location中没有, publicPath是加在location中
   routes: [
     {
       path: "/",

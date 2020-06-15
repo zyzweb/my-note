@@ -28,21 +28,34 @@
 // console.log('----------------------',process.env.npm_package_name); //能获得package.json中的name
 
 const CompressionPlugin = require("compression-webpack-plugin");
+// const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+
 module.exports = {
+  productionSourceMap: false,
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === "production") {
-      return {
-        // plugins: [
-        //   new CompressionPlugin({   // 开启 Gzip 压缩
-        //     test: /\.js$|\.html$|.\css/, //匹配文件名
-        //     threshold: 10240, //对超过10k的数据压缩
-        //     deleteOriginalAssets: false, //不删除源文件
-        //   }),
-        // ],
-        // productionSourceMap: false
-        // devtool: "source-map",
-        // devtool: 'eval'  //不生成source-map
-      };
+      // 为生产环境修改配置...
+      // config.optimization.minimizer.push(
+      //   new UglifyJsPlugin({
+      //     uglifyOptions: {
+      //       compress: {
+      //         drop_console: true, // console
+      //       },
+      //     },
+      //   })
+      // );
+
+      // plugins: [
+      //   new CompressionPlugin({   // 开启 Gzip 压缩
+      //     test: /\.js$|\.html$|.\css/, //匹配文件名
+      //     threshold: 10240, //对超过10k的数据压缩
+      //     deleteOriginalAssets: false, //不删除源文件
+      //   }),
+      // ]
+      // productionSourceMap: false
+      // devtool: "source-map",
+      // devtool: 'eval'  //不生成source-map
     } else {
       return {
         devtool: "source-map",
@@ -62,7 +75,28 @@ module.exports = {
           .end();
         config.plugins.delete("prefetch");
       }
+
+      if (process.env.NODE_ENV === "production") {
+        // config.optimization.minimizer([
+        //   new TerserPlugin({
+        //     test: /\.js(\?.*)?$/i,
+        //     terserOptions: {
+        //       compress: {
+        //         warnings: false,
+        //         drop_debugger: true, //去除debugger
+        //         drop_console: true,
+        //         pure_funcs: ["console.log"], //去除console
+        //       },
+        //     },
+        //   }),
+        // ]);
+      } else {
+        // disable optimization during tests to speed things up
+        config.optimization.minimize(false);
+      }
     }
+    // 移除 prefetch 插件
+    config.plugins.delete("prefetch");
   },
 
   lintOnSave: false, //暂时关掉eslint的检查

@@ -6,6 +6,7 @@
 ### chainWebpack 是链式修改，而 configureWebpack 更倾向于整体替换和修改 都能修改
 
 ### // vue-loader 是 webpack 的加载器，允许你以单文件组件的格式编写 Vue 组件
+const orderInfo = () => import(/* webpackChunkName: "orderInfo" */ '../components/vip/orderInfo.vue')  会有chunkName
 在vue-cli.3.3版本后 baseUrl被废除了，要写成 publicPath
 环境变量修改之后要重启
 vue-cli-service serve 命令默认设置的环境是 development，你需要修改 package.json 中的 serve 脚本的命令为：
@@ -14,10 +15,12 @@ vue-cli-service serve 命令默认设置的环境是 development，你需要修�
 相同配置项权重大的覆盖小的，不同配置项它们会进行合并操作，类似于 Object.assign 的用法。
 webpack 通过 DefinePlugin 内置插件将 process.env 注入到客户端代码中。 所以前端代码也可以访问process.env
 vue.config.js 可以使用所有.env变量,但是cli只是将VUE_APP开头的注入到前端代码
+uglifyjs不支持es6语法，所以用terser-webpack-plugin替代uglifyjs-webpack-plugin
+实现原理不一样，作用基本相同，require.ensure 是 webpack 特有的，遵循 common.js 规范，而 import 是 ES6 的模块化引入方法，需要结合 Vue 的异步组件才能实现按需加载
+html-minifier 是一款用于缩小 html 文件大小的工具，其有很多配置项功能，包括上述所列举的常用的删除注释、空白、引号等
+
 npm i webpack-bundle-analyzer -D  然后   npm run build --report   查看build图
 添加如下配置:
-
-
 ```js
 chainWebpack: (config) => {
     /* 添加分析工具*/
@@ -61,4 +64,22 @@ const PreloadPlugin = require("preload-webpack-plugin");
 
 // 用于将单个文件或整个目录复制到构建目录
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+```
+```js vue.config.js
+css: {
+    // 是否使用css分离插件 ExtractTextPlugin   设置之后build不会生成单独的css文件夹
+    extract: false,
+    // 开启 CSS source maps?
+    sourceMap: false,
+    // css预设器配置项
+    loaderOptions: {},
+    // 启用 CSS modules for all css / pre-processor files.
+    modules: false
+}
+```
+```js
+//在页面刷新时将vuex里的信息保存到sessionStorage里
+      window.addEventListener("beforeunload",()=>{
+          sessionStorage.setItem("store",JSON.stringify(this.$store.state))
+      })
 ```

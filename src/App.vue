@@ -27,6 +27,7 @@
        <iframe v-if="ifArr.third"  class="ifa" scrolling=auto src="https://www.baidu.com/" frameborder="0"></iframe>
     </el-tab-pane>
   </el-tabs> -->
+
     <!-- 中间路由 -->
     <router-view></router-view>
   </div>
@@ -34,6 +35,9 @@
 
 <script>
 // import Particle from 'zhihu-particle'
+
+
+
 export default {
   name: "app",
   components: {},
@@ -51,6 +55,7 @@ export default {
    
   },
   mounted() {
+    console.log('this', this);
     // new Particle(document.getElementById('app'),{interactive:true, density: 'low'})
     // axios.get('/data.json').then(res => console.log(res))
     // this.$nextTick(function() {

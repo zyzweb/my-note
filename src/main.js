@@ -39,9 +39,15 @@ import 'vue-easytable/libs/themes-base/index.css'
 // 导入 table 和 分页组件
 import {VTable,VPagination} from 'vue-easytable'
 
-// 注册到全局
+// ?注册全局组件
 Vue.component(VTable.name, VTable)
 Vue.component(VPagination.name, VPagination)
+
+//?注册全局方法 和install use作用相同
+// function globalMethod() {
+//   console.log(999);
+// }
+// Vue.prototype.$myMethod = globalMethod  
 
 import VueI18n from 'vue-i18n'        //引入vue-i18n
 Vue.use(VueI18n);    //通过插件的形式挂载
@@ -61,7 +67,7 @@ const i18n = new VueI18n({
      
 //导入路由文件
 import router from './router'
-Vue.config.productionTip = false
+Vue.config.productionTip = false  //关闭development production提示
 Vue.use(ElementUI)
 var cc = new Vue({
   render: h => h(App),
