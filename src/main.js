@@ -25,6 +25,9 @@ Vue.use(VueMaterial)
 // import { Swipeout } from 'vux'
 // Vue.use(Swipeout)
 
+import loading from '@/components/loading组件/loading'
+Vue.use(loading)
+
 
 // 配置主题 -- 配置默认主题
 // Vue.material.registerTheme('default',{
@@ -48,6 +51,8 @@ Vue.component(VPagination.name, VPagination)
 //   console.log(999);
 // }
 // Vue.prototype.$myMethod = globalMethod  
+import testData from './testData'
+Vue.prototype.testData = testData  
 
 import VueI18n from 'vue-i18n'        //引入vue-i18n
 Vue.use(VueI18n);    //通过插件的形式挂载
