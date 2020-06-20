@@ -350,3 +350,28 @@ function isNullUndefinedTemp(value) {
   return (typeof (value) == "undefined") || ((typeof (value) == "number") && isNaN(value)) || (value == "null") || (!value && value == 0) || (typeof (value) === "string" ? value.trim() == "" : false);
 }
 
+// 对象验证规则
+const schema = {
+  first: {
+    required:true
+  },
+  last: {
+    required:true
+  }
+}
+
+// 通用验证函数  不用每次编写验证函数
+const validate = (schema, values) => {
+  for(field in schema) {
+    if(schema[field].required) {
+      if(!values[field]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+console.log(validate(schema, {first:'Bruce'})); // false
+console.log(validate(schema, {first:'Bruce',last:'Wayne'})); // true
+

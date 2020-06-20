@@ -58,24 +58,28 @@
       <thead>
         <tr>
           <!-- 表头数据 -->
+          <th><input type="checkbox"></th>
           <th>姓名</th>
           <th>性别</th>
           <th>年龄</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr align="center">
+          <td><input type="checkbox"></td>
           <td align="center">吴彦祖</td>
           <td align="center">男</td>
           <td align="center" rowspan="2">45</td>
         </tr>
         <tr align="center">
+          <td><input type="checkbox"></td>
           <td>霍建华</td>
           <td>男</td>
           <!-- <td>38</td> -->
           <!-- 后面不要的数据要删除 -->
         </tr>
         <tr align="center">
+          <td><input type="checkbox"></td>
           <td>胡歌</td>
           <td colspan="2">男</td>
           <!-- <td>35</td> -->
@@ -83,6 +87,15 @@
         </tr>
       </tbody>
     </table>
+    <script>
+      let theadInput = document.querySelector('thead input')
+      let tbodyInput = document.querySelectorAll('tbody input')
+      theadInput.onclick = function () {
+        // tbodyInput.forEach((item) => {
+        //   item.checked = this.checked
+        // })
+      }
+    </script>
   </body>
 </html>
 

@@ -8,13 +8,17 @@ export default new Vuex.Store({
     pageYOffset: 0,
     aa:1
   },
+  getters: {
+    aa(state) {
+      return state.aa
+    }
+  },
   mutations: {
     setPageYOffset(state, val) {
       state.pageYOffset = val;
     },
     good(state,val) {
-      console.log(state.aa);
-      state.aa += 1
+      state.aa   = val
     }
   },
   actions: {

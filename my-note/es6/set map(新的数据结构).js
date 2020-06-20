@@ -24,6 +24,7 @@
   
     let arr=[1,2,3,1,'2'];
     let list2=new Set(arr); //set中的元素不能重复 可以使用来去重
+    Array.from(list2)  //将set转化成Array
   
     console.log('unique',list2);
   }

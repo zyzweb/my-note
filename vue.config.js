@@ -32,7 +32,8 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
-  productionSourceMap: false,
+  // productionSourceMap: false,
+  
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === "production") {
       // 为生产环境修改配置...
@@ -62,7 +63,7 @@ module.exports = {
         devServer: {
           disableHostCheck: true, //阻止hostname检查   ngrok
         },
-      };
+      }
     }
   },
   chainWebpack: (config) => {

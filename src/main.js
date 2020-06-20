@@ -74,18 +74,25 @@ const i18n = new VueI18n({
 import router from './router'
 Vue.config.productionTip = false  //关闭development production提示
 Vue.use(ElementUI)
-var cc = new Vue({
+new Vue({
   render: h => h(App),
   i18n,
   router,
   store
 }).$mount('#app')
 
-// console.log('vue',Vue)//为构造函数
-// console.log('cc',cc); //vue实例
 
 
-//全局导入样式
+// alias: {
+//   'vue$': 'vue/dist/vue.esm.js' // ?vue默认是运行时,不包括compile,需要手动挂载
+// }
+// new Vue({
+// 	el: '#app',
+//   router,
+//   i18n,
+// 	components: { App },
+// 	template: '<App/>'
+// });
 
 
 
