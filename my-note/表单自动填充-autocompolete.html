@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body><!-- 需要有name属性会提交到服务器,chrome才会表单自动填充 -->
+    <form action="/" method="get" enctype="multipart/form-data">
+      用户名:<input type="text" name="fname" autocomplete="on"/><br />
+      密码<input type="password" placeholder="请输入六位密码" maxlength="6" name="userPsw"><br/> <!-- 最多只能输6位 -->
+      性别:<input type="radio" name="sex">男<input type="radio" name="sex" checked>女<br/>  <!-- 默认选中 -->
+      邮箱: <input type="email" name="email" autocomplete="off" /><br />  <!-- 邮箱会自动校验 -->
+      手机: <input type="number" name="phone" autocomplete="off" /><br />
+      文件:  <input type="file" name="" id=""><br/> 
+      图片按钮 <input type="image" width="20px" height="20px" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566875796&di=3ea66f48bd6b96f60ca9bcb29b265564&src=http://dpic.tiankong.com/1k/35/QJ8133550638.jpg">
+      <input type="submit" /> <input type="reset"><!-- reset要在form中才能生效 -->
+    </form>
+  </body>
+</html>
