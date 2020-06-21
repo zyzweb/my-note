@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js原生动画</title>
+    <style>
+      .box {
+        background-color: lightblue;
+        height: 20px;
+        line-height: 20px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" style="width:0">0%</div>
+    <button id="btn">load</button>
+    <script>
+      var btn = document.getElementById("btn");
+      var div = document.getElementsByClassName("box")[0];
+
+      btn.addEventListener("click", function() {
+        // load1();
+        // load2();
+        load3();
+        function load1() {
+          div.style.width = parseInt(div.style.width) + 5 + "px";
+          div.innerHTML = parseInt(div.style.width) / 5 + "%";
+          if (parseInt(div.style.width) < 500) {
+            var c = setTimeout(function() {
+              load1();
+            }, 16);
+          } else {
+            clearTimeout(c);
+          }
+        }
+        function load2() {
+          div.style.width = parseInt(div.style.width) + 5 + "px";
+          div.innerHTML = parseInt(div.style.width) / 5 + "%";
+          var c = setInterval(function() {
+            if (parseInt(div.style.width) < 500) {
+              load2();
+            } else {
+              clearInterval(c);
+            }
+          }, 16);
+        }
+
+        // 注意setTimeout和setInterval的区别，两种方法的if分别在不同的地方控制。
+        function load3() {
+          div.style.width = parseInt(div.style.width) + 5 + "px";
+          div.innerHTML = parseInt(div.style.width) / 5 + "%";
+          if (parseInt(div.style.width) < 500) {
+            var c = requestAnimationFrame(load3);
+          } else {
+            cancelAnimationFrame(c);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

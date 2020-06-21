@@ -1,37 +1,47 @@
 <template>
-  <el-row :gutter="5">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
+  <div>
+    <button @click="click">点击切换</button>
+    <transition>
+      <p v-if="isHidden">使用默认前缀的过渡</p>
+    </transition>
+  </div>
 </template>
 
-<style>
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
+<script>
+export default {
+  data() {
+    return {
+      isHidden: true
+    };
+  },
+  methods: {
+    click() {
+      this.isHidden = !this.isHidden;
     }
   }
-  .el-col {
-    border-radius: 4px;
+};
+</script>
+
+<style>
+  /* 在此处声明过渡样式类，从一个状态过渡到另一个状态 */
+  .v-enter,
+  .v-leave-to {
+    opacity: 0;
   }
-  .bg-purple-dark {
-    background: #99a9bf;
+  .v-enter-active,
+  .v-leave-active {
+    transition-property: opacity; /* 过渡属性 */
+    transition-delay: 100ms;  /* 延迟 */
+    transition-duration: 900ms; /* 过渡时长 */
+    transition-timing-function: linear; /* 贝塞尔曲线（动画速度曲线） */
   }
-  .bg-purple {
-    background: #d3dce6;
+  .rotate-enter,
+  .rotate-leave-to {
+    transform: rotateY(90deg);
   }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
+  .rotate-enter-active,
+  .rotate-leave-active {
+    transform-origin: left;
+    transition: transform 1s linear;
   }
 </style>

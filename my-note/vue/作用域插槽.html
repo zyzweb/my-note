@@ -55,7 +55,6 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
 <script type="text/javascript">
-//父组件通过props传值到子组件,子组件通过作用域slot穿值到父组件, col对应fields   row对应goods
   let FlyTable = {
     props: { // 组件接收从父组件传入的数据
       fields: {
@@ -75,7 +74,7 @@
       return '<table class="fly-table">\n' +
         '    <tr>\n' +
         '      <th\n' +
-        '        v-for="(col, cIndex) in fields"\n'  
+        '        v-for="(col, cIndex) in fields"\n' +
         '        :key="cIndex">\n' +
         '        {{ col.label }}\n' +
         '      </th>\n' +
