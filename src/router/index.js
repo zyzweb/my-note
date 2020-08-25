@@ -40,18 +40,9 @@ const router = new VueRouter({
     },
     { path: "/i18n", name: 8888, component:() => import('@/components/vue-i18n') },
     { path: "/father", component:() => import('@/components/$attr $listeners继承用法/father')},
-    { path: "/test1", component:() => import('@/components/test1'), props: {keyword: '111'},},
-    { path: "/test", component:() => import('@/components/test.vue'),
-      children: [
-      {
-        path: 'aaa',
-        component:() => import('@/components/aaa.vue'),
-      },
-      {
-        path: 'bbb',
-        component:() => import('@/components/bbb.vue'),
-      },
-    ]},
+    // { path: "/test1", component:() => import('@/components/test1'), props: {keyword: '111'},},
+    { path: "/test", component:() => import('@/components/test.vue'), props: {keyword: '111'}}, //直接通过keyword接收
+    // { path: "/test/:id", component:() => import('@/components/test.vue'), props: {keyword: '111'}}, //直接通过keyword接收
     { path: "/gaizao", component:() => import('@/components/gaizao')},
     { path: "/easytable", component:() => import('@/components/vue-easytable')},
     { path: "/checked", component:() => import('@/components/绑定checked值')},
@@ -60,6 +51,7 @@ const router = new VueRouter({
     // { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值
     { path: "/editors", component:() => import('@/components/eleEditor')},
     { path: "/multiStageTable", component:() => import('@/components/el-table多级表头/multiStageTable')},
+    { path: "/vmodel", component:() => import('@/components/v-model/v-model')},
   ]
 });
 

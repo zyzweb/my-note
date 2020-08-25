@@ -16,6 +16,10 @@ export default {
     child2
   },
   inheritAttrs: false,// true/false 体现在子组件根元素属性的不同
+  mounted() {
+    console.log('this.$attrs', this.$attrs);
+    console.log('this.$listeners', this.$listeners);
+  },
 }
 </script>
 <style scoped>

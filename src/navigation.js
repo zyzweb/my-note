@@ -17,6 +17,7 @@ const data = [
     {path:'/popup',name:'mint-ui 弹出框'},
     {path:'/editors',name:'el-table可编辑'},
     {path:'/multiStageTable',name:'封装多级表头'},
+    {path:'/vmodel',name:'v-model原理'},
 ]
 
 export default data

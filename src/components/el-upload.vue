@@ -11,14 +11,14 @@
           :on-remove="handleRemove"
           :before-remove="beforeRemove"
           :auto-upload="false"
+          :http-request="getFile"
           multiple
           :limit="3"
           accept=".xlsx,.jpg,.jpeg,.png,.gif,"
           :on-exceed="handleExceed"
-          :file-list="fileList"
         >
           <el-button size="small" type="primary">点击上传</el-button>
-          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          <div slot="tip"  class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
         </el-upload>
       </el-form-item>
       <el-form-item>
@@ -40,10 +40,14 @@ export default {
     };
   },
   methods: {
+    getFile(item) {
+      console.log('item');
+      this.form.file = item
+    },
     // 文件状态改变时的钩子
     fileChange(file, fileList) { //分别为选中的文件,剩余文件列表
-      this.form.file = file.raw 
-      // this.uploadFile()  只能支持单个上传
+      // this.form.file = file.raw 
+      // this.uploadFile()  //只能支持单个上传
     },
     uploadFile() {
       // this.$refs.uploadExcel.submit();  //这种更简单
@@ -57,18 +61,12 @@ export default {
         console.log('res')
         console.log(res)
       })
-      .catch(err => {
-      })
     },
-    handleRemove(file, fileList) {
-      console.log(file, fileList);
-      console.log(fileList);
-    },
-    handlePreview(file) {
+    handlePreview(file) { //点击文件列表中已上传的文件时的钩子
       console.log(666);
       console.log(file);
     },
-    handleExceed(files, fileList) {
+    handleExceed(files, fileList) {//文件超出个数限制时的钩子
       this.$message.warning(
         `当前限制选择 3 个文件，本次选择了 ${
           files.length
@@ -77,6 +75,9 @@ export default {
     },
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`);
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
     }
   }
 };

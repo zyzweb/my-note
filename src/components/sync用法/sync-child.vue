@@ -6,10 +6,16 @@
 </template>
 <script>
 export default {
+  props: {
+    isShow:Boolean
+  },
   methods: {
     upIsShow() {
       this.$emit("update:isShow", false);
     }
+  },
+  mounted () {
+    console.log(this.sss);
   }
 };
 </script>

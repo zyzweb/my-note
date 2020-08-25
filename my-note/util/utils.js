@@ -375,3 +375,55 @@ const validate = (schema, values) => {
 console.log(validate(schema, {first:'Bruce'})); // false
 console.log(validate(schema, {first:'Bruce',last:'Wayne'})); // true
 
+
+//图片转blob
+function compressImage(file) {
+  var read = new FileReader()
+  read.readAsDataURL(file)
+  return new Promise(function(resolve, reject){
+    read.onload = function(e) {
+      var img = new Image()
+      img.src = e.target.result
+      img.crossOrigin = "*"
+      img.onload = function() {
+        var that = this
+        var w = that.width
+        var h = that.height
+        var quality = 1 //默认图片质量为0.7
+        //生成canvas
+        var canvas = document.createElement('canvas')
+        var ctx = canvas.getContext('2d')
+        //创建属性节点
+        var anw =  document.createAttribute('width')
+        anw.nodeValue = w
+        var anh = document.createAttribute('height')
+        anh.nodeValue = h
+        canvas.setAttributeNode(anw)
+        canvas.setAttributeNode(anh)
+        ctx.drawImage(img, 0, 0 ,w, h)
+        if(quality && quality <= 1 && quality > 0) {
+          quality = quality
+        }
+        var base64 = canvas.toDataURL('image/*', quality)
+        var blob = convertBase64UrlToBlob(base64)
+        resolve(blob)
+      }
+    }
+  })
+}
+
+/**
+     * 判断无效值
+     * @param {any} value 待检测的数据：undefined、isNaN、null、"null"、""、0
+     * @param {Boolean} isZero（可选） 0作为无效数参数2传入true，默认0为false作为有效数
+     * @returns {Boolean} 
+     */
+  function isNullUndefinedTemp(value, isZero=false) {
+      return (typeof (value) == "undefined") 
+      || ((typeof (value) == "number") && isNaN(value)) 
+      || (value == "null") 
+      || (value === null) 
+      || (isZero ? !value && value == 0:false) 
+      || (typeof (value) === "string" ? value.trim() == "" : false);
+  }
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>father</p>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <!-- <iframe src="http://127.0.0.1:9999/son.html" frameborder="0"></iframe> -->
+    <script>
+      var textarea = document.querySelector("textarea");
+      var myWin = window.open('http://127.0.0.1:9999/son.html') //指向自己
+      // var frame = document.querySelector('iframe')
+      textarea.addEventListener("input", function() {
+        // frame.postMessage(textarea.value, "http://127.0.0.1:9999/test1.html");
+        myWin.postMessage(textarea.value,'http://127.0.0.1:9999/test1.html')
+      });
+    </script>
+  </body>
+</html>

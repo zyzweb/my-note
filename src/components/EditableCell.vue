@@ -1,19 +1,20 @@
 <template>
   <div @click="onFieldClick" class="edit-cell">
     <el-tooltip v-if="!editMode && !showInput" :placement="toolTipPlacement" :open-delay="toolTipDelay" :content="toolTipContent">
-      <div tabindex="0" @keyup.enter="onFieldClick">
+      <div class="good" @keyup.enter="onFieldClick">
         <slot name="content"></slot>
       </div>
     </el-tooltip>
     <component
-      :is="editableComponent"
+      class=""
+      v-model="model"
       v-if="editMode || showInput"
+      v-on="listeners"
+      v-bind="$attrs"
+      :is="editableComponent"
       ref="input"
       @focus="onFieldClick"
       @keyup.enter.native="onInputExit"
-      v-on="listeners"
-      v-bind="$attrs"
-      v-model="model"
     >
       <slot name="edit-component-slot"></slot>
     </component>
@@ -25,7 +26,7 @@ export default {
   inheritAttrs: false,
   props: {
     value: {
-      // type: String,
+      type: String,
       default: ""
     },
     toolTipContent: {
@@ -34,7 +35,7 @@ export default {
     },
     toolTipDelay: {
       type: Number,
-      default: 500
+      default: 50
     },
     toolTipPlacement: {
       type: String,
@@ -76,6 +77,7 @@ export default {
   },
   methods: {
     onFieldClick() {
+      console.log(111);
       this.editMode = true;
       this.$nextTick(() => {
         let inputRef = this.$refs.input;

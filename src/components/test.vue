@@ -1,47 +1,67 @@
 <template>
   <div>
-    <button @click="click">点击切换</button>
-    <transition>
-      <p v-if="isHidden">使用默认前缀的过渡</p>
-    </transition>
+    <el-table id="table" :data="tableData" style="width: 100%">
+      <el-table-column prop="date" label="日期" width="180"></el-table-column>
+      <el-table-column prop="name" label="姓名" width="180"></el-table-column>
+      <el-table-column prop="address" label="地址"></el-table-column>
+    </el-table>
+    <button @click="getXlsx">导出excel</button>
   </div>
 </template>
 
 <script>
+import FileSaver from "file-saver";
+import XLSX from "xlsx";
+
 export default {
   data() {
     return {
-      isHidden: true
+      tableData: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1517 弄"
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1519 弄"
+        },
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1516 弄"
+        }
+      ]
     };
   },
   methods: {
-    click() {
-      this.isHidden = !this.isHidden;
+    getXlsx() {
+      let wb = XLSX.utils.table_to_book(document.querySelector("#table"));
+      /* #table 就是表格的id */
+      let wbout = XLSX.write(wb, {
+        bookType: "xlsx",
+        bookSST: true,
+        type: "array"
+      });
+      try {
+        FileSaver.saveAs(
+          new Blob([wbout], { type: "application/octet-stream" }),
+          "导出数据.xlsx" //对下载文件命名
+        );
+      } catch (e) {
+        if (typeof console !== "undefined") console.log(e, wbout);
+      }
+      return wbout;
     }
   }
 };
 </script>
 
 <style>
-  /* 在此处声明过渡样式类，从一个状态过渡到另一个状态 */
-  .v-enter,
-  .v-leave-to {
-    opacity: 0;
-  }
-  .v-enter-active,
-  .v-leave-active {
-    transition-property: opacity; /* 过渡属性 */
-    transition-delay: 100ms;  /* 延迟 */
-    transition-duration: 900ms; /* 过渡时长 */
-    transition-timing-function: linear; /* 贝塞尔曲线（动画速度曲线） */
-  }
-  .rotate-enter,
-  .rotate-leave-to {
-    transform: rotateY(90deg);
-  }
-  .rotate-enter-active,
-  .rotate-leave-active {
-    transform-origin: left;
-    transition: transform 1s linear;
-  }
 </style>

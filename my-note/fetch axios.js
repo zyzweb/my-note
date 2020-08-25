@@ -45,3 +45,7 @@ axios.get('http://127.0.0.1:8080/test/delUser',{ params:{ id:1 } }).then(res => 
 
 axios({url:'http://127.0.0.1:8080/test/delUser', method:'post', data:{}})
 axios({url:'http://127.0.0.1:8080/test/delUser', method:'get', params:{key:value}})
+
+
+
+

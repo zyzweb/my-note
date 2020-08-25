@@ -3,7 +3,7 @@
     <template v-for="colConfig in colConfigs">
       <slot v-if="colConfig.slot" :name="colConfig.slot" />
       <el-table-column v-bind="colConfig" v-bind:key="colConfig.id" />
-    </template>  
+    </template>
   </el-table>
 </template>
 
@@ -13,9 +13,8 @@ export default {
     colConfigs: Array,
     tableData: Array
   },
-  data () {
-    return {
-    }
+  data() {
+    return {};
   }
-}
+};
 </script>

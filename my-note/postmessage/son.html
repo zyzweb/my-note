@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head><!-- 用http-server分别打开两个不同端口的 -->
+<body>
+  <p>son</p>
+  <div></div>
+  <script>
+    var div = document.querySelector('div')
+    window.addEventListener('message',function (e) {
+      console.log(e);
+      if(e.origin === 'http://127.0.0.1:8888') {
+        div.innerHTML = e.data
+      }
+      
+    })
+  </script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 # 192.168.123.217 家里无线 ipv4 地址
 
+# vscode 断点 vue项目 node_modules 普通项目
+
 ### vue-cli 已经配置了 scss less stylus 只需安装对应 loader 即可使用
 
 ### vue inspect > output.js vue inspect plugins 只查看 plugins
@@ -7,6 +9,10 @@
 ### chainWebpack 是链式修改，而 configureWebpack 更倾向于整体替换和修改 都能修改
 
 ### // vue-loader 是 webpack 的加载器，允许你以单文件组件的格式编写 Vue 组件
+
+<input v-model="sth" />
+<input :value="sth" @input="sth = $event.target.value" /> //两行代码等价
+
 var fm = new FormData(document.querySelector('form'));
   //formdata 要想看到值不能直接看到,只能调用get方法传入name才能看到值
   // console.log(fm.get('feature'));

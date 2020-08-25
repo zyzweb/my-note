@@ -34,20 +34,20 @@
             type: Array,
             default() {
               return [];
-            }
+            },
           },
           goods: {
             type: Array,
             default() {
               return [];
-            }
-          }
+            },
+          },
         },
         methods: {
           reverse() {
             // 定义数组倒序方法
             this.goods.reverse();
-          }
+          },
         },
         render(createElement) {
           // 使用render函数渲染DOM
@@ -61,7 +61,7 @@
             "div",
             {
               // * 作为子组件时的插槽名称
-              slot: "fly-table"
+              slot: "fly-table",
             },
             [
               createElement("h2", this.$slots.title),
@@ -69,28 +69,28 @@
                 // class 用于绑定类名，同v-bind:class的绑定方式
                 class: ["btn", "btn-text"],
                 style: {
-                  color: 'red'
+                  color: "red",
                 },
                 // attrs 用于绑定节点一般属性，如id、disabled、title等
                 attrs: {
                   disabled: false,
-                  title: "点击使数组倒序"
+                  title: "点击使数组倒序",
                 },
                 // domProps 用于绑定节点DOM属性，如innerHTML、innerText等
                 domProps: {
-                  innerText: "倒序"
+                  innerText: "倒序",
                 },
                 on: {
                   // 绑定事件，使用箭头函数以免创建函数作用域
                   click: () => {
                     this.goods.reverse();
-                  }
+                  },
                 },
                 // 自定义指令
                 directives: [],
                 // 其他属性
                 key: "btnReverse",
-                ref: "btnReverse"
+                ref: "btnReverse",
               }),
               createElement(
                 "table",
@@ -101,28 +101,26 @@
                     textAlign: "left",
                     lineHeight: "42px",
                     border: "1px solid #eee",
-                    userSelect: "none" //控制能够选择文本
-                  }
+                    userSelect: "none", //控制能够选择文本
+                  },
                 },
                 [
-                  createElement("tr", [
-                    this.fields.map(field => createElement("th", field.prop))
-                  ]),
-                  this.goods.map(item =>
+                  createElement("tr", [this.fields.map((field) => createElement("th", field.prop))]),
+                  this.goods.map((item) =>
                     createElement(
                       "tr",
                       {
                         style: {
-                          color: item.isMarked ? "#ea4335" : ""
-                        }
+                          color: item.isMarked ? "#ea4335" : "",
+                        },
                       },
-                      this.fields.map(field =>
+                      this.fields.map((field) =>
                         createElement(
                           "td",
                           {
                             style: {
-                              borderTop: "1px solid #eee"
-                            }
+                              borderTop: "1px solid #eee",
+                            },
                           },
                           [
                             field.prop !== "operate" // 如果不是操作列，显示文本  判断是生成span还是button
@@ -131,25 +129,25 @@
                                   // 否则显示按钮
                                   class: ["btn", "btn-text"],
                                   domProps: {
-                                    innerHTML: "<span>切换标记</span>"
+                                    innerHTML: "<span>切换标记</span>",
                                   },
                                   on: {
                                     click: () => {
                                       // 当按钮被点击时，切换该行文本标记状态（被标记时字体颜色为红色）
                                       item.isMarked = !item.isMarked;
-                                    }
-                                  }
-                                })
+                                    },
+                                  },
+                                }),
                           ]
                         )
                       )
                     )
-                  )
+                  ),
                 ]
-              )
+              ),
             ]
           );
-        }
+        },
       });
       // 声明 Vue 实例
       new Vue({
@@ -159,43 +157,43 @@
             fields: [
               {
                 label: "名称",
-                prop: "name"
+                prop: "name",
               },
               {
                 label: "数量",
-                prop: "quantity"
+                prop: "quantity",
               },
               {
                 label: "价格",
-                prop: "price"
+                prop: "price",
               },
               {
                 label: "",
-                prop: "operate"
-              }
+                prop: "operate",
+              },
             ],
             goods: [
               {
                 name: "苹果",
                 quantity: 200,
                 price: 6.8,
-                isMarked: false
+                isMarked: false,
               },
               {
                 name: "西瓜",
                 quantity: 50,
                 price: 4.8,
-                isMarked: false
+                isMarked: false,
               },
               {
                 name: "榴莲",
                 quantity: 0,
                 price: 22.8,
-                isMarked: false
-              }
-            ]
+                isMarked: false,
+              },
+            ],
           };
-        }
+        },
       });
     </script>
   </body>

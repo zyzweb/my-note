@@ -8,7 +8,7 @@
   <body><!-- 需要有name属性会提交到服务器,chrome才会表单自动填充 -->
     <form action="/" method="get" enctype="multipart/form-data">
       用户名:<input type="text" name="fname" autocomplete="on"/><br />
-      密码<input type="password" placeholder="请输入六位密码" maxlength="6" name="userPsw"><br/> <!-- 最多只能输6位 -->
+      密码<input type="password" placeholder="请输入六位密码" maxlength="6" name="userPsw" required><br/> <!-- 最多只能输6位 -->
       性别:<input type="radio" name="sex">男<input type="radio" name="sex" checked>女<br/>  <!-- 默认选中 -->
       邮箱: <input type="email" name="email" autocomplete="off" /><br />  <!-- 邮箱会自动校验 -->
       手机: <input type="number" name="phone" autocomplete="off" /><br />

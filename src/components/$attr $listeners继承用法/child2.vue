@@ -9,7 +9,7 @@
 <script>
 //child2继承了father传递给child1的$attrs同时也继承了father传递给child1的事件监听器
 export default {
-  inheritAttrs: false,
+  inheritAttrs: true,
   methods: {
     changeFunction() {
       this.$emit('upRocket')

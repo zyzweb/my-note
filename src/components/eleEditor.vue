@@ -1,26 +1,26 @@
 <template>
   <div id="app">
     <el-table :data="gridData" style="width: 100%">
-      <!-- <el-table-column
+      <el-table-column
         label="Operations"
         min-width="180">
         <template slot-scope="{row, index}">
-         <el-button icon="el-icon-edit"
-          @click="setEditMode(row, index)">
-        </el-button>
-         <el-button type="success" icon="el-icon-check"
-          @click="saveRow(row, index)">
-        </el-button>
+          <el-button icon="el-icon-edit"
+            @click="setEditMode(row, index)">
+          </el-button>
+          <el-button type="success" icon="el-icon-check"
+            @click="saveRow(row, index)">
+          </el-button>
         </template>
-      </el-table-column>-->
+      </el-table-column>
 
-      <el-table-column label="Name" min-width="180">
+      <el-table-column label="姓名" min-width="180">
         <editable-cell :show-input="row.editMode" slot-scope="{ row }" v-model="row.name">
           <span slot="content">{{ row.name }}</span>
         </editable-cell>
       </el-table-column>
 
-      <el-table-column min-width="150" label="Gender">
+      <el-table-column min-width="150" label="性别">
         <editable-cell :show-input="row.editMode" slot-scope="{ row }" editable-component="el-select" close-event="change" v-model="row.gender">
           <el-tag size="medium" :type="row.gender === 'M' ? 'primary' : 'danger'" slot="content">{{ row.gender === "M" ? "Male" : "Female" }}</el-tag>
 
@@ -31,7 +31,7 @@
         </editable-cell>
       </el-table-column>
 
-      <el-table-column label="Birth Date" min-width="250">
+      <el-table-column label="生日" min-width="250">
         <editable-cell
           :show-input="row.editMode"
           slot-scope="{ row }"
@@ -81,6 +81,14 @@ export default {
       ]
     };
   },
+  mounted() {
+    this.gridData = this.gridData.map(row => {
+      return {
+        ...row,
+        editMode: false
+      };
+    });
+  },
   methods: {
     setEditMode(row) {
       row.editMode = true;
@@ -89,14 +97,6 @@ export default {
       row.editMode = false;
     }
   },
-  mounted() {
-    this.gridData = this.gridData.map(row => {
-      return {
-        ...row,
-        editMode: false
-      };
-    });
-  }
 };
 </script>
 

@@ -8,12 +8,14 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 import 'element-ui/lib/theme-chalk/index.css';
+import './element-variables.scss'
 Vue.use(ElementUI)
 // import {Tabs,TabPane,} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 // Vue.use(Tabs)
 // Vue.use(TabPane)
 
+import './components/directives.js'
 import hocElTable from '@hoc-element/table'
 
 Vue.use(hocElTable)
@@ -25,9 +27,8 @@ Vue.use(VueMaterial)
 // import { Swipeout } from 'vux'
 // Vue.use(Swipeout)
 
-import loading from '@/components/loading组件/loading'
+import loading from '@/components/loading'
 Vue.use(loading)
-
 
 // 配置主题 -- 配置默认主题
 // Vue.material.registerTheme('default',{
@@ -94,5 +95,7 @@ new Vue({
 // 	template: '<App/>'
 // });
 
+
+console.log(Vue.version);
 
 
