@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",//调试node_modueles
+      "request": "launch",
+      "name": "plugin debugger",
+      "program": "${workspaceFolder}/node_modules\\@vue\\cli-service\\bin\\vue-cli-service.js",
+      "args": [
+        "build",
+        "--mode",
+        "wcm"
+      ]
+    },
+    {
+      "type": "chrome",  //调试vue项目
+      "request": "launch",  
+      "name": "vuejs:launch Chrome",  // 此项配置的名字，显示在调试页的配置选择下拉框中。
+      "url": "http://localhost:8080",  // chrome 自动启动时打开的网址(开发环境启动的本地调试入口)。
+      "webRoot": "${workspaceFolder}",  // 静态文件所在的本机目录(一般是项目根目录)。
+      "sourceMaps": true
+    },
+    {
+      "type": "node", //调试js
+      "request": "launch",
+      "name": "node",
+      "program": "${workspaceFolder}/test/test.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "chrome", //调试html
+      "request": "launch",
+      "name": "Chrome",
+      "file": "${workspaceRoot}/index.html"
+    }
+  ]
+}
