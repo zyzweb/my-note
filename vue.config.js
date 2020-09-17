@@ -30,10 +30,10 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 // const TerserPlugin = require('terser-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-
+const fs = require("fs");
 module.exports = {
   // productionSourceMap: false,
-  
+
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === "production") {
       // 为生产环境修改配置...
@@ -62,6 +62,10 @@ module.exports = {
         devtool: "source-map",
         devServer: {
           disableHostCheck: true, //阻止hostname检查   ngrok
+          https: {
+            key: fs.readFileSync(`${__dirname}/localhost+3-key.pem`),
+            cert: fs.readFileSync(`${__dirname}/localhost+3.pem`)
+          }
         },
       }
     }
