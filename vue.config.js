@@ -59,13 +59,19 @@ module.exports = {
       // devtool: 'eval'  //不生成source-map
     } else {
       return {
+        resolve: {
+          alias: {//使用含compile的vue版本
+            'vue$': 'vue/dist/vue.esm.js'
+          }
+        },
         devtool: "source-map",
         devServer: {
           disableHostCheck: true, //阻止hostname检查   ngrok
-          https: {
-            key: fs.readFileSync(`${__dirname}/localhost+3-key.pem`),
-            cert: fs.readFileSync(`${__dirname}/localhost+3.pem`)
-          }
+          // https: true //只设置这个会有https不安全提示
+          // https: {//https 不会有安全提示  需要有证书和秘钥配合    也可不用放在项目中
+          //   key: fs.readFileSync(`${__dirname}/localhost-key.pem`),
+          //   cert: fs.readFileSync(`${__dirname}/localhost.pem`)
+          // }
         },
       }
     }
