@@ -14,17 +14,20 @@
     },
     {
       "type": "chrome",  //调试vue项目
-      "request": "launch",  
+      "request": "launch",
       "name": "vuejs:launch Chrome",  // 此项配置的名字，显示在调试页的配置选择下拉框中。
       "url": "http://localhost:8080",  // chrome 自动启动时打开的网址(开发环境启动的本地调试入口)。
-      "webRoot": "${workspaceFolder}",  // 静态文件所在的本机目录(一般是项目根目录)。
-      "sourceMaps": true
+      "webRoot": "${workspaceFolder}/src",  // 静态文件所在的本机目录(一般是项目根目录)。
+      "breakOnLoad": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
     },
     {
       "type": "node", //调试js
       "request": "launch",
       "name": "node",
-      "program": "${workspaceFolder}/test/test.js",
+      "program": "${workspaceFolder}/my-note/node/get.js",
       "skipFiles": [
         "<node_internals>/**"
       ]

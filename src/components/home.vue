@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: zhuyuanzheng
+ * @Date: 2020-06-07 15:17:02
+ * @LastEditors: zhuyuanzheng
+ * @LastEditTime: 2020-09-15 10:41:23
+-->
 <template>
   <div class="home">
     <h3 class="nav">导航</h3>
@@ -37,7 +44,7 @@ export default {
     color:blueviolet;
   }
   a:hover {
-      color:green;
+    color:green;
   }
 }
 </style>

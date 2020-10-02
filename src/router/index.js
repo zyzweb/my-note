@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Author: zhuyuanzheng
+ * @Date: 2020-01-20 00:04:07
+ * @LastEditors: zhuyuanzheng
+ * @LastEditTime: 2020-09-23 17:00:41
+ */
 import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter); //模块化开发必须要use
@@ -20,29 +27,19 @@ const router = new VueRouter({
     { path: "/slot", component:() => import('@/components/slot-zyy-father')},
     { path: "/functional", component:() => import('@/components/函数式组件/functionComponent')},
     { path: "/slideBar", component:() => import('@/components/目录树递归组件/side-bar')},
-    { path:'/keep-alive', component:() => import('@/components/keep-alive表单demo/index')},
-    { path: "/keep-alive2", component:() => import('@/components/keep-alive用法/keep-alive2')},
     {
-      path: "/middle", 
+      path: "/middle",
       component: () => import('@/components/keep-alive表单demo/middle'),
       children: [
         { path: "", component:() => import('@/components/keep-alive表单demo/page')},
-        {path: "/agree", component:() => import('@/components/keep-alive表单demo/agree')},/* 必须在middle下面才能缓存 */
-      ]
-    },
-    { path: "/details", name: 'details',component:() => import('@/components/keep-alive表单demo/details')},
-    {
-      path: "/list",
-      component:() => import('@/components/keep-alive表单demo/listBox'),
-      children: [
-        { path: "", component:() => import('@/components/keep-alive表单demo/list'), },
+        {path: "agree", component:() => import('@/components/keep-alive表单demo/agree')},/* 必须在middle下面才能缓存 */
       ]
     },
     { path: "/i18n", name: 8888, component:() => import('@/components/vue-i18n') },
     { path: "/father", component:() => import('@/components/$attr $listeners继承用法/father')},
     // { path: "/test1", component:() => import('@/components/test1'), props: {keyword: '111'},},
     { path: "/test", component:() => import('@/components/test.vue'), props: {keyword: '111'}}, //直接通过keyword接收
-    // { path: "/test/:id", component:() => import('@/components/test.vue'), props: {keyword: '111'}}, //直接通过keyword接收
+    { path: "/testSon/:type", component:() => import('@/components/testSon.vue')},
     { path: "/gaizao", component:() => import('@/components/gaizao')},
     { path: "/easytable", component:() => import('@/components/vue-easytable')},
     { path: "/checked", component:() => import('@/components/绑定checked值')},
@@ -50,7 +47,7 @@ const router = new VueRouter({
     { path: "/popup", component:() => import('@/components/mint-ui使用/popup')},
     // { path: "/", component: test, meta: { keepAlive: false } }, // 自定义的一个属性,可以自己赋予一个值
     { path: "/editors", component:() => import('@/components/eleEditor')},
-    { path: "/multiStageTable", component:() => import('@/components/el-table多级表头/multiStageTable')},
+    { path: "/multiStageTable", component:() => import('@/components/element-ui/el-table多级表头/multiStageTable')},
     { path: "/vmodel", component:() => import('@/components/v-model/v-model')},
   ]
 });

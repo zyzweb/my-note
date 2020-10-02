@@ -1,5 +1,6 @@
 <template>
-  <div id="app" class="hhhh"> <!-- 会渲染出来 $el是它的子元素 -->
+  <div id="app" class="hhhh">
+    <!-- 会渲染出来 $el是它的子元素 -->
     <!-- <h1>这是根组件</h1> -->
 
     <!-- <router-link to="/gaizao">跳转改造</router-link> <br>
@@ -45,26 +46,26 @@ export default {
       ifArr: {
         first: true,
         second: false,
-        third: false
-      }
+        third: false,
+      },
     };
   },
   created() {
     //在页面加载时读取sessionStorage里的状态信息
-    if (sessionStorage.getItem("store")) {
-      this.$store.replaceState(
-        Object.assign(
-          {},
-          this.$store.state,
-          JSON.parse(sessionStorage.getItem("store"))
-        )
-      );
-    }
+    // if (sessionStorage.getItem("store")) {
+    //   this.$store.replaceState(
+    //     Object.assign(
+    //       {},
+    //       this.$store.state,
+    //       JSON.parse(sessionStorage.getItem("store"))
+    //     )
+    //   );
+    // }
 
-    //在页面刷新时将vuex里的信息保存到sessionStorage里
-    window.addEventListener("beforeunload", () => {
-      sessionStorage.setItem("store", JSON.stringify(this.$store.state));
-    });
+    // //在页面刷新时将vuex里的信息保存到sessionStorage里
+    // window.addEventListener("beforeunload", () => {
+    //   sessionStorage.setItem("store", JSON.stringify(this.$store.state));
+    // });
   },
   methods: {},
   mounted() {
@@ -78,10 +79,10 @@ export default {
     // })
     //test
     //test
-  }
+  },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .el-scrollbar {
   .el-scrollbar__bar {
     opacity: 1 !important;

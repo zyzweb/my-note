@@ -6,7 +6,8 @@
     "dev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "node": "node my-note/node/server.js"
+    "node": "nodemon my-note/node/get.js",
+    "rimraf": "rimraf node_modules"
   },
   "dependencies": {
     "@hoc-element/table": "^0.2.3",

@@ -1,3 +1,4 @@
+
 //1.谁调用this指向谁
 //2.多层调用指向它前面的那个  eg: obj.a.b() 与 obj1.obj.a.b() 都是指向a
 //3.构造函数里的this指向它实例化的对象(有返回值的话指向返回的函数或对象)
@@ -9,32 +10,31 @@
 var obj = {
     name: function () {
     console.log(this); //function name(){}
-        setTimeout(() => 
+        setTimeout(() =>
         {console.log(this)}) //function name(){}
     }
 }
 var sss = obj.name()  //这两个this都是指向obj这个对象 前一个obj调用指向obj 后一个指向父级name所在作用域的this
 
-var point = { 
-    x : 0, 
-    y : 0, 
-    moveTo : function(x, y) { 
-        this.x = this.x + x; 
+var point = {
+    x : 0,
+    y : 0,
+    moveTo : function(x, y) {
+        this.x = this.x + x;
         this.y = this.y + y;
-        console.log(this.x); 
-        console.log(this.y); 
-    } 
-}; 
+        console.log(this.x);
+        console.log(this.y);
+    }
+};
 point.moveTo(1, 1) // 1,1   this指向的是point this.x = 0 + 1
 
 
 window.val = 1;
- 
 var obj = {
     val: 2,
     dbl: function () {
-        this.val *= 2; 
-        val *= 2;       
+        this.val *= 2;
+        val *= 2;
         console.log('val:', val);
         console.log('this.val:', this.val);
     }

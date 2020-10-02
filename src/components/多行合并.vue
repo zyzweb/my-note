@@ -8,7 +8,7 @@
     </el-table>
   </div>
 </template>
-  
+
   <script>
 export default {
   data() {
@@ -147,7 +147,7 @@ export default {
         if (obj2[k]) obj2[k]++;
         else obj2[k] = 1;
       }
-      
+
       //保存结果{el-'元素'，count-出现次数}
       for (var o in obj2) {
         for (let i = 0; i < obj2[o]; i++) {

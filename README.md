@@ -9,6 +9,7 @@
 ### chainWebpack 是链式修改，而 configureWebpack 更倾向于整体替换和修改 都能修改
 
 ### // vue-loader 是 webpack 的加载器，允许你以单文件组件的格式编写 Vue 组件
+### https://sourcegraph.com/github.com/zyzweb/my-note
 
 <input v-model="sth" />
 <input :value="sth" @input="sth = $event.target.value" /> //两行代码等价
@@ -133,3 +134,17 @@ router,
 components: { App },
 template: '<App/>'
 });
+
+###  runtime: 仅包含运行时,不包含编译器.就是没有compile的内容,所以runtime类型的文件会比较轻小.但是无法使用字符串模板
+###  common: cjs规范,为什么会有commonjs规范呢,因为我们可以用于webpack1,或者进行SSR
+###  umd: (universal module definition)兼容cjs和amd规范,用于浏览器
+
+zhihu-particle
+
+mock    Apifox   yapi
+
+ speed-measure-webpack-plugin  分析构建速度
+### 优化构建速度
+ - 1.减少执行构建的模块数量为目的的方向
+ - 2.以提升单个模块构建速度为目的的方向
+ - 3.以及通过并行构建以提升整体构建效率的方向

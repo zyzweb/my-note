@@ -16,7 +16,6 @@ class Cat extends Animal {
     super(name, age); //覆盖父类的参数   继承了constructor
     this.color = color; //子类自己的属性必须放在super之后
   }
-
   jiao() {
     console.log(`我们一起学 ${this.name} 叫 miao~miao~miao`);
   }

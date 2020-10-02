@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>属性draggable为true</title>
-    <!-- 
+    <!--
         让网页中的某些元素可以拖拽
         元素不是你想拽，想拽就能拽
         图片可以拽，其他的默认不能拽
@@ -18,8 +18,9 @@
             width: 100px;
             height: 100px;
             background-color: #f00;
-
-            position: absolute;
+        }
+        .position {
+          position: absolute;
         }
     </style>
 </head>
@@ -27,9 +28,10 @@
 <body>
 
 
-    <img src="images/pl.png" alt="">
+    <img src="./111.png" alt="">
 
-    <div class="box" draggable="true"></div>
+    <div class="box" ></div> <br/>
+    <div class="box position" draggable="true"></div>
 
 </body>
 
@@ -37,7 +39,7 @@
 
 <script>
     //找到div
-    var box = document.querySelector('.box');
+    var box = document.querySelector('.position');
 
     //全局变量记录鼠标按下时相对于div左上角的坐标
     var offsetX, offsetY;
@@ -65,7 +67,7 @@
 
     //拖拽结束事件
     box.ondragend = function (e) {
-
+        console.log('拖拽结束');
         // console.log(e);
         box.style.left = e.pageX - offsetX + "px";
         box.style.top = e.pageY - offsetY + "px";

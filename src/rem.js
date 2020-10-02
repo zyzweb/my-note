@@ -1,19 +1,3 @@
-(function(doc, win) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',//横竖屏切换会触发
-        recalc = function() {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';//750px 对应100px
-        };
-    if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
-
-
-
-
 
 window.addEventListener('resize', setHtmlFontSize)
 setHtmlFontSize();
@@ -22,7 +6,7 @@ function setHtmlFontSize() {
     // 根据屏幕的宽度来改变根元素的字体大小的值
     // 当前屏幕 / 标准的375屏幕 求得你当前屏幕是标准屏幕的多少倍  * 标准屏幕根元素的字体大小
     // 当前屏幕的宽度 / 375 * 100
-    // 假如当前750/375 = 2 * 100 == 200px  
+    // 假如当前750/375 = 2 * 100 == 200px
     // 1. 当前屏幕的宽度
     var windowWidth = document.documentElement.offsetWidth;
     // 限制最大屏幕 和最小屏幕

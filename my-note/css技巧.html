@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <base href="http://www.example.com/">
+</body>
+</html>
+
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+/* 设置初始属性 */
+  html {
+    box-sizing: border-box;
+  }
+  *,*:before,*:after {
+    box-sizing: inherit;
+  }
+
+/* 设置默认行高 */
+  body {
+    line-height: 1.5;
+  }
+
+/* 设置居中布局 */
+  html,body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    align-items: center;
+  }
+
+/* 用svg来代替 png jpg gif */
+  .logo {
+    background: url('logo.svg');
+  }
+
+/* 设置统一间距 */
+* + * {
+  margin-top: 1.5rem;
+}
+.intro > * {
+  margin-bottom: 1.25rem;
+}
+
+/* 显示空连接 */
+a[href^='http']:empty::before {
+  content: attr(href);
+}
+
+/* rem em 分别相对根元素和自身font-size */
+article {
+  font-size: 1.25rem;
+}
+h2 {
+  font-size: 2em;
+  line-height: 2; /* 相对自身font-size */
+}
+</style>

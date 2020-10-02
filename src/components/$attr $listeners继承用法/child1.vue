@@ -15,7 +15,7 @@ export default {
   components: {
     child2
   },
-  inheritAttrs: false,// true/false 体现在子组件根元素属性的不同
+  inheritAttrs: true,// true/false 体现在子组件是否有 coo="hello father"  $attrs保持不变
   mounted() {
     console.log('this.$attrs', this.$attrs);
     console.log('this.$listeners', this.$listeners);

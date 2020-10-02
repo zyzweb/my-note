@@ -5,17 +5,22 @@
         <component
           :key="colConfig.id"
         	v-else-if="colConfig.component"
-        	:is="colConfig.component" 
+        	:is="colConfig.component"
         	:col-config="colConfig">
       	</component>
      		<el-table-column v-else v-bind="colConfig" :key="colConfig.id" />
-      </template>  
+      </template>
   </el-table>
 </template>
 
 <script>
 export default {
   props: { colConfigs: Array, tableData: Array }
+  data () {
+    return {
+      good: true,
+    }
+  }
 };
 </script>
 

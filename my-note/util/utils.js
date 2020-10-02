@@ -1,3 +1,5 @@
+//判断是否中文
+/[\u4e00-\u9fa5]/.test('中文')
 // 判断是否在微信
 function isweixin() {
   var ua = window.navigator.userAgent.toLowerCase();
@@ -12,7 +14,7 @@ function isweixin() {
 //判断函数执行次数
 function foo() {
   //其他函数逻辑blah blah。。。
-  console.count("foo 被执行的次数：");
+  
 }
 foo();
 foo();
@@ -20,12 +22,12 @@ foo();
 
 //检测一段代码的执行时间
 //方法一:
-console.time("start"); // start和后面要一致
+ // start和后面要一致
 var arr = new Array(1000000);
 for (var i = 0; i < arr.length; i++) {
   arr[i] = new Object();
 }
-console.timeEnd("start");
+
 
 //方法二:
 var start = new Date().getTime();
@@ -33,12 +35,12 @@ var array = new Array(1000000);
 for (let i = 0; i < array.length; i++) {
   array[i] = new Object();
 }
-console.log(new Date().getTime() - start);
+
 
 //渲染对象数组
 let arr = [{ a: 2 }, { b: 3 }];
 arr.map(i => ({ ...i, c: 5 }));
-console.log(arr.map(i => ({ ...i, c: 5 })));
+
 
 //生成空数组
 Array.apply(null, { length: 10 }); // === new Array(10).fill(1)
@@ -161,6 +163,8 @@ ajax = function(met, url, data) {
   });
 };
 
+
+
 /**
  * 功能 图片压缩以及添加水印
  * @param file：一个是文件(类型是图片格式)，或是base64
@@ -271,7 +275,7 @@ function photoCompress(file, obj, callback) {
 var arr = [{ name: 1, age: 2, sex: null }];
 // var b = arr
 // b[0].name = 33
-// console.log(arr);
+// 
 
 var objDeepCopy = function(source) {
   var sourceCopy = source instanceof Array ? [] : {};
@@ -285,8 +289,7 @@ var objDeepCopy = function(source) {
 };
 var b = objDeepCopy(arr);
 b[0].name = 33;
-console.log(b);
-console.log(arr);
+
 
 //数字千分位隔开
 const numFormat = num => {
@@ -323,7 +326,7 @@ var cc = [{id:2,name:'zhang'},{id:1,name:'li'},{id:3,name:'wang'}]
 cc.sort((a,b) => {
     return a.id - b.id
 })
-console.log(cc); // [{id:1,name:'li'},{id:2,name:'zhang'},{id:3,name:'wang'}]
+ // [{id:1,name:'li'},{id:2,name:'zhang'},{id:3,name:'wang'}]
 
 
 //获取当月1号
@@ -372,8 +375,8 @@ const validate = (schema, values) => {
   return true;
 }
 
-console.log(validate(schema, {first:'Bruce'})); // false
-console.log(validate(schema, {first:'Bruce',last:'Wayne'})); // true
+ // false
+ // true
 
 
 //图片转blob
@@ -426,4 +429,44 @@ function compressImage(file) {
       || (isZero ? !value && value == 0:false) 
       || (typeof (value) === "string" ? value.trim() == "" : false);
   }
+
+//时间格式化    parseTime(new Date(),'{y}-{m}-{d} {h}:{i}:{s} {a}')
+  function parseTime(time, cFormat) {
+    if (arguments.length === 0) {
+      return null
+    }
+    const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
+    let date
+    if (typeof time === 'object') {
+      date = time
+    } else {
+      if ((typeof time === 'string') && (/^[0-9]+$/.test(time))) {
+        time = parseInt(time)
+      }
+      if ((typeof time === 'number') && (time.toString().length === 10)) {
+        time = time * 1000
+      }
+      date = new Date(time)
+    }
+    const formatObj = {
+      y: date.getFullYear(),
+      m: date.getMonth() + 1,
+      d: date.getDate(),
+      h: date.getHours(),
+      i: date.getMinutes(),
+      s: date.getSeconds(),
+      a: date.getDay()
+    }
+    const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) => {
+      const value = formatObj[key]
+      // Note: getDay() returns 0 on Sunday
+      if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value ] }
+      return value.toString().padStart(2, '0')
+    })
+    return time_str
+  }
+
+
+  
+ 
 

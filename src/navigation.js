@@ -7,7 +7,6 @@ const data = [
     {path:'/functional',name:'函数式组件(functional)'},
     {path:'/slideBar',name:'递归组件(目录树)'},
     {path:'/keep-alive',name:'keep-alive表单demo'},
-    {path:'/keep-alive2',name:'keep-alive用法2'},
     {path:'/i18n',name:'i18n国际化'},
     {path:'/father',name:'$attr $listeners继承用法'},
     {path:'/gaizao',name:'父子组件传值'},

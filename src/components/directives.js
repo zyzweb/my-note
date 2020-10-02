@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: zhuyuanzheng
+ * @Date: 2020-08-11 22:58:59
+ * @LastEditors: zhuyuanzheng
+ * @LastEditTime: 2020-09-08 11:32:21
+ */
 import Vue from "vue";
 
 // v-dialogDrag: 弹窗拖拽属性
@@ -20,7 +27,6 @@ Vue.directive("dialogDrag", {
     })();
 
     dialogHeaderEl.onmousedown = (e) => {
-      debugger
       // 鼠标按下，计算当前元素距离可视区的距离
       const disX = e.clientX - dialogHeaderEl.offsetLeft;
       const disY = e.clientY - dialogHeaderEl.offsetTop;

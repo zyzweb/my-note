@@ -64,7 +64,8 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
           }
         },
-        devtool: "source-map",
+        // devtool: "source-map",
+        // devtool: false,//最快的构建速度
         devServer: {
           disableHostCheck: true, //阻止hostname检查   ngrok
           // https: true //只设置这个会有https不安全提示
