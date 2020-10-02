@@ -8,7 +8,7 @@
   export default {
     data () {
       return {
-
+                console.log(1111);
       }
     },
     created() {
@@ -24,6 +24,6 @@
 </script>
 
 <style lang='scss'>
-  
+
 </style>
 
