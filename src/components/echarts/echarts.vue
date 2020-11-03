@@ -124,7 +124,9 @@ export default {
       value2: ""
     };
   },
-  mounted() {}
+  mounted() {
+    console.log(111)
+  }
 };
 </script>
 

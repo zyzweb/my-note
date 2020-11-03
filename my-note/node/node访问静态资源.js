@@ -12,10 +12,4 @@ app.listen(90,console.log("start 90 OK"))
 
 //访问 http://localhost:90
 
-var app2 = express()
-app2.get('/', function (req, res) {
-  res.header('Access-Control-Allow-Origin','*')
-  res.send('你好')
-})
-app2.listen(91, console.log("start 91 OK"))
 

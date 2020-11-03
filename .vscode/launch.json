@@ -19,6 +19,9 @@
       "url": "http://localhost:8080",  // chrome 自动启动时打开的网址(开发环境启动的本地调试入口)。
       "webRoot": "${workspaceFolder}/src",  // 静态文件所在的本机目录(一般是项目根目录)。
       "breakOnLoad": true,
+      "skipFiles": [
+        "**/node_modules/**"
+      ],
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*"
       }
@@ -27,7 +30,7 @@
       "type": "node", //调试js
       "request": "launch",
       "name": "node",
-      "program": "${workspaceFolder}/my-note/node/get.js",
+      "program": "${workspaceFolder}/my-note/node/StudentManagerSystem/src/app.js",
       "skipFiles": [
         "<node_internals>/**"
       ]

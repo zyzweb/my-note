@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "multiparty": "^4.2.1"
+    "multiparty": "^4.2.1",
+    "date-format": "^1.2.0"
   }
 }
