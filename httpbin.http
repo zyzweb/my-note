@@ -1,0 +1,64 @@
+### 第一个HTTP测试
+//httpbin.org 这个网站能测试 HTTP 请求和响应的各种信息，
+//比如 cookie、ip、headers 和登录验证等，且支持 GET、POST
+// 等多种方法，对 web 开发和测试很有帮助。
+GET http://httpbin.org/ip
+
+
+### 第二个HTTP测试
+GET http://httpbin.org/user-agent
+
+
+### 发送JSON数据
+POST https://httpbin.org/post
+Content-Type: application/json
+//这里必须有一空行
+
+{
+  "query": {"a":1,"b":2}
+}
+
+
+### 发送form-urlencoded数据
+POST https://httpbin.org/post
+Content-Type: application/x-www-form-urlencoded
+//这里必须有一空行
+
+a=1&b=2
+
+
+### 模拟浏览器请求一个网页
+GET https://httpbin.org/
+Accept: text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6
+Connection: keep-alive
+Cookie: BIDUPSID=CF844808573053195E4D5760343A0DE0; PSTM=1553656042; delPer=0; BD_HOME=0; BD_UPN=12314753; BD_CK_SAM=1; PSINO=5; H_PS_645EC=6b64FQkUWvWCrKmgQDniAqN96VXzdqVpuyfqvfkw4NzIO0Y4DAo2FNn4hlI; BAIDUID=E4E13D8CA9AC39C0994B17987F621780:FG=1; H_PS_PSSID=1464_21082_28721_28557_28697_28585_28638_26350_28604_28606
+Host: www.baidu.com
+Referer: https://www.baidu.com/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36
+X-Requested-With: XMLHttpRequest
+
+
+### 模拟百度首页
+GET https://www.baidu.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,la;q=0.7
+Cache-Control: no-cache
+Connection: keep-alive
+Cookie: BD_UPN=12314753; BDICON=10294984.98; MSA_WH=375_667; BIDUPSID=2CE1EC589C1C1464B590D92B1A69D70F; PSTM=1595001737; BAIDUID=C5E16DA528A70F03AA19F643853850D9:FG=1; H_WISE_SIDS=156537_148867_156516_155803_146732_154954_154189_155939_155344_157171_156522_156389_154619_157188_154147_157028_153447_156606_157696_154639_110085; sug=3; sugstore=1; ORIGIN=2; bdime=0; BDUSS=EVTU213R0NWdUNSSUl4RWM1TGN4bnpsdXBIS0VHYTRqUX41VUM0SWZ4OTV0Y05mSVFBQUFBJCQAAAAAAAAAAAEAAAAXAmJz1u3W7bTzyfFsb3ZlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkonF95KJxfO; BDUSS_BFESS=EVTU213R0NWdUNSSUl4RWM1TGN4bnpsdXBIS0VHYTRqUX41VUM0SWZ4OTV0Y05mSVFBQUFBJCQAAAAAAAAAAAEAAAAXAmJz1u3W7bTzyfFsb3ZlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkonF95KJxfO; BDRCVFR[fb3VbsUruOn]=0IJFhm_ZczYfj0znj01n1bsg1f1gv99; delPer=0; BD_CK_SAM=1; PSINO=7; BDRCVFR[n9IS1zhFc9f]=mk3SLVN4HKm; BDORZ=FFFB88E999055A3F8A630C64834BD6D0; H_PS_645EC=40e7YV75d1FJueGmZt8WUs9oAqnGmd3xR6ybhSw2czou7EcFJJZjxaKCXMMRAIyy7Ie7mIYcshus; BA_HECTOR=ak8ga484ah2401bdnn1fq32ql0p; BD_HOME=1; H_PS_PSSID=32755_1444_32876_32949_31254_32970_32705_7516_32961_32937_32117
+DNT: 1
+Host: www.baidu.com
+Pragma: no-cache
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36
+
+
+### 定义一个变量
+@testurl = http://httpbin.org/cookies/set?name=value
+GET  {{testurl}}
