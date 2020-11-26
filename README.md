@@ -1,3 +1,4 @@
+https://scto.subscribelink.xyz/link/V42uDImjVFNIx2Ys?list=shadowrocket
 # duanzihuang
 # 192.168.123.217 家里无线 ipv4 地址
 
