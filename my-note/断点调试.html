@@ -28,10 +28,13 @@
         a.style.backgroundColor = 'red' //改变节点属性断点
         var result = get(1);
         alert(result);
+        console.log("result", result)
       };
 
       function get(b) {
+        console.log(111)
         return ++b;
+
       }
 
       b.onclick = function() {

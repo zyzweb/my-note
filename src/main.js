@@ -3,7 +3,6 @@ import App from './App.vue'
 import store from './store'
 import '@/styles/normalize.css'
 // import './rem'  //rem适配
-
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import './element-variables.scss'

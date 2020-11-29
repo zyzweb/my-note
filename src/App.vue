@@ -47,6 +47,8 @@ export default {
         first: true,
         second: false,
         third: false,
+        second: false,
+        third: false,
       },
     };
   },
@@ -83,6 +85,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+#app {
+  color: red;
+}
+.hhhh {
+  color: red;
+}
 .el-scrollbar {
   .el-scrollbar__bar {
     opacity: 1 !important;

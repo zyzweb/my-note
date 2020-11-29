@@ -19,16 +19,20 @@ export default {
   methods: {
     reciveRocket() {
       console.log("father组件")
+      
     }
   }
 }
 </script>
 <style scoped>
-.father{
+.father {
   width: 500px;
   height: 500px;
   padding: 10px;
   color: #f00;
-  border:1px solid #f00;
+  border: 1px solid #f00;
+  display: inline-block;
+  text-align: center;
+  background-color: #999;
 }
 </style>

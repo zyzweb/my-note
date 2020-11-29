@@ -8,7 +8,12 @@
   export default {
     data () {
       return {
-
+          good: [
+            {name:1,age:2},
+            {name:1,age:2},
+            {name:1,age:2},
+            {name:1,age:2},
+          ]
       }
     },
     created() {

@@ -24,6 +24,10 @@ function setHtmlFontSize() {
     //4. 把当前计算的html 字体大小设置到页面的html元素上就可以
     document.querySelector('html').style.fontSize = htmlFontSize + 'px';
 }
+const a = 100
+console.log(a)
+ const aa = require('element-ui')
+ const bb = require('jquery')
 
 
 
