@@ -1,3 +1,4 @@
+https://scto.subscribelink.xyz/link/V42uDImjVFNIx2Ys?list=shadowrocket
 # duanzihuang
 # 192.168.123.217 家里无线 ipv4 地址
 
@@ -139,6 +140,10 @@ template: '<App/>'
 ###  runtime: 仅包含运行时,不包含编译器.就是没有compile的内容,所以runtime类型的文件会比较轻小.但是无法使用字符串模板
 ###  common: cjs规范,为什么会有commonjs规范呢,因为我们可以用于webpack1,或者进行SSR
 ###  umd: (universal module definition)兼容cjs和amd规范,用于浏览器
+
+DOMContentLoaded —— 浏览器已经完全加载了 HTML，DOM 树已经构建完毕，但是像是 <img> 和样式表等外部资源可能并没有下载完毕。
+load —— 浏览器已经加载了所有的资源（图像，样式表等）。
+beforeunload/unload —— 当用户离开页面的时候触发。
 
 zhihu-particle
 
