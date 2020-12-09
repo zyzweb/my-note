@@ -1,3 +1,4 @@
+https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 [SwitchyOmega Conditions]
 ; Require: SwitchyOmega >= 2.3.2
 ; Date: 2020/12/9
