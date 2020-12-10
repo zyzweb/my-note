@@ -118,3 +118,5 @@ javascript: (function () {
     document.body.innerHTML += "<style>html * { outline: 1px solid red }</style>";
   }
 })();
+
+https://mengqi92.github.io/2020/07/17/hide-files-from-git/
