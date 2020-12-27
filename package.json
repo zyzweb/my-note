@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve --open",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "node": "nodemon my-note/node/get.js",
@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@hoc-element/table": "^0.2.3",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
     "axios": "^0.19.0",
     "better-scroll": "^2.0.4",
     "browserslist": "^4.12.0",
