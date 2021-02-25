@@ -7,7 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "node": "nodemon my-note/node/get.js",
-    "rimraf": "rimraf node_modules"
+    "rimraf": "rimraf node_modules",
+    "start-devtools": "vue-devtools",
+    "devs": "run-p start-devtools dev"
   },
   "dependencies": {
     "@hoc-element/table": "^0.2.3",
@@ -57,6 +59,7 @@
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "@vue/devtools": "^5.3.4",
     "babel-eslint": "^10.0.1",
     "compression-webpack-plugin": "^4.0.0",
     "date-format": "^2.1.0",
