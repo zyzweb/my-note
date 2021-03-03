@@ -1,0 +1,1115 @@
+一般规范
+
+命名规范
+
+命名分类
+camelCase（驼峰式，即小驼峰命名，eg: userInfo)
+PascalCase（帕斯卡命名式，即大驼峰命名，eg: UserInfo）
+kebab-case（短横线连接式，eg: user-info）
+snake_case（下划线连接式，eg:user_info）
+
+变量命名
+命名方式：小驼峰
+命名规范：类型+对象描述或属性的方式
+// bad
+var getTitle = "LoginTable"
+
+// good
+let tableTitle = "LoginTable"           
+
+函数命名
+命名方式：小驼峰
+命名规范：建议使用动宾短语
+动词   含义                 
+can   判断是否可执行某个动作  
+has   判断是否有某个值
+is    判断是否为某个值
+get   获取某个值
+set   设置某个值
+
+常量命名
+命名方式：全部大写
+命名规范：使用大写字母和下划线来组合命名，下划线用以分割单词
+const MAX_COUNT = 10;
+CONST URL = 'http://test.host.com';
+
+
+类的命名
+命名方式：大驼峰
+function TextNode() {
+
+}
+
+
+类的成员命名
+公共属性和方法：小驼峰，同变量命名
+私有属性和方法：前缀为下划线（_），后面与公共的属性方法的命名保持一致
+function Student(name) {
+  var _name = name; // 私有成员
+  
+  // 公共方法
+  this.getName = function() {
+    return _name;
+  }
+}
+
+
+注释规范
+
+单行注释
+1、单独一行：// 双斜线与注释文字之间保留一个空格
+
+2、在代码后面添加注释：// 双斜线与代码之间保留一个空格，并且// 双斜线与注释文字之间保留一个空格
+
+// 调用了一个函数
+setTitle();
+
+var maxCount = 10; // 设置最大值
+
+
+多行注释
+若开始（/*）和结束（*/）都在同一行，推荐采用单行注释
+若至少三行注释时，第一行为/*，最后行为*/，其他行以*开始，并且注释文字与*保留一个空格
+/**
+ * 代码执行到这里后会调用setTitle()函数
+ * setTitle():设置title的值
+ */
+setTitle();
+
+
+函数（方法）注释
+函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识
+参数和返回值注释必须包含类型信息，且不允许省略参数的说明
+/**
+ * 函数描述
+ *
+ * @param {string} p1 参数1的说明
+ * @param {string} p2 参数2的说明，比较长
+ *        那就换行了
+ * @param {number=} p3 参数3的说明（可选）
+ * @return {Object} 返回值描述
+ */
+function foo(p1, p2, p3) {
+  var p3 = p3 || 10;
+  return {
+    p1: p1,
+    p2: p2,
+    p3: p3
+  };
+}
+
+
+常用注释关键字：
+
+类型定义
+语法示例
+解释
+String
+{string}
+--
+Number
+{number}
+--
+Boolean
+{boolean}
+--
+Object
+{Object}
+--
+Function
+{Function}
+--
+RegExp
+{RegExp}
+--
+Array
+{Array}
+--
+Date
+{Date}
+--
+单一类型集合
+{Array.<string>}
+string类型的数组
+多类型
+{(number | boolean)}
+可能是number类型，也可能是boolean类型
+允许为null
+{?number}
+可能是number，也可能是null
+不允许null
+{!Object}
+Object类型，但不是null
+参数可选
+@param {string=} name
+可选参数，=为类型后缀
+可变参数
+@param {...number} args
+变长参数，...为类型前缀
+任意类型
+{*}
+任意类型
+需要添加注释的地方
+
+代码注释在一个项目的后期维护中显得尤为重要，所以我们要为每一个被复用的组件编写组件使用说明。为组件中每一个方法编写方法说明。
+
+以下情况，务必添加注释：
+
+1、公共组件使用说明
+2、各组件中重要函数或类说明
+3、复杂的业务逻辑处理说明
+4、特殊情况的代码处理说明，对于代码中特殊用途的变量、存在临界值、使用了某种算法或思路等需要进行注释描述
+5、多重if判断语句
+
+
+Vue规范
+
+
+Vue项目规范
+
+目录、文件、组件命名规范
+1、目录
+目录统一使用小驼峰命名。
+
+2、组件文件
+命名遵循PascalCase约定。  组件文件除index.vue之外，一律采用PascalCase（大驼峰）写法
+组件名建议始终用多个单词，跟组件App除外。  如BookItem.vue，单独的Book.vue不推荐
+组件的使用遵循kebab-case约定
+3、其他文件
+js的类文件使用PascalCase，如UserInfo.js
+其他类型js文件、css文件，使用kebab-case风格，如user-detail.js，user-detail.css，user-avatar.png
+
+
+Vue开发规范
+
+Vue文件结构
+基本结构
+      顺序：template ->script->style。一个组件尽量不要超过200行，页面包含独立部分时尽量分离成子组件。
+
+组件/实例的选项顺序
+-name        (全局引用)
+-components  (模版依赖)
+-directives  (指令)
+-filters     (过滤器)
+-mixins      (组合)
+-props       (接口)
+-data        (本地状态属性)
+-computed    (计算属性)
+-watch       (监听)
+-created     (生命周期函数)
+-mounted     ...
+-methods     (方法)
+
+
+组件开发规范
+1、注册组件
+    注册组件的时候，全部使用PascalCase（大驼峰）
+
+import UserBook form './user/UserBook'
+
+
+2、props命名规范
+在声明prop的时候，其命名应该始终使用camelCase（小驼峰），而在模板和JSX中应该始终使用kebab-case。我们内部都用小驼峰。
+// good
+props: {
+  greetingText: String
+}
+<WelcomeMessage greetingText="hi"/>
+
+
+prop定义应该尽量详细
+提供默认值
+使用type属性校验类型
+// bad
+props: ['status']
+
+// good
+props: {
+  status: {
+    type:String,
+    validator:function(value) {
+      return [
+        'syncing',
+        'synced',
+        'error'
+      ].indexOf(value) !== -1
+    }
+  }
+}
+
+
+3、methods命名规范
+驼峰式命名，统一使用动词或者动词+名次形式
+// bad
+go、nextPage、show、login、get_code
+
+//good
+jumpPage、openCarInfoDiaLog
+
+
+请求数据方法，以data结尾
+// bad
+takeData、confirmData、getList、postForm
+
+//good
+getListData、postFormData
+
+
+尽量使用常用单词开头（set、get、has、is）
+
+
+4、多个属性的html元素规范
+     多个特性的元素，占据一行过长时，应该分多行撰写，每个特性一行。（增强更易读）
+
+// bad
+<img src="https://vuejs.org/images/logo.png" alt="Vue Logo">
+<my-component foo="fooattribute" bar="barattribute" baz="bazattribute"></my-component>
+
+// good
+<img
+  src="https://vuejs.org/images/logo.png"
+  alt="Vue Logo"
+>
+<my-component
+  foo="fooattribute"
+  bar="barattribute"
+  baz="bazattribute"
+>
+</my-component>
+
+
+5、元素属性的顺序：原生属性放前面，指令放后面
+-class
+-id,ref
+-name
+-data-*
+-src,for,type,href,value,max-length,max,min,pattern
+-title,alt,placeholder
+-aria-*,role
+-required,readonly,disabled
+-is
+-v-for
+-key
+-v-if
+-v-else-if
+-v-else
+-v-show
+-v-cloak
+-v-pre
+-v-once
+-v-model
+-v-bind,:
+-v-on,@
+-v-html
+-v-text
+
+
+6、指令规范
+指令有缩写则一律统一采用缩写
+// bad
+v-bind:code="code"
+v-on:click="getUserData"
+
+// good
+:code="code"
+@click="getUserData"
+
+
+v-for 循环必须加上 key 属性，在整个 for 循环中 key 需要唯一
+<!-- bad -->
+<ul>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+</ul>
+
+
+<!-- good -->
+<ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+    </li>
+</ul>
+
+
+v-for 循环必须加上 key 属性，在整个 for 循环中 key 需要唯一
+<!-- bad -->
+<ul>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+</ul>
+
+
+<!-- good -->
+<ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+    </li>
+</ul>
+
+
+避免 v-if 和 v-for 同时用在一个元素上（性能问题），以下两种解决方案
+a、将数据替换为一个计算属性，让其返回过滤后的列表
+
+  <!-- bad -->
+  <ul>
+    <li v-for="user in users" v-if="user.isActive" :key="user.id">
+      {{ user.name }}
+    </li>
+  </ul>
+
+
+  <!-- good -->
+  <ul>
+    <li v-for="user in activeUsers" :key="user.id">
+      {{ user.name }}
+    </li>
+  </ul>
+
+
+  <script>
+  computed: {
+    activeUsers: function () {
+      return this.users.filter(() => user.isActive)
+    }
+  }
+  </script>
+
+
+b、将 v-if 移动至容器元素上 (比如 ul, ol)
+
+  <!-- bad -->
+  <ul>
+    <li v-for="user in users" v-if="shouldShowUsers" :key="user.id">
+      {{ user.name }}
+    </li>
+  </ul>
+
+
+  <!-- good -->
+  <ul v-if="shouldShowUsers">
+    <li v-for="user in users" :key="user.id">
+      {{ user.name }}
+    </li>
+  </ul>
+
+
+7、组件样式设置作用域
+    对于应用来说，顶级App组件和布局组件中的样式可以是全局的，但是其他所有组件都应该是有作用域的。
+
+
+
+HTML规范
+
+语义化
+正确合理使用nav，header，article，section等语义标签，不要全篇div
+结构、样式、行为三者分离
+尽量在文档和模板中只包含结构性的HTML
+将所有表现代码，移入样式表中
+将所有动作行为，移入脚本之中
+HTML只关注内容
+HTML只显示展示内容信息
+不要引入一些特定的HTML结构来解决一些视觉设计问题，多考虑使用伪元素:before、:after
+
+
+
+
+JS规范
+
+
+一般规范
+
+
+使用严格等 ===
+总是使用 === 精确的比较操作符，避免在判断过程中，由javascript的强制类型转换所造成的困扰
+
+三元操作符
+用三元操作符分配或返回语句。在比较简单的情况下使用，避免在复杂的情况下使用
+
+使用对象代替 if else / switch 语句
+// if else写法
+function fun1(status){
+	if (status == 1) {
+	    alert('成功：',status)
+        go('IndexPage')//跳页面方法
+	  } else if (status == 2) {
+	    alert('失败：',status)
+        go('failPage')//跳页面方法
+	  } else if (status == 3) {
+	    alert('失败：',status)
+        go('failPage')//跳页面方法
+	  } else if (status == 4) {
+	    alert('超时：',status)
+        go('timeoutPage')//跳页面方法
+	  } else if (status == 5) {
+	    alert('系统内部错误：',status)
+        go('errorPage')//跳页面方法
+	  } else {
+	    alert('其他提示：',status)
+        go('otherPage')//跳页面方法
+	  }
+}
+
+switch写法
+function fun1(status){	
+  switch (status) {
+    case 1:
+      alert('成功：',status)
+      go('IndexPage')//跳页面方法
+      break
+    case 2:
+    case 3:
+      alert('失败：',status)
+      go('failPage')//跳页面方法
+      break
+    case 4:
+     alert('超时：',status)
+     go('timeoutPage')//跳页面方法
+      break
+    case 5:
+      alert('系统内部错误：',status)
+      go('errorPage')//跳页面方法
+      break
+    default:
+      alert('其他提示：',status)
+      go('otherPage')//跳页面方法
+      break
+  }
+}
+
+对象写法：
+const actions = {
+   '1': ['成功', 'IndexPage'],
+   '2': ['失败', 'failPage'],
+   '3': ['失败', 'failPage'],
+   '4': ['超时', 'timeoutPage'],
+   '5': ['系统内部错误', 'errorPage'],
+   'default': ['其他', 'otherIndex']
+ }
+ function fun(status){
+  	const action = actions[status] || actions['default']
+    const { logName, pageName } = action
+ 	alert(logName)
+    go(pageName)//跳页面方法
+}
+
+
+使用ES6编码规范
+
+
+定义变量使用let ,定义常量使用const
+静态字符串一律使用单引号或反引号，动态字符串使用反引号
+// bad
+const a = 'foobar';
+const b = 'foo' + a + 'bar';
+
+
+// good
+const a = 'foobar';
+const b = `foo${a}bar`;
+
+
+解构赋值
+// 1. 数组解构赋值
+const arr = [1, 2, 3, 4];
+// bad
+const first = arr[0];
+const second = arr[1];
+// good
+const [first, second] = arr;
+
+
+// 2. 对象解构赋值
+// bad
+function getFullName(user) {
+  const firstName = user.firstName;
+  const lastName = user.lastName;
+}
+// good
+function getFullName(obj) {
+  const { firstName, lastName } = obj;
+}
+// best
+function getFullName({ firstName, lastName }) {}
+
+
+使用扩展运算符（...）拷贝数组
+const items = [1, 2, 3, 4, 5];
+// bad
+const itemsCopy = items;
+// good
+const itemsCopy = [...items];
+
+
+箭头函数 需要使用函数表达式的场合，尽量用箭头函数代替
+
+
+CSS规范
+
+
+合理使用ID
+一般情况下ID不应该被用于样式，并且ID的权重很高，所以不使用ID解决样式的问题，而使用class
+
+
+
+css选择器中避免使用标签名
+从结构、样式、行为分离的原则来看，应该尽量避免css中出现HTML标签，并且在css选择器中出现标签名会存在潜在的问题。
+
+
+
+使用直接子选择器
+使用后代选择器常可能导致设计问题和性能损耗，这是个不好的办法，应总是考虑直接子选择器
+
+/* bad */
+.content .title {
+  font-size: 2rem;
+}
+/* good */
+.content > .title {
+  font-size: 2rem;
+}
+
+
+class命名
+规则命名中，一律采用小写加中划线的方式，不允许使用大写字母或_
+命名避免使用中文拼音，应该采用更简明有语义的英文单词进行组合+
+不允许通过1、2、3等序号进行命名；避免class与id重名
+class用于标识某一个类型的对象，命名必须言简意赅
+尽可能提高代码模块的复用，样式尽量用组合的方式
+规则名称中不应该包含颜色（red/blue）、定位（left/right）等与具体显示效果相关的信息。应该用意义命名，而不是样式显示结果命名
+// 将复用性高的单条属性直接命名成类
+.ml5{margin-left:5px;}
+
+// 按照职能划分命名规则，例如，模块是nav，便可以命名nav-tittle、nav-left
+
+
+书写规范
+缩进：使用4个空格做为一个缩进层级，不允许使用2个空格或tab字符
+.selector {
+    margin: 0;
+    padding: 0;
+}
+
+
+空格：选择器与 { 之间必须包含空格
+.selector {
+}
+
+
+属性名与之后的：之间不允许包含空格，：与属性值之间必须包含空格
+margin: 0;
+
+
+列表型属性值书写在单行时， ，后必须跟一个空格
+font-family: Arial, sans-serif;
+
+
+当一个rule包含多个selector时，每个选择器声明必须独占一行
+/* good */
+.post,
+.page,
+.comment {
+    line-height: 1.5;
+}
+
+/* bad */
+.post, .page, .comment {
+    line-height: 1.5;
+}
+
+
+>、+、～选择器的两边各保留一个空格
+/* good */
+main > nav {
+    padding: 10px;
+}
+
+label + input {
+    margin-left: 5px;
+}
+
+input:checked ~ button {
+    background-color: #69C;
+}
+
+/* bad */
+main>nav {
+    padding: 10px;
+}
+
+label+input {
+    margin-left: 5px;
+}
+
+input:checked~button {
+    background-color: #69C;
+}
+
+
+属性选择器中的值必须用双引号包围。不允许使用单引号，不允许不使用引号
+/* good */
+article[character="juliet"] {
+    voice-family: "Vivien Leigh", victoria, female
+}
+
+/* bad */
+article[character='juliet'] {
+    voice-family: "Vivien Leigh", victoria, female
+}
+
+
+属性定义必须另起一行
+/* good */
+.selector {
+    margin: 0;
+    padding: 0;
+}
+
+/* bad */
+.selector { margin: 0; padding: 0; }
+
+
+属性定义后必须以分号结尾
+/* good */
+.selector {
+    margin: 0;
+}
+
+/* bad */
+.selector {
+    margin: 0
+}
+
+
+当数值为0-1之间的小数时，省略整数部分的0
+/* good */
+panel {
+    opacity: .8
+}
+
+/* bad */
+panel {
+    opacity: 0.8
+}
+
+
+颜色值可以缩写时，必须使用缩写形式
+/* good */
+.success {
+    background-color: #aca;
+}
+
+/* bad */
+.success {
+    background-color: #aaccaa;
+}
+
+
+颜色值不允许使用命名色值
+/* good */
+.success {
+    color: #90ee90;
+}
+
+/* bad */
+.success {
+    color: lightgreen;
+}
+
+
+书写顺序。按照分组及重要性进行排序。由外向内，从元素与外界的关系，是否会影响外部布局，到外边距，内边距等
+1、布局相关(display，position，float，overflow，clear)，因为元素的布局会对相邻元素产生影响，自身甚至会脱离原来的文档流，所以比较重要
+
+2、盒模型相关（width，height，margin，padding）
+
+3、外观（color，background，border，box-shadow）
+
+4、文字排版（font-size，font-family，text-align，text-transform）
+
+5、其他（cursor，z-index）
+
+/* bad */
+ .box {
+  font-family: 'Arial', sans-serif;
+  border: 3px solid #ddd;
+  left: 30%;
+  position: absolute;
+  text-transform: uppercase;
+  background-color: #eee;
+  right: 30%;
+  isplay: block;
+  font-size: 1.5rem;
+  overflow: hidden;
+  padding: 1em;
+  margin: 1em;
+}
+
+
+/* good */
+.box {
+  display: block;
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  overflow: hidden;
+  
+  margin: 1em;
+  padding: 1em;
+  
+  background-color: #eee;
+  border: 3px solid #ddd;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+
+基于上述规范的日期组件示例
+
+
+目录文件：date-picker 
+
+<!-- index.vue (父组件) -->
+
+<template>
+  <date-picker :date="date" @choose-date="chooseDate"/>
+</template>
+
+<script>
+import DatePicker from "./DatePicker";
+export default {
+  components: {
+    DatePicker,
+  },
+  data() {
+    return {
+      date: new Date(),
+    }
+  },
+  methods: {
+    chooseDate(date) {
+      this.date = date;
+    }
+  },
+}
+</script>
+
+
+<!-- DatePicker.vue (子组件) -->
+<template>
+  <div class="date-picker" v-click-outside>
+
+    <div class="picker-input">
+      <span class="input-prefix"
+        <i class="iconfont icon-date"></i>
+      </span>
+      <input type="text" :value="chooseDate" />
+    </div>
+
+    <div class="picker-panel" v-if="isShowPanel"
+      <div class="picker-body">
+
+        <div class="picker-header">
+          <span class="picker-button iconfont icon-prev-year" @click="onChangeYear('prev')" />
+          <span class="picker-button iconfont icon-prev-month" @click="onChangeMonth('prev')" />
+          <span class="picker-date">{{ showDate.year }}年{{ showDate.month + 1 }}月</span>
+          <span class="picker-button iconfont icon-next-month" @click="onChangeMonth('next')" />
+          <span class="picker-button iconfont icon-next-year" @click="onChangeYear('next')" />
+        </div>
+
+        <div class="picker-content">
+          <div class="picker-weeks">
+            <div 
+              v-for="week in ['日', '一', '二', '三', '四', '五', '六']" 
+              :key="week"
+            > 
+              {{ week }}
+            </div>
+          </div>
+          <div class="picker-days">
+            <div v-for="date in showDay" 
+              :key="date.getTime()"
+              :class="{
+                'other-month': !handleCurrentDateClass(date).month,
+                'is-selected': !handleCurrentDateClass(date).select,
+                'is-today': !handleCurrentDateClass(date).today,
+              }"
+                {{ date.getDate() }}
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  directives: {
+    // 点击指令。判断当前点击区域是否在panel上，来显示/隐藏日期栏目
+    "click-outside": {
+      bind(el, binding, vnode) {
+        const vm = vnode.context;
+        document.onclick = function (e) {
+          const dom = e.target;
+          const isElSon = el.contains(dom);
+          if (isElSon && !vm.isShowPanel) {
+            vm.changePanel(true);
+          } else if (!isElSon && vm.isShowPanel) {
+            vm.changePanel(false);
+          }
+        }
+      }
+    }
+  },
+  props: {
+    date: {
+      type: Date,
+      default: () => new Date(),
+    }
+  },
+  data() {
+    return {
+      isShowPanel: false,
+      showDate: {
+        year: 0,
+        month: 0,
+        day: 0,
+      },
+    };
+  },
+  computed: {
+    // 将父传子的日期经过转化成固定格式返回
+    chooseDate() {
+      const { year, month, day } = this.getYearMonthDay(this.date);
+      return `${year}-${month + 1}-${day}`;
+    },
+
+    // 返回当前日期栏显示的所有日期的集合数组
+    showDay() {
+      const { year,month } = this.showDate;
+      // 获取当月第一天
+      const firstDay = new Date(year, month, 1);
+      // 获取星期数
+      const week = firstDay.getDay();
+      // 标记日历的初始位。例当月第一天为星期三，则往前挪三天，可得日历中开头的日期
+      const startDay = firstDay - week * 24 * 60 * 60 * 1000;
+      // 日历行6*列7，往数组里面压入42个日期元素
+      const arr = [];
+      for (let i = 0;i < 42;i++) {
+        arr.push(new Date(startDay + i *24 *60 *60 *1000));
+      }
+      return arr;
+    },
+  },
+
+  methods: {
+    /**
+     * 获取日期的年，月，日
+     *
+     * @param {Object} date 日期对象
+     * @return {Object} { year: 年, month: 月, day: 日}
+     */
+    getYearMonthDay(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const day = date.getDate();
+      return {
+        year,
+        month,
+        day,
+      };
+    },
+
+    // 显示/隐藏 日期panel
+    changePanel(flag) {
+      this.isShowPanel = flag;
+    },
+    
+    // 将日期赋值给showDate变量
+    getShowDate(date) {
+      const { year, month, day } = this.getYearMonth(date);
+      this.showDate = {
+        year,
+        month,
+        day,
+      }
+    },
+    
+    /**
+     * 处理每个日期项的样式。选中样式，当天样式，其他月份样式
+     *
+     * @param {Object} date 日期对象
+     * @return {Object} { month: 其他月份, select: 被选中, today: 当天 }
+     */
+    handleCurrentDateClass(date) {
+      // 选中的日期对象
+      const chooseDate = new Date(this.chooseDate);
+      // 日历panel中的日期对象
+      const { year: showYear, month: showMonth } = this.showDate;
+      const {
+        year: chooseYear,
+        month: chooseMonth,
+        day: chooseDay,
+      } = this.getYearMonthDay(chooseDate);
+      const {
+        year: curYear,
+        month: curMonth,
+        day: curDay,
+      } = this.getYearMonthDay(new Date());
+      const { year, month, day } = this.getYearMonthDay(date);
+      return {
+        month: year === showYear && month === showMonth, // 年份和月份与当月所在年份月份不一样则为其他月份，且设置该样式
+        select: year === chooseYear && month === chooseMonth && day === chooseDay, // 年月日与选中的年月日一致则设置选中日期样式
+        today: year === curYear && month === curMonth && day === curDay, // 年月日与当天年月日一致则设置当天日期样式
+      };
+    },
+  
+    // 点击选择日期触发
+    onChooseDate(date) {
+      this.$emit("choose-date", date);  
+      this.changePanel(false);
+      this.getShowDate(date);
+    },
+    
+    // 点击切换月份（上个月/下个月）
+    onChangeMonth(type) {
+      const moveMonth = type === 'prev' ? -1 : 1;
+      const { year, month, day } = this.showDate;
+      const showDate = new Date(year, month , day);
+      // 设置月份
+      showDate.setMonth(month + moveMonth);
+      const { year: showYear, month: showMonth } = this.getYearMonthDay(showDate);
+      this.showDate.year = showYear;
+      this.showDate.month = showMonth;
+    },
+    
+    // 点击切换年份
+    onChangeYear(type) {
+      const moveYear = type === 'prev' ? -1 : 1;
+      this.showDate.year += moveYear;
+    },
+  },
+  
+  created() {
+    // 将父传子的日期格式化
+    this.getShowDate(this.date);
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+  .date-picker {
+    display: inline-block;
+    background-color: pink;
+    .picker-input {
+      position: relative;
+      input { 
+        height: 40px;
+        line-height: 40px;
+        padding: 0 30px;
+        border: 1px solid #dcdfe6;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+      }
+      .input-prefix {
+        position: absolute;
+        width: 25px;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        background-color: #fff;
+        color: #c0c4cc;
+      }
+    }
+    .picker-panel {
+      position: absolute;
+      width: 322px;
+      height: 329px;
+      margin-top: 5px;
+      border: 1px solid #e4e7ed;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      .picker-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 30px;
+        top: -12px;
+        border: 6px solid transparent;
+        border-bottom-color: #ebeef5;
+        &::after {
+          display: block;
+          position: absolute;
+          content: ""; 
+          width: 0;
+          height: 0;
+          left: -6px;
+          top: -5px;
+          border: 6px solid transparent;
+          border-bottom-color: #fff;
+        }
+      }
+      .picker-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0 15px 0;
+      }
+      .picker-button {
+        margin: 0 5px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .picker-date {
+        margin: 0 60px;
+        user-select: none;
+      }
+      .picker-content {
+        padding: 0 10px 10px 10px;
+        color: #606266;
+        user-select: none;
+      }
+      .picker-weeks {
+        dislpay: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+        border-bottom: 1px solid #ebeef5;
+      }
+      .picker-days {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        div {
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          margin: 4px 6px;
+          font-size: 12px;
+          cursor: pointer;
+          text-align: center;
+          &:hover {
+            color: #409eff;
+          }
+          .is-today {
+            color: #409eff;
+            font-weight: 700;
+          }
+          .is-selected {
+            border-radius: 50%;
+            background-color: #409eff;
+            color: #fff;
+          }
+          .other-month {
+            color: #c0c4cc;
+          }
+        }
+      }
+  }
+  
+</style>
