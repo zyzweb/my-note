@@ -1,0 +1,110 @@
+{
+  "workbench.colorCustomizations": {
+    //设置用户选中代码段的颜色
+    // "editor.selectionBackground": "#2f00ff",
+    //搜索匹配的背景色
+    "editor.findMatchBackground": "#FFFFCE",
+    // "editor.findMatchHighlightBackground": "#FFFFCE",
+    // "editor.findRangeHighlightBackground": "#FFFFCE",
+    "editorCursor.foreground": "#e9e6e6" // 设置光标颜色
+  },
+  "workbench.iconTheme": "simple-icons",
+  "explorer.confirmDragAndDrop": false,
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.inlineValues": true,
+  "explorer.confirmDelete": false,
+  "editor.codeActionsOnSave": {
+    //保存时自动按eslint修复
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["vue", "javascript", "typescript", "typescriptreact", "html"],
+  // "editor.formatOnSave": true, //每次保存自动格式化
+  "cSpell.userWords": ["Bscroll", "actionsheet", "colspan", "devtool", "echarts", "fastclick", "qrcode", "readonly", "rgba", "rowspan", "sourcemap", "touchend", "touchmove", "touchstart", "vuex"],
+  "bookmarks.useWorkaroundForFormatters": true,
+  "prettier.printWidth": 200,
+  "prettier.eslintIntegration": true, //让prettier使用eslint的代码格式进行校验
+  "prettier.singleQuote": false, //使用单引号替代双引号
+  "vetur.completion.scaffoldSnippetSources": {},
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "printWidth": 120
+      // "wrap_attributes": "force"
+    }
+
+    // "prettyhtml": { // 已经被废弃
+    //   "printWidth": 100, // No line exceeds 100 characters
+    //   "singleQuote": false, // Prefer double quotes over single quotes
+    //   // "wrap_attributes": "force" // 可以换成上面任意一种value   auto|force|force-aligned|force-expand-multiline
+    // }
+  },
+  "vetur.format.defaultFormatter.js": "none",
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur" // 默认格式化程序   esbenp.prettier-vscode  octref.vetur
+  },
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.enableFiletypes": ["vue"],
+  "pathAlias.aliasMap": {
+    "@": "${cwd}/src",
+    "api": "${cwd}/src/api",
+    "components": "${cwd}/src/components",
+    "config": "${cwd}/src/config",
+    "util": "${cwd}/src/util",
+    "module": "${cwd}/src/module",
+    "asset": "${cwd}/src/asset",
+    "service": "${cwd}/src/service",
+    "assets": "${cwd}/src/assets"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.arrowParens": "avoid",
+  "editor.quickSuggestions": {
+    //开启自动显示建议
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "git.autofetch": true,
+  "vue-helper.rem-px": 50,
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vetur.ignoreProjectWarning": true, // 忽略vetur警告提示
+  // "update.channel": "none", // 关闭自动更新
+  "search.followSymlinks": false, //解决code helper进程cpu占用过大
+  "path-intellisense.showHiddenFiles": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "vue-helper.alias": {
+    "@": "${cwd}/src"
+    // "api": "${cwd}/src/api",
+    // "components": "${cwd}/src/components",
+    // "config": "${cwd}/src/config",
+    // "util": "${cwd}/src/util",
+    // "module": "${cwd}/src/module",
+    // "asset": "${cwd}/src/asset",
+    // "service": "${cwd}/src/service",
+    // "assets": "${cwd}/src/assets",
+  },
+  "vue-helper.quotes": "single",
+  "vue-helper.tagNameWay": "camelCase",
+  "workbench.editor.decorations.badges": true,
+  "search.experimental.searchInOpenEditors": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "vetur.validation.templateProps": true
+
+  //path intellisense显示隐藏文件
+  // "path-intellisense.mappings": {
+  //   "@": "${workspaceRoot}/src"
+  // }
+}
