@@ -1,3 +1,4 @@
+https://www.bilibili.com/video/BV1ZE411E7LS?p=14
 webstrom设置环境变量 https://gist.github.com/moreta/d3989686b6a1f2416b5802cac8df16b4
 
 https://scto.subscribelink.xyz/link/V42uDImjVFNIx2Ys?list=shadowrocket
